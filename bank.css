@@ -1,0 +1,790 @@
+.bankPosition{
+    position: absolute;
+}
+.bankInsideMap{
+    height:180%;
+    width:180%;
+    background-image: url('component/bankBaseImage.png');
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+    position: relative;
+}
+#bankWallVertical1{
+    left:2%;
+    height: 35.8%;
+}
+
+#bankWallVertical2{   
+    left: 20%;
+    height: 35.5%;
+}
+#bankWallVertical3{
+    left: 35.7%;
+    height: 22%;
+}
+#bankWallVertical4{
+    left: 52.2%;
+    height: 22%;
+}
+.bankWallV{
+    top: 64.3%;
+    width: 0.85%;
+}
+
+#bankWallHorizontal1{
+    left: 2%; 
+   height: 1.7%;
+    width: 11%;
+}
+#bankWallHorizontal2{
+    left:20%;
+    height: 1.7%;
+    width: 5%;
+}
+#bankWallHorizontal3{
+    left: 31.5%;
+    height: 1.7%;
+    width: 5%;
+}
+#bankWallHorizontal4{
+    left: 36.5%;
+    height: 1.7%;
+    width: 5%;
+}
+#bankWallHorizontal5{
+    left: 48%;
+    height: 1.7%;
+    width: 5%;
+}
+.bankWallH{
+    top:63%;
+}
+
+
+
+#bankChair1{
+    top: 25%;
+    left: 11.5%;
+    width: 5%;
+    height:12%;
+}
+
+#bankChair2{
+    top: 25%;
+    left: 31.5%;
+    height: 10%;
+    width: 5.8%; 
+}
+
+#bankChair3{
+    top: 25%;
+    left: 52%;
+    height: 10%;
+    width: 5.8%; 
+}
+#bankSofa{
+    left: 27.5%;
+}
+#bankSofa2{
+    left: 38%;
+}
+.bankSofaClass{
+    top: 2.6%;
+    height: 10.5%;
+    width: 10.5%;
+}
+
+#bankOfficeTable{
+    top: 3%;
+    left: 87.9%;
+    height: 22%;
+    width: 5.3%;
+}
+#bankOfficeChair{
+    top: 10%;
+    left: 93.5%;
+    height: 7.5%;
+    width: 5%;
+}
+#bankOfficeSofa1{
+    top: 2.6%;
+    left: 75%;
+    height: 8.5%;
+    width: 4.5%;
+}
+#bankOfficeSofa2{
+    top: 11%;
+    left: 70%;
+    height: 16.7%;
+    width: 4.7%;
+}
+#bankOfficeTable2{
+    top: 12.5%;
+    left: 75.5%;
+    height: 14%;
+    width: 4%;
+}
+#bankOfficeChair1{
+    top: 6%;
+    left: 84.3%;
+    height: 7.5%;
+    width: 3.5%;
+}
+#bankOfficeChair2{
+    top: 15%;
+    left: 84.3%;
+    height: 7.5%;
+    width: 3.5%;
+}
+#bankOfficeLamp{
+    top: 4%;
+    left:70.5%;
+    height: 6%;
+    width: 3%;
+}
+#bankOfficeDustbin{
+    top: 4%;
+    left:95%;
+    width: 2.5%;
+    height: 5%;
+}
+#bankOfficeCupboard{
+    top: 38.8%;
+    left: 70%;
+    height: 6.7%;
+    width: 9.7%;
+}
+#bankOfficeWallVertical{
+    top: 1%;
+    left: 69.3%;
+    height: 45%;
+    width: 0.8%;
+}
+#bankOfficeWallHorizontal{
+    top: 45%;
+    left: 69.3%;
+    height: 1.85%;
+    width: 20%;
+}
+
+#bankCabinet1{
+    top: 84.5%;
+    left:2.93%;
+    height: 13%;
+    width: 3.5%;
+}
+#bankBlackCupBoard{
+    top: 91%;
+    left: 9%;
+    height: 7.5%;
+    width: 11%;
+}
+#bankFiles1{
+    top: 75%;
+    left: 3%;
+    height:5%;
+    width: 2.7%;
+}
+#bankFiles2{
+    top: 80%;
+    left: 3.8%;
+    height:5%;
+    width: 2.7%;
+}
+#bankBlackTable{
+    top: 64.7%;
+    left: 2.85%;
+    height: 10%;
+    width: 10.1%;
+}
+#bankCounterTable{
+    top: 66%;
+    left: 23%;
+    height: 9%;
+    width: 10%;
+}
+#bankCounterTable2{
+    top: 66%;
+    left: 40%;
+    height: 9%;
+    width: 10%;
+}
+#bankchair1{
+    top: 75%;
+    left: 25.8%;
+    height:8%;
+    width: 5%;
+}
+#bankchair2{
+    top: 75%;
+    left: 43%;
+    height:8%;
+    width: 5%;
+}
+#bankFiles2{
+    top: 77%;
+    left: 21%;
+    height: 6.3%;
+    width: 2.3%;
+}
+
+#bankCalc{
+    top: 14%;
+    left: 77%;
+    height: 4.3%;
+    width: 2.3%;
+}
+#bankATM{
+    top: 2.6%;
+    left: 2%;
+    height: 12%;
+    width: 8%;
+}
+#bankKioskMachine1{
+    top: 2.6%;
+    left: 15.5%;
+    height: 16%;
+    width: 6%;
+}
+#bankKioskMachine2{
+    top: 2.6%;
+    left: 21.5%;
+    height: 16%;
+    width: 6%; 
+}
+#bankChairsVertical1{
+    top: 2.6%;
+    left: 65.7%;
+    height: 25%;
+    width: 3.5%;
+}
+#bankChairsHorizontal{
+    top: 2.6%;
+    height: 7.5%;
+    width: 12%;
+    left: 49%;
+}
+
+#bankDustbin1{
+    top: 2.8%;
+    height: 5%;
+    width: 2.5%;
+    left: 10%;
+}
+#bankDustbin2{
+    top: 2.8%;
+    height: 5%;
+    width: 2.5%;
+    left: 12.5%;
+}
+#bankDustbin3{
+    height: 5%;
+    width: 2.5%;
+    left: 33%;
+    top: 70%;
+}
+#bankDustbin4{
+    height: 5%;
+    width: 2.5%;
+    left: 36.7%;
+    top: 70%;
+}
+#bankBrownTable{
+    top: 31%;
+    left: 35%;
+    height: 10%;
+    width: 10%;
+}
+#bankBrownTable1{
+    top: 41%;
+    left: 35%;
+    height: 10%;
+    width:10%;
+}
+.bankWashroomWallV{
+    top: 74%;
+    height: 25%;
+    width: 1%;
+}
+#bankWashroomWallVertical1{
+    left:69%; 
+}
+#bankWashroomWallVertical2{
+left:84.1%;
+}
+
+.bankWashroomWallH{
+    top: 73%;
+    height:1.7%;
+    width: 7.9%;
+}
+#bankWashroomWallHorizontal1{
+    left:69%;
+}
+#bankWashroomWallHorizontal2{
+    left: 84.1%;
+}
+#bankToilet1{
+    top: 78.5%;
+    left: 70%;
+    height: 7.5%;
+    width: 5%;
+}
+#bankToilet2{
+    top: 78.5%;
+    left: 85%;
+    height: 7.5%;
+    width: 5%;
+}
+#bankWashBasin1{
+    top: 91.5%;
+    left: 76%;
+    height: 7%;
+    width: 7%;
+}
+#bankWashBasin2{
+    top: 91.5%;
+    left: 91%;
+    height: 7%;
+    width: 7%;
+}
+
+#bankBlacklineHorizontal{
+    top: 0%;
+    left: 0%;
+    height: 3%;
+    width: 100%;
+}
+#bankBlacklineHorizontal2{
+    top: 97%;
+    left: 0%;
+    height: 3%;
+    width: 100%;
+}
+#bankBlacklineVertical{
+    top: 0%;
+    left: 0%;
+    height:21%;
+    width: 2%;
+}
+#bankBlacklineVertical2{
+    top: 78%;
+    left: 0%;
+    height:20%;
+    width: 2%;
+}
+#bankBlacklineVertical3{
+    top: 0%;
+    left: 98.8%;
+    height:100%;
+    width: 1.2%;
+}
+.visibility{
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+#bankSittingMan1{
+    top: 8%;
+    left: 40%;
+    height: 7.5%;
+    width:3.5%;
+}
+#bankSittingMan2{
+    top: 5.5%;
+    left: 55%;
+    height: 6.5%;
+    width: 2.6%;
+}
+#bankSittingMan3{
+    top: 9%;
+    left: 64.5%;
+    height: 5.5%;
+    width: 4%;
+}
+#bankCounterMan1{
+    top: 72.9%;
+    left: 26.6%;
+    height: 7.5%;
+    width: 3.3%;
+}
+#bankCounterMan2{
+    top: 73%;
+    left: 43.5%;
+    height: 7.5%;
+    width: 4%;
+}
+#bankSittingWoman1{
+    top: 7%;
+    left: 30%;
+    height: 8.5%;
+    width: 4%;
+}
+#bankSittingWoman2{
+    top: 20.5%;
+    left: 64.5%;
+    height: 5.5%;
+    width: 4%;
+}
+#bankManager{
+    top: 11%;
+    left: 92.5%;
+    height: 5.6%;
+    width: 4.8%;
+}
+
+
+/* -------------------------------------------------------------- */
+#bankPolice1{
+    position: absolute;
+    width: calc(7% / 2);
+    height: 6%;
+    top: 18%;
+    left: 4%;
+    z-index: 1;
+    overflow: hidden;
+     /* display: none;  */
+    animation: bankPoliceAnimation 11s infinite linear ;
+}
+
+#bankPolice1 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes bankPoliceAnimation {
+    0%{
+        top: 18%;
+        left: 4%;
+        transform:rotate(0deg);
+    }
+    33%{
+        top: 53%;
+        left: 4%;
+        transform:rotate(0deg);
+    }
+    34%{
+        transform:rotate(-90deg);
+        left: 4%;
+        top: 53%;
+    }
+    50%{
+        transform:rotate(-90deg);
+        left: 10%;
+        top: 53%;
+    }
+    55%{
+        transform:rotate(90deg);
+        left: 10%;
+        top: 53%;
+    }
+    70%{
+        transform:rotate(90deg);
+        left: 4%;
+        top: 53%;
+    }
+    71%{
+        transform:rotate(180deg);
+        left: 4%;
+        top: 53%;
+    }
+    98%{
+        transform:rotate(180deg);
+        left: 4%;
+        top: 18%;
+    }
+    100%{
+        top: 18%;
+        left: 4%;
+        transform:rotate(0deg);
+    }
+}
+/* ----------------------------------------------------- */
+#bankYellowMan{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 20%;
+    left: 22%;
+    z-index: 1;
+    overflow: hidden;
+     /* display: none;  */
+    animation: bankYellowManAni  40s infinite linear ;
+}
+
+#bankYellowMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes bankYellowManAni{
+    0%{
+        transform:rotate(0deg);
+        top: 20%;
+        left: 22%;
+    }
+    1%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 22%;
+    }
+    11%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 54%;
+    }
+    12%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 54%;
+    }
+    24%{
+        transform:rotate(180deg);
+        top: 87%;
+        left: 54%;
+    }
+    25%{
+        transform:rotate(270deg);
+        top: 87%;
+        left: 54%;
+    }
+    30%{
+        transform:rotate(270deg);
+        top: 87%;
+        left: 38%;
+    }
+    31%{
+        transform:rotate(90deg);
+        top: 87%;
+        left: 38%;
+    }
+    37%{
+        transform:rotate(90deg);
+        top: 87%;
+        left: 54%;
+    }
+    38%{
+        transform:rotate(0deg);
+        top: 87%;
+        left: 54%;
+    }
+    44%{
+        transform:rotate(0deg);
+        top: 50%;
+        left: 54%;
+    }
+    45%{
+        transform:rotate(90deg);
+        top: 50%;
+        left: 54%;
+    }
+    57%{
+        transform:rotate(90deg);
+        top: 50%;
+        left: 92%;
+    }
+    58%{
+        transform:rotate(0deg);
+        top: 50%;
+        left: 92%;
+    }
+    62%{
+        transform:rotate(0deg);
+        top: 27%;
+        left: 92%;
+    }
+    64%{
+        transform:rotate(180deg);
+        top: 27%;
+        left: 92%;
+    }
+    69%{
+        transform:rotate(180deg);
+        top: 50%;
+        left: 92%;
+    }
+    70%{
+        transform:rotate(270deg);
+        top: 50%;
+        left: 92%;
+    }
+    83%{
+        transform:rotate(270deg);
+        top: 50%;
+        left: 54%;
+    }   
+    84%{
+        transform:rotate(360deg);
+        top: 50%;
+        left: 54%;
+    }   
+    89%{
+        transform:rotate(360deg);
+        top: 20%;
+        left: 54%;
+    }
+    90%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 54%;
+    }
+    100%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 22%;
+    }
+   
+   
+}
+/* --------------------------------------------------------*/
+
+#bankRedMan{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 20%;
+    left: 8.5%;
+    z-index: 1;
+    overflow: hidden;
+     /* display: none;  */
+    animation: bankRedManAni  20s infinite linear ;
+}
+
+#bankRedMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes bankRedManAni {
+    0%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 8.5%;
+    }
+    1%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 8.5%;
+    }
+    7%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    8%{
+        transform:rotate(360deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    35%{
+        transform:rotate(360deg);
+        top: 80%;
+        left: 13.5%;
+    }
+    37%{
+        transform:rotate(180deg);
+        top: 80%;
+        left: 13.5%;
+    }
+    47%{
+        transform:rotate(180deg);
+        top: 55%;
+        left: 13.5%;
+    }
+    48%{
+        transform:rotate(270deg);
+        top: 55%;
+        left: 13.5%;
+    }
+    58%{
+        transform:rotate(270deg);
+        top: 55%;
+        left: 27%;
+    }
+    59%{
+        transform:rotate(360deg);
+        top: 55%;
+        left: 27%;
+    }
+    62%{
+        transform:rotate(360deg);
+        top: 58%;
+        left: 27%;
+    }
+    64%{
+        transform:rotate(180deg);
+        top: 58%;
+        left: 27%;
+    }
+    67%{
+        transform:rotate(180deg);
+        top: 50%;
+        left: 27%;
+    }
+    74%{
+        transform:rotate(180deg);
+        top: 35%;
+        left: 27%;
+    }
+    75%{
+        transform:rotate(90deg);
+        top: 35%;
+        left: 27%;
+    }
+    85%{
+        transform:rotate(90deg);
+        top: 35%;
+        left: 13.5%;
+    }
+    86%{
+        transform:rotate(180deg);
+        top: 35%;
+        left: 13.5%;
+    }
+    94%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    95%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    99%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 8.5%;
+    }
+    100%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 8.5%;
+    }
+   
+}
+
+/* ---------------------------------------------------------------- */
+
+.bankwalk{
+    animation: bankwalk .8s infinite steps(2);
+}
+@keyframes bankwalk {
+    0%{
+        left: 0%;
+    }
+    
+    100%{
+        left: -200%;
+    }
+}

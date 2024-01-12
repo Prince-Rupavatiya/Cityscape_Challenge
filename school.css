@@ -1,0 +1,1132 @@
+.schoolInsideMap {
+    background-image: url('component/schoolBaseImage.PNG');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    display: none;
+    top: 0%;
+    left: 0%;
+    height: 180%;
+    width: 180%;
+}
+
+.schoolposition {
+    position: absolute;
+}
+
+
+/* OUTER WALLS */
+
+#schoolWall1 {
+    left: 0.4%;
+    height: 1.5%;
+    width: 99.3%;
+}
+
+#schoolWall2 {
+    height: 2%;
+    width: 40.6%;
+    left: 59.1%;
+    top: 98%;
+}
+
+#schoolWall3 {
+    height: 100%;
+    width: 0.8%;
+    left: 99.2%;
+    top:0%;
+}
+
+#schoolWall4 {
+    left:0.4%;
+    height: 2%;
+    width: 40%;
+    top: 98%;
+
+}
+
+#schoolWall5 {
+    height: 100%;
+    width: 1%;
+}
+
+/* INNER WALLS */
+#schoolWall6 {
+    height: 45%;
+    width: 1%;
+    left: 20%;
+    top: 0.6%;
+}
+
+#schoolWall7 {
+    height: 45%;
+    width: 1%;
+    left: 40%;
+    top: 0.6%;
+}
+
+#schoolWall8 {
+    height: 45%;
+    width: 1%;
+    left: 60%;
+    top: 0.6%;
+}
+
+#schoolWall9 {
+    height: 45%;
+    width: 1%;
+    left: 80%;
+    top: 0.6%;
+}
+
+#schoolWall10 {
+    height: 1.5%;
+    width: 13%;
+    left: 8%;
+    top: 45%;
+}
+
+#schoolWall11 {
+    height: 1.5%;
+    width: 13%;
+    left: 28%;
+    top: 45%;
+}
+
+#schoolWall12 {
+    height: 1.5%;
+    width: 13%;
+    left: 48%;
+    top: 45%;
+}
+
+#schoolWall13 {
+    height: 1.5%;
+    width: 13%;
+    left: 68%;
+    top: 45%;
+}
+
+#schoolWall14 {
+    height: 1.5%;
+    width: 12.8%;
+    left: 87%;
+    top: 45%;
+}
+
+#schoolWall15 {
+    height: 1.5%;
+    width: 16%;
+    left: 0.4%;
+    top: 70%;
+}
+
+#schoolWall16 {
+    height: 29.4%;
+    width: 1%;
+    left: 25%;
+    top: 69.8%;
+}
+
+#schoolWall17 {
+    height: 1.5%;
+    width: 20%;
+    left: 67%;
+    top: 70%;
+}
+
+#schoolWall18 {
+    height: 29.4%;
+    width: 1%;
+    left: 70%;
+    top: 69.8%;
+}
+
+#schoolWall19 {
+    height: 28%;
+    width: 1%;
+    left: 80%;
+    top: 70%;
+}
+
+#schoolWall20 {
+    height: 1.5%;
+    width: 22.1%;
+    left: 77.5%;
+    top: 70%;
+}
+
+#schoolWall21 {
+    height: 13%;
+    width: 1%;
+    left: 88%;
+    top: 57%;
+}
+
+#schoolRestRoomFloor {
+    height: 24%;
+    width: 13%;
+    left: 88%;
+    top: 46%;
+}
+
+#schoolRestroomWashBasin {
+    height: 5%;
+    width: 6.5%;
+    left: 92.7%;
+    top: 46.5%;
+}
+
+#schoolRestroom1 {
+    height: 6%;
+    width: 2.8%;
+    left: 96%;
+    top: 64%;
+}
+
+#schoolRestRoomWall {
+    height: 10%;
+    width: 1%;
+    left: 94%;
+    top: 60%;
+}
+
+#schoolRestroom2 {
+    height: 6%;
+    width: 2.8%;
+    left: 90%;
+    top: 64%;
+}
+
+/* CLASSROOMS */
+/* CR1 */
+#schoolClass1Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 8%;
+}
+
+#schoolClass1Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 1%;
+}
+
+#schoolClass1Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 1%;
+}
+
+#schoolClass1Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 14%;
+}
+
+#schoolClass1Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 1%;
+}
+
+#schoolClass1Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 14%;
+}
+
+#schoolClass1Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 14%;
+}
+
+#schoolClass1Desk7 {
+
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 1%;
+}
+
+#schoolClass1Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 1%;
+}
+
+#schoolClass1Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 14%;
+}
+
+#schoolClass1Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 1%;
+}
+
+#schoolClass1Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 14%;
+}
+
+#schoolClass1Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 14%;
+}
+
+/* CR2 */
+
+#schoolClass2Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 28%;
+}
+
+#schoolClass2Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 21%;
+}
+
+#schoolClass2Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 21%;
+}
+
+#schoolClass2Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 21%;
+}
+
+#schoolClass2Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 21%;
+}
+
+#schoolClass2Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 21%;
+}
+
+#schoolClass2Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 21%;
+}
+
+#schoolClass2Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 34%;
+}
+
+#schoolClass2Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 34%;
+}
+
+#schoolClass2Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 34%;
+}
+
+#schoolClass2Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 34%;
+}
+
+#schoolClass2Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 34%;
+}
+
+#schoolClass2Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 34%;
+}
+
+/* CR3 */
+
+#schoolClass3Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 48%;
+}
+
+#schoolClass3Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 41%;
+}
+
+#schoolClass3Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 41%;
+}
+
+#schoolClass3Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 41%;
+}
+
+#schoolClass3Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 41%;
+}
+
+#schoolClass3Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 41%;
+}
+
+#schoolClass3Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 41%;
+}
+
+#schoolClass3Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 54%;
+}
+
+#schoolClass3Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 54%;
+}
+
+#schoolClass3Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 54%;
+}
+
+#schoolClass3Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 54%;
+}
+
+#schoolClass3Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 54%;
+}
+
+#schoolClass3Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 54%;
+}
+
+/* CR4 */
+
+#schoolClass4Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 68%;
+}
+
+#schoolClass4Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 61%;
+}
+
+#schoolClass4Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 61%;
+}
+
+#schoolClass4Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 61%;
+}
+
+#schoolClass4Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 61%;
+}
+
+#schoolClass4Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 61%;
+}
+
+#schoolClass4Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 61%;
+}
+
+#schoolClass4Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 74%;
+}
+
+#schoolClass4Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 74%;
+}
+
+#schoolClass4Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 74%;
+}
+
+#schoolClass4Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 74%;
+}
+
+#schoolClass4Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 74%;
+}
+
+#schoolClass4Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 74%;
+}
+
+/* CR5 */
+
+#schoolClass5Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 87.2%;
+}
+
+#schoolClass5Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 81%;
+}
+
+#schoolClass5Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 81%;
+}
+
+#schoolClass5Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 81%;
+}
+
+#schoolClass5Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 81%;
+}
+
+#schoolClass5Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 81%;
+}
+
+#schoolClass5Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 81%;
+}
+
+#schoolClass5Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 93.1%;
+}
+
+/* STAFFROOM */
+#schoolStaffRoomTable {
+    height: 14%;
+    width: 15%;
+    top: 78%;
+    left: 80%;
+}
+
+#schoolStaffRoomShelf {
+    height: 8%;
+    width: 3%;
+    top: 90%;
+    left: 71%;
+}
+
+
+/* PRINCIPAL CABIN */
+#schoolPrincipalTable {
+    height: 24%;
+    width: 5%;
+    top: 74%;
+    left: 8%;
+}
+
+#schoolPrincipalChair {
+    height: 8%;
+    width: 4%;
+    top: 82%;
+    left: 3%;
+}
+
+#schoolChair1 {
+    height: 8%;
+    width: 4%;
+    top: 78%;
+    left: 13%;
+}
+
+#schoolChair2 {
+    height: 8%;
+    width: 4%;
+    top: 88%;
+    left: 13%;
+}
+
+/* PLANTS */
+#schoolPlant1 {
+    height: 6%;
+    width: 4%;
+    left: 26%;
+    top: 92%;
+}
+
+#schoolPlant2 {
+    height: 6%;
+    width: 4%;
+    left: 31%;
+    top: 92%;
+}
+
+#schoolPlant3 {
+    height: 6%;
+    width: 4%;
+    left: 36%;
+    top: 92%;
+}
+
+#schoolPlant4 {
+    height: 6%;
+    width: 4%;
+    left: 60%;
+    top: 92%;
+}
+
+#schoolPlant5 {
+    height: 6%;
+    width: 4%;
+    left: 65%;
+    top: 92%;
+}
+
+#schoolPlant6 {
+    height: 6%;
+    width: 4%;
+    left: 84%;
+    top: 64%;
+}
+
+/* PEOPLE */
+
+#schoolPrincipal
+{
+    top: 83%;
+    left: 4%;
+    height: 5%;
+    width: 4%;
+}
+
+
+
+ 
+ 
+
+#schoolTeacher3
+{
+    top: 37%;
+    left: 47%;
+    height: 5%;
+    width: 4%;
+}
+
+#schoolTeacher4
+{
+    top: 37%;
+    left: 68%;
+    height: 5%;
+    width: 4%;
+}
+
+#schoolPerson1 {
+    position: absolute;
+    width: calc(7.5% / 3);
+    top: 90%;
+    height: 5.5%;
+    left: 22%;
+    z-index: 1;
+    overflow: hidden;
+    animation: maschollMan1 20s infinite linear;
+}
+
+@keyframes maschollMan1 {
+    0% {
+        transform: rotate(0deg);
+        top: 90%;
+        left: 22%;
+    }
+
+    13% {
+        transform: rotate(0deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    14% {
+        transform: rotate(-90deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    30% {
+        transform: rotate(-90deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    31% {
+        transform: rotate(0deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    42% {
+        transform: rotate(0deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    43% {
+        transform: rotate(90deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    50% {
+        transform: rotate(90deg);
+        top: 33%;
+        left: 13%;
+    }
+
+    52% {
+        transform: rotate(270deg);
+        top: 33%;
+        left: 13%;
+    }
+
+    60% {
+        transform: rotate(270deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    61% {
+        transform: rotate(180deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    73% {
+        transform: rotate(180deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    74% {
+        transform: rotate(90deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    87% {
+        transform: rotate(90deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    88% {
+        transform: rotate(180deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    98% {
+        transform: rotate(180deg);
+        top: 90%;
+        left: 22%;
+    }
+    100% {
+        transform: rotate(0deg);
+        top: 90%;
+        left: 22%;
+    }
+}
+
+#schoolPerson1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.schoolWalk {
+    animation: schoolwalkAni .7s infinite steps(2);
+}
+
+
+@keyframes schoolwalkAni {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+#schoolPerson2 {
+    position: absolute;
+    width: calc(7.5% / 3);
+    height: 5.5%;
+    top: 3%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: schoolMan2 15s infinite linear;
+}
+
+#schoolPerson2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes schoolMan2 {
+    0% {
+        top: 3%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+
+    40% {
+        top: 32%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+
+    41% {
+        transform: rotate(-90deg);
+        left: 30%;
+        top: 32%;
+    }
+
+    53% {
+        transform: rotate(-90deg);
+        left: 35%;
+        top: 32%;
+    }
+
+    55% {
+        transform: rotate(90deg);
+        left: 35%;
+        top: 32%;
+    }
+
+    68% {
+        transform: rotate(90deg);
+        left: 30%;
+        top: 32%;
+    }
+
+    69% {
+        transform: rotate(180deg);
+        left: 30%;
+        top: 32%;
+    }
+
+    98% {
+        transform: rotate(180deg);
+        left: 30%;
+        top: 3%;
+    }
+
+    100% {
+        top: 3%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+}
+
+
+#schoolPerson3 {
+    position: absolute;
+    width: calc(5% / 2);
+    top: 90%;
+    height: 5%;
+    left: 22%;
+    z-index: 1;
+    overflow: hidden;
+    animation: schoolWoman1 15s infinite linear;
+}
+
+#schoolPerson3>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes schoolWoman1 {
+    0% {
+        top: 35%;
+        left: 83%;
+        transform: rotate(0deg);
+    }
+
+    10% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(0deg);
+    }
+
+    11% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(90deg);
+
+    }
+
+    23% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(90deg);
+
+    }
+
+    24% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(0deg);
+
+    }
+
+    40% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(0deg);
+
+    }
+
+    41% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(-90deg);
+
+    }
+
+    49% {
+        top: 77%;
+        left: 78%;
+        transform: rotate(-90deg);
+
+    }
+
+    51% {
+        top: 77%;
+        left: 78%;
+        transform: rotate(90deg);
+
+    }
+
+    58% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(90deg);
+
+    }
+    59% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(180deg);
+
+    }
+    75% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(180deg);
+
+    }
+
+    76% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(270deg);
+
+    }
+    89% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(270deg);
+
+    }
+    90% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(180deg);
+
+    }
+    98% {
+        top: 35%;
+        left: 83%;
+        transform: rotate(180deg);
+
+    }
+    100% {
+        top: 35%;
+        left: 83%;
+        transform: rotate(0deg);
+
+    }
+
+  
+
+}

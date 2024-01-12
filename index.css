@@ -1,0 +1,1428 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* Starting page */
+/* --------------------------------------------------------------------- */
+#frontPage {
+    height: 100%;
+    width: 100%;
+    background: url('component/cityBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* filter: blur(8px); */
+}
+
+
+.buttonClass {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+    border: 2px solid orange;
+    height: 10%;
+    width: 14%;
+    background-color: rgb(59, 57, 57);
+    color: wheat;
+    font-size: 30px;
+    border-radius: 15px;
+    box-shadow: 7px 7px 10px rgba(12, 12, 12, 0.8);
+}
+
+.buttonClass:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(160, 87, 87), lightpink, pink, magenta, purple, navy, blue, lightblue, white);
+    position: absolute;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    left: 0;
+    top: 0;
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.buttonClass:active {
+    color: #000
+}
+
+.buttonClass:active:after {
+    background: transparent;
+}
+
+.buttonClass:hover:before {
+    opacity: 1;
+}
+
+.buttonClass:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#startButton {
+    left: 28%;
+    top: 70%;
+}
+
+#settingButton {
+    left: 28%;
+    top: 85%;
+}
+
+#aboutButton {
+    left: 57%;
+    top: 70%;
+}
+
+#howToPlayButton {
+    left: 57%;
+    top: 85%;
+}
+
+#cityscapeLogo {
+    position: absolute;
+    height: 60%;
+    width: 40%;
+    left: 30%;
+    top: 10%;
+}
+
+#SoundSettingDiv {
+    position: absolute;
+    height: 40%;
+    width: 30%;
+    background-color: wheat;
+    top: 30%;
+    left: 35%;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgb(57, 57, 57);
+    opacity: 0.9;
+    display: none;
+}
+
+#settingCloseButton {
+    position: relative;
+    height: 15%;
+    width: 10%;
+    left: 85%;
+    top: -15%;
+}
+
+#settingMuteButton {
+    position: relative;
+    height: 35%;
+    width: 23%;
+    top: 40%;
+    left: 12%;
+    border-radius: 10px;
+}
+
+#settingPlayButton {
+    position: relative;
+    height: 35%;
+    width: 23%;
+    left: 20%;
+    top: 40.5%;
+
+}
+
+#aboutDiv {
+
+    position: absolute;
+    height: 55%;
+    width: 45%;
+    background-color: wheat;
+    top: 20%;
+    left: 26%;
+    padding: 0px 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgb(57, 57, 57);
+    opacity: 0.9;
+    display: none;
+    overflow: auto;
+}
+
+#aboutCloseButton {
+    position: relative;
+    height: 10%;
+    width: 6%;
+    left: 89%;
+    top: 3%;
+}
+
+#howToPlayDiv {
+
+    position: absolute;
+    height: 72%;
+    width: 55%;
+    background-color: wheat;
+    top: 13%;
+    left: 23%;
+    padding: 0px 20px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgb(57, 57, 57);
+    opacity: 0.9;
+    display: none;
+    overflow: auto;
+}
+
+#howToPlayCloseButton {
+    position: relative;
+    height: 10%;
+    width: 6%;
+    left: 93%;
+    top: 3%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(66, 66, 66, 0.6);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(66, 66, 66, 0.89);
+}
+
+#startButton:hover,
+#settingButton:hover,
+#aboutButton:hover,
+#howToPlayButton:hover,
+#settingPlayButton:hover,
+#settingCloseButton:hover,
+#settingMuteButton:hover,
+#skipButton:hover,
+#aboutButton:hover,
+#howToPlayButton:hover,
+#aboutCloseButton:hover,
+#howToPlayCloseButton:hover {
+    transform: scale(1.07);
+    transition: transform 0.3s ease;
+}
+
+#storyPage {
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: black;
+}
+
+#storyVideo {
+    position: relative;
+    left: 2.5%;
+    top: 2.5%;
+    width: 95%;
+    border-radius: 25px;
+    height: 95%;
+    object-fit: fill;
+}
+
+#skipButton {
+    display: none;
+    position: absolute;
+    height: 7%;
+    width: 10%;
+    border-radius: 15px;
+    box-shadow: 7px 7px 10px rgba(12, 12, 12, 0.8);
+    top: 90%;
+    left: 83%;
+    background-color: rgb(212, 175, 107);
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+#popUpPage {
+    height: 100%;
+    width: 100%;
+    background: url('component/cityScapeFrontPage.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+.popUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: whitesmoke;
+    background: conic-gradient(orangered 90deg, grey 90deg 270deg, orangered 270deg 360deg);
+    box-shadow: 0px 0px 20px black;
+    font-family: cursive;
+    font-size: medium;
+    height: 280px;
+    padding: 20px;
+    width: 280px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popUpContainer:hover {
+    box-shadow: 0px 0px 20px orangered;
+    background: conic-gradient(orange 0deg 90deg, black 90deg 270deg, orange 270deg 360deg);
+    opacity: 1;
+}
+
+#submitButton {
+    background-color: orangered;
+    border-radius: 1%;
+    border: 2px solid white;
+    padding: 7px;
+    font-size: 15px;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+#submitButton:hover {
+    box-shadow: 0px 0px 15px white;
+    font-weight: bold;
+}
+
+#popUpLogoImage {
+    background-color: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 35%;
+    width: 35%;
+}
+
+#messageKey {
+    height: 10%;
+    width: 70%;
+    border: 2px solid orangered;
+    border-radius: 10px;
+}
+
+.popUpItems {
+    flex-wrap: wrap;
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.801);
+    display: none;
+}
+
+.loading>img {
+    position: absolute;
+    height: 75%;
+    width: 40%;
+    left: 30%;
+    top: 5%;
+}
+
+.loading>.box {
+    position: fixed;
+    height: 1%;
+    width: 0%;
+    background-color: rgb(212, 149, 30);
+    bottom: 3%;
+    align-self: flex-start;
+    animation: load 3s 1 0s ease-in-out forwards;
+}
+
+@keyframes load {
+    100% {
+        width: 100%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    height: 10%;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar>#msg {
+    color: white;
+    width: 85%;
+    height: 100%;
+    padding: 0.5%;
+    overflow: auto;
+    display: inline-block;
+}
+
+.navbar>.container {
+    height: 100%;
+    width: 15%;
+    color: white;
+    font-weight: bold;
+    padding: 0% 1%;
+    display: inline-block;
+}
+
+.container>div {
+    height: calc(100%/3);
+    padding: 1% 0%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.energyContainer>#energyScore {
+    width: 85%;
+    padding: 0% 5%;
+    display: inline-block;
+}
+
+.energyContainer>img {
+    height: 100%;
+    float: right;
+}
+
+
+.lifeContainer>#lifeScore {
+    width: 85%;
+    padding: 0% 5%;
+    display: inline-block;
+}
+
+.lifeContainer>img {
+    height: 100%;
+    float: right;
+}
+
+
+.coinContainer>#coinScore {
+    width: 85%;
+    padding: 0% 5%;
+    display: inline-block;
+}
+
+.coinContainer>img {
+    height: 100%;
+    float: right;
+}
+
+#main_keys {
+    display: none;
+}
+
+.main_key {
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.main_key:hover {
+    opacity: 2;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+
+}
+
+#main_Key_UP {
+    top: 79.5%;
+    left: 10%;
+}
+
+#main_Key_Down {
+    top: 90%;
+    left: 10%;
+}
+
+#main_Key_Left {
+    top: 90%;
+    left: 3%;
+}
+
+#main_Key_Right {
+    top: 90%;
+    left: 17%;
+}
+
+
+/* Map Icon */
+#mapIcon {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 89%;
+    left: 94%;
+    border-radius: 10px;
+    z-index: 2;
+    height: 8%;
+    width: 4%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#cityMap {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+#cityMapImage {
+    position: relative;
+    top: 12%;
+    left: 4%;
+    height: 80%;
+    width: 90%;
+}
+
+#cityMapCloseImage {
+    position: relative;
+    width: 2%;
+    top: -65%;
+    left: 4%;
+}
+
+#cityMapIcon {
+    height: 100%;
+    width: 100%;
+}
+
+#cityMapIcon:hover {
+    box-shadow: 0px 0px 20px #bbc1c1;
+}
+
+#cityMapCloseImage:hover {
+    box-shadow: 0px 0px 20px #b13838;
+}
+
+/* Camera */
+.camera {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+/* Message */
+#massegeContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#massegeContainer>p {
+    font-size: 500%;
+    color: orange;
+    font-weight: bold;
+}
+
+/* MAP */
+.map {
+    height: 300%;
+    width: 300%;
+    background-color: rgb(58, 57, 57);
+    position: relative;
+    display: none;
+}
+
+.item {
+    border: 10px solid rgb(255, 255, 255);
+    border-style: groove;
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(72, 216, 72);
+    border-radius: 12px;
+}
+
+/* Player */
+.player {
+    position: absolute;
+    width: calc(10% / 2);
+    height: 10%;
+    top: 0%;
+    left: 33%;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+}
+
+.player>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: walk .6s infinite steps(2);
+}
+
+@keyframes walk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+/* Places */
+.item>img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#riddhihome {
+    background-image: url("component/stone.jfif");
+    height: 20%;
+    width: 10%;
+    top: 0%;
+    left: 0%;
+}
+
+#riddhihome>img {
+    margin: 10% 20%;
+    height: 80%;
+    width: 60%;
+}
+
+#policestation {
+    height: 25%;
+    width: 18%;
+    top: 0%;
+    left: 15%;
+}
+
+#firestation {
+    height: 25%;
+    width: 17%;
+    top: 0%;
+    left: 38%;
+}
+
+#govtoffice {
+    height: 25%;
+    width: 11%;
+    top: 0%;
+    left: 60%;
+}
+
+#mall {
+    background-image: url("component/walkway.jfif");
+    height: 27%;
+    width: 25%;
+    top: 0%;
+    left: 75%;
+    background-color: #bbc1c1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mall>img {
+    height: 75%;
+    width: 85%;
+}
+
+#hospital>img {
+    height: 100%;
+    width: 100%;
+}
+
+#hospital {
+    height: 30%;
+    width: 20%;
+    top: 35%;
+    left: 0%;
+}
+
+
+#gamezone {
+    height: 30%;
+    width: 25%;
+    top: 35%;
+    left: 25%;
+}
+
+#school {
+    height: 25%;
+    width: 20%;
+    top: 35%;
+    left: 55%;
+}
+
+#postoffice {
+    height: 20%;
+    width: 20%;
+    top: 35%;
+    left: 80%;
+}
+
+#postoffice>img {
+    height: 90%;
+    width: 95%;
+    top: 5%;
+    left: 5%;
+}
+
+#home {
+    background-image: url("component/bg_home.jpg");
+    height: 25%;
+    width: 15%;
+    top: 75%;
+    left: 0%;
+}
+
+#home>img {
+    height: 90%;
+    width: 50%;
+    top: 6%;
+    left: 25%;
+}
+
+#bank {
+    height: 25%;
+    width: 20%;
+    top: 75%;
+    left: 20%;
+}
+
+
+
+#hotel {
+    height: 25%;
+    width: 10%;
+    top: 75%;
+    left: 45%;
+}
+
+#garden {
+    height: 25%;
+    width: 20%;
+    top: 75%;
+    left: 60%;
+}
+
+#garden>img {
+    height: 100%;
+    width: 100%;
+}
+
+#theater {
+    height: 17%;
+    width: 10%;
+    top: 61%;
+    left: 85%;
+}
+
+#advikhome {
+    height: 15%;
+    width: 15%;
+    top: 85%;
+    left: 85%;
+}
+
+#advikhome>img {
+    height: 100%;
+    width: 100%;
+}
+
+.car {
+    position: absolute;
+    height: 7%;
+    width: 1.8%;
+}
+
+.car>img {
+    height: 100%;
+    width: 100%;
+}
+
+#policecar1 {
+    animation: policecar1 15s infinite linear;
+}
+
+#policecar2 {
+    animation: policecar2 13s infinite linear;
+}
+
+#car1 {
+    top: 53%;
+    left: 100%;
+    animation: car1 8s infinite linear;
+}
+
+#car2 {
+    top: 55%;
+    left: 99%;
+    animation: car2 5s infinite linear;
+}
+
+@keyframes policecar1 {
+    0% {
+        top: -2%;
+        left: 13%;
+        transform: rotate(180deg);
+    }
+
+    14% {
+        top: 25%;
+        left: 13%;
+        transform: rotate(180deg);
+    }
+
+    17% {
+        top: 25%;
+        left: 13%;
+        transform: rotate(90deg);
+    }
+
+    45% {
+        top: 25%;
+        left: 53%;
+        transform: rotate(90deg);
+    }
+
+    48% {
+        top: 25%;
+        left: 53%;
+        transform: rotate(180deg);
+    }
+
+    63% {
+        top: 67.3%;
+        left: 53%;
+        transform: rotate(180deg);
+    }
+
+    66% {
+        top: 67.3%;
+        left: 53%;
+        transform: rotate(270deg);
+    }
+
+    85% {
+        top: 67.3%;
+        left: 18%;
+        transform: rotate(270deg);
+    }
+
+    88% {
+        top: 67.3%;
+        left: 18%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 100%;
+        left: 18%;
+        transform: rotate(180deg);
+    }
+
+}
+
+@keyframes policecar2 {
+    0% {
+        top: -2%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+
+    17% {
+        top: 28%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+
+    20% {
+        top: 28%;
+        left: 58%;
+        transform: rotate(90deg);
+    }
+
+    38% {
+        top: 28%;
+        left: 78%;
+        transform: rotate(90deg);
+    }
+
+    41% {
+        top: 28%;
+        left: 78%;
+        transform: rotate(180deg);
+    }
+
+    62% {
+        top: 68%;
+        left: 78%;
+        transform: rotate(180deg);
+    }
+
+    65% {
+        top: 68%;
+        left: 78%;
+        transform: rotate(270deg);
+    }
+
+    83% {
+        top: 68%;
+        left: 58%;
+        transform: rotate(270deg);
+    }
+
+    86% {
+        top: 68%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 100%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes car1 {
+    0% {
+        top: 63%;
+        left: -2%;
+        transform: rotate(90deg);
+    }
+
+    33% {
+        top: 63%;
+        left: 20%;
+        transform: rotate(90deg);
+    }
+
+    36% {
+        top: 63%;
+        left: 20%;
+        transform: rotate(0deg);
+    }
+
+    64% {
+        top: 29.99%;
+        left: 20%;
+        transform: rotate(0deg);
+    }
+
+    67% {
+        top: 29.99%;
+        left: 20%;
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        top: 29.99%;
+        left: -2%;
+        transform: rotate(-90deg);
+    }
+
+}
+
+@keyframes car2 {
+    0% {
+        top: 55%;
+        left: 98.5%;
+        transform: rotate(-90deg);
+    }
+
+    40% {
+        top: 55%;
+        left: 83%;
+        transform: rotate(-90deg);
+    }
+
+    45% {
+        top: 55%;
+        left: 83%;
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        top: 100%;
+        left: 83%;
+        transform: rotate(-180deg);
+    }
+}
+
+#cityyellowman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman01 21s infinite linear;
+}
+
+#cityyellowman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk1 {
+    animation: cityWalk .8s infinite steps(2);
+}
+
+
+
+@keyframes cityWalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+@keyframes cityman01 {
+    0% {
+        top: 81.6%;
+        left: 85%;
+        transform: rotate(90deg);
+    }
+
+    25% {
+        top: 81.6%;
+        left: 98%;
+        transform: rotate(90deg);
+    }
+
+    26% {
+        top: 81.6%;
+        left: 98%;
+        transform: rotate(0deg);
+    }
+
+    49% {
+        top: 61%;
+        left: 98%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 61%;
+        left: 98%;
+        transform: rotate(-90deg);
+    }
+
+    58% {
+        top: 61%;
+        left: 95.2%;
+        transform: rotate(-90deg);
+    }
+
+    59% {
+        top: 61%;
+        left: 95.2%;
+        transform: rotate(-180deg);
+    }
+
+    75% {
+        top: 78.3%;
+        left: 95.2%;
+        transform: rotate(-180deg);
+    }
+
+    76% {
+        top: 78.3%;
+        left: 95.2%;
+        transform: rotate(-90deg);
+    }
+
+    94% {
+        top: 78.3%;
+        left: 85%;
+        transform: rotate(-90deg);
+    }
+
+    95% {
+        top: 78.3%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+
+    99% {
+        top: 81.6%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        top: 81.6%;
+        left: 85%;
+        transform: rotate(-270deg);
+    }
+}
+
+#citypinkman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman02 10s infinite linear;
+}
+
+#citypinkman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes cityman02 {
+    0% {
+        top: 0%;
+        left: 71%;
+        transform: rotate(180deg);
+    }
+
+    50% {
+        top: 23%;
+        left: 71%;
+        transform: rotate(180deg);
+    }
+
+    52% {
+        top: 23%;
+        left: 71%;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 0%;
+        left: 71%;
+        transform: rotate(0deg);
+    }
+}
+
+
+#cityblueman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman04 10s infinite linear;
+}
+
+#cityblueman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes cityman04 {
+    0% {
+        top: 28%;
+        left: 100%;
+        transform: rotate(270deg);
+    }
+
+    50% {
+        top: 28%;
+        left: 82%;
+        transform: rotate(270deg);
+    }
+
+    52% {
+        top: 28%;
+        left: 82%;
+        transform: rotate(90deg);
+    }
+
+    100% {
+        top: 28%;
+        left: 100%;
+        transform: rotate(90deg);
+    }
+}
+
+#citygreenwoman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman03 23s infinite linear;
+}
+
+#citygreenwoman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes cityman03 {
+    0% {
+        top: 20%;
+        left: 0%;
+        transform: rotate(90deg);
+    }
+
+    25% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(90deg);
+    }
+
+    27% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 0%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+
+    52% {
+        top: 0%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+
+    75% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+
+    78% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: 20%;
+        left: 0%;
+        transform: rotate(270deg);
+    }
+}
+
+
+.insideMap {
+    height: 200%;
+    width: 190%;
+    background-color: green;
+    display: none;
+    color: white;
+    font-size: 230px;
+    position: relative;
+}
+
+#endVideoDiv {
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: black;
+}
+
+#endVideo {
+    position: relative;
+    border-radius: 20px;
+    left: 2.5%;
+    top: 2.5%;
+    width: 95%;
+    height: 95%;
+    object-fit: fill;
+}
+
+
+@media (max-width : 600px) {
+
+    #loadingLogo,
+    #cityscapeLogo {
+        height: 40%;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+    }
+
+    .buttonClass {
+        font-size: 120%;
+        width: 20%;
+    }
+
+    #skipButton {
+        font-size: 120%;
+        left: 75%;
+        width: 20%;
+    }
+
+    .navbar {
+        font-size: 70%;
+    }
+
+    .car {
+        width: 2%;
+        height: 5%;
+    }
+
+    .player {
+        left: 80%;
+    }
+
+    .map {
+        height: 200%;
+        width: 800%;
+    }
+
+    #riddhihome {
+        width: 10%;
+        height: 20%;
+    }
+
+    #policestation {
+        height: 25%;
+        width: 15%;
+        top: 0%;
+        left: 15%;
+    }
+
+    #firestation {
+        height: 25%;
+        width: 17%;
+        top: 0%;
+        left: 35%;
+    }
+
+    #govtoffice {
+        height: 25%;
+        width: 11%;
+        top: 0%;
+        left: 60%;
+    }
+
+    #mall {
+        height: 25%;
+        width: 25%;
+    }
+
+    #hospital {
+        height: 28%;
+        width: 20%;
+        top: 35%;
+        left: 0%;
+    }
+
+}
+
+@media (max-height : 600px) {
+
+    #loadingLogo,
+    #cityscapeLogo {
+        height: 60%;
+        top: 10%;
+        left: 20%;
+        width: 60%;
+    }
+
+    .buttonClass {
+        font-size: 100%;
+        width: 16%;
+    }
+
+    #howToPlayButton,
+    #aboutButton{
+        left: 55%;
+    }
+
+    #skipButton {
+        font-size: 120%;
+        left: 77%;
+        top: 85%;
+        width: 15%;
+        height: 10%;
+    }
+
+}

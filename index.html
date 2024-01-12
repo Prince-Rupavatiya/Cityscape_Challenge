@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cityscape Challenge</title>
+    <link rel="icon" type="image/x-icon" href="component/logo_final.png">
+
+
+    <link rel="stylesheet" href="temp.css">
+    <!-- <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="advikHome.css">
+    <link rel="stylesheet" href="Hotel.css">
+    <link rel="stylesheet" href="Bank.css">
+    <link rel="stylesheet" href="Garden.css">
+    <link rel="stylesheet" href="riddhiHome.css">
+    <link rel="stylesheet" href="Mall.css">
+    <link rel="stylesheet" href="FireStation.css">
+    <link rel="stylesheet" href="GovOffice.css">
+    <link rel="stylesheet" href="Hospital.css">
+    <link rel="stylesheet" href="School.css">
+    <link rel="stylesheet" href="PostOffice.css">
+    <link rel="stylesheet" href="PoliceStation.css">
+    <link rel="stylesheet" href="Theater.css">
+    <link rel="stylesheet" href="game_zone.css"> -->
+</head>
+
+<body>
+
+    <!-- game front page -->
+    <div id="frontPage">
+        <img src="component/cityscapeLogo.png" id="cityscapeLogo">
+        <div id="buttonDiv">
+            <button id="startButton" class="buttonPosition buttonClass">
+                Start
+            </button>
+            <button id="settingButton" class="buttonPosition buttonClass">
+                Setting
+            </button>
+            <button id="aboutButton" class="buttonPosition buttonClass">
+                About
+            </button>
+            <button id="howToPlayButton" class="buttonPosition buttonClass">
+                How to Play
+            </button>
+        </div>
+
+
+        <div id="SoundSettingDiv">
+            <img src="component/settingClose.png" id="settingCloseButton" class="InsideSettingButtons">
+            <img src="component/settingMute.png" id="settingMuteButton" class="InsideSettingButtons">
+            <img src="component/settingPlay.png" id="settingPlayButton" class="InsideSettingButtons">
+        </div>
+
+        <div id="aboutDiv">
+            <img src="component/settingClose.png" id="aboutCloseButton" class="aboutSettingButtons">
+
+            <h2> About the cityscape Challenges game</h2>
+            <br>
+
+            Cityscape Challenges is a 2D game having a virtual city with a variety of <br>
+            challenges gives the player thechance to navigate through various places <br>
+            in the city while overcoming the obstacles.
+            The game is developed by:<br><br>
+
+            <h3>&nbsp;&nbsp;Aatreyee Joshi</h3>
+            <h3>&nbsp;&nbsp;Bharvy Savaliya</h3>
+            <h3>&nbsp;&nbsp;Riya Shah</h3>
+            <h3>&nbsp;&nbsp;Tirth Patel</h3>
+            <h3>&nbsp;&nbsp;Prince Rupavatiya</h3>
+        </div>
+
+
+        <div id="howToPlayDiv">
+            <img src="component/settingClose.png" id="howToPlayCloseButton" class="howToPlaySettingButtons">
+
+            <h2>&nbsp;How to Play:</h2>
+            <br>
+
+            <h3>1) Player:</h3>
+            <p> &nbsp;- Movement: Use the following controls for player movement on the map:</p>
+            <p>&nbsp;- Up Arrow Key or W: Move upwards</p>
+            <p>&nbsp;- Down Arrow Key or S: Move downwards</p>
+            <p>&nbsp;- Left Arrow Key or A: Move to the left</p>
+            <p>&nbsp;- Right Arrow Key or D: Move to the right</p>
+            <br>
+            <h3>2) Map:</h3>
+            <p>&nbsp;- City Map:
+                Press the map icon on your right to view the city map.</p>
+            <p>&nbsp;- Navigation:
+                Move onto places to explore them.</p>
+            <p>&nbsp;- Exit:
+                Press enter to exit the map.</p>
+            <br>
+
+            <h3> 3) Energy and Life:</h3>
+            <p> &nbsp;- Energy:
+                Be cautious, each accident reduces your energy.</p>
+            <p>&nbsp;- Lives:
+                You have a maximum of three lives. Beware of police cars; getting caught costs a life.</p>
+            <p>&nbsp;- Energy Maintenance:
+                Replenish energy by returning home.</p>
+        </div>
+    </div>
+
+    <div id="storyPage">
+        <video id="storyVideo">
+            <source src="component/storyVideo.mp4" type="video/mp4">
+        </video>
+        <button id="skipButton">
+            Skip
+        </button>
+    </div>
+
+    <div id="massegeContainer">
+        <p id="message">Mission Completed
+        </p>
+    </div>
+
+    <!-- Loading page -->
+    <div class="loading" id="loading">
+        <img src="component/cityscapeLogo.png" alt="" id="loadingLogo">
+        <div class="box"></div>
+    </div>
+
+    <!-- Map icon -->
+    <div id="mapIcon">
+        <img src="component/cityMapIcon.png" alt="" id="cityMapIcon" title="Map">
+    </div>
+
+    <div id="cityMap">
+        <img src="component/cityMap.jpg" alt="" id="cityMapImage">
+        <img src="component/cityMapClose.png" alt="" id="cityMapCloseImage">
+    </div>
+   
+    <!-- Camera -->
+    <div class="camera" id="camera">
+        <!-- Navbar -->
+        <div class="navbar" id="navbar">
+            <p id="msg">Hint : </p>
+
+            <div class="container">
+                <div class="energyContainer">
+                    <p id="energyScore">100</p>
+                    <img src="component/energy.png" alt="">
+                </div>
+                <div class="lifeContainer">
+                    <p id="lifeScore">3</p>
+                    <img src="component/heart.png" alt="">
+                </div>
+                <div class="coinContainer">
+                    <p id="coinScore">5000</p>
+                    <img src="component/coin.png" alt="">
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- player -->
+        <div class="player" id="player">
+            <img src="component/sprite_stand.png" id="character">
+        </div>
+
+        <!-- Map -->
+        <div class="map" id="map">
+
+            <div id="riddhihome" class="item">
+                <img src="component/riddhi_home.jpg" title="riddhi's Home">
+            </div>
+            <div id="policestation" class="item">
+                <img src="component/policeStation.png" title="Police Station">
+            </div>
+
+
+            <div id="firestation" class="item">
+                <img src="component/fire_station.png" title="Fire Station">
+            </div>
+            <div id="govtoffice" class="item">
+                <img src="component/govOffice.png" title="Government Office">
+            </div>
+            <div id="mall" class="item">
+                <img src="component/mall.png" title="Shopping Mall">
+            </div>
+
+
+            <div id="hospital" class="item">
+                <img src="component/hospital.png" title="Hospital">
+            </div>
+            <div id="gamezone" class="item">
+                <img src="component/game_zone.jpeg" title="Game Zone">
+            </div>
+            <div id="school" class="item">
+                <img src="component/school.png" title="School">
+            </div>
+            <div id="postoffice" class="item">
+                <img src="component/post_office.png" title="Post Office">
+            </div>
+
+
+            <div id="home" class="item">
+                <img src="component/my_home.png" title="Home">
+            </div>
+
+            <div id="bank" class="item">
+                <img src="component/bank.png" title="Bank">
+            </div>
+
+            <div id="hotel" class="item">
+                <img src="component/restaurant.png" title="Hotel">
+            </div>
+
+            <div id="garden" class="item">
+                <img src="component/garden.jfif" title="Park">
+            </div>
+
+            <div id="advikhome" class="item">
+                <img src="component/advik_home.jpg" title="advik's Home">
+            </div>
+
+            <div id="theater" class="item">
+                <img src="component/theater.jfif" title="Theatre">
+            </div>
+
+            <!-- Cars -->
+            <div class="car" id="policecar1">
+                <img src="component/policecar.png" title="car">
+            </div>
+
+            <div class="car" id="policecar2">
+                <img src="component/policecar.png" title="car">
+            </div>
+
+            <div class="car" id="car1">
+                <img src="component/car1.png" title="car">
+            </div>
+
+            <div class="car" id="car2">
+                <img src="component/car1.png" title="car">
+            </div>
+
+            <!-- People -->
+            <div id="cityyellowman" class="cityPeople">
+                <img src="component/cityyellowman.png" class="walk1">
+            </div>
+
+            <div id="citypinkman" class="cityPeople">
+                <img src="component/citypinkman.png" class="walk1">
+            </div>
+
+            <div id="cityblueman" class="cityPeople">
+                <img src="component/cityblueman.png" class="walk1">
+            </div>
+
+            <div id="citygreenwoman" class="cityPeople">
+                <img src="component/citygreenwoman.png" class="walk1">
+            </div>
+        </div>
+
+
+        <!-- riddhi home Map -->
+        <div id="riddhihomeMap" class="riddhiHomeInsideMap">
+            <img src="component/riddhiHomebedroomV_line2.png " id="riddhiHomeWall03"
+                class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomebedroomH_line2.png" id="riddhiHomeWall01"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomV_line2.png" id="riddhiHomeWall02"
+                class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomebedroomV_line2.png" id="riddhiHomeWall06"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line2.png" id="riddhiHomeWall08"
+                class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomebedroomV_line2.png" id="riddhiHomeWall07"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line2.png" id="riddhiHomeWall09"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line2.png" id="riddhiHomeWall10"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line1.png" id="riddhiHomeWall11"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line1.png" id="riddhiHomeWall12"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line1.png" id="riddhiHomeWall13"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomebedroomH_line2.png" id="riddhiHomeWall14"
+                class="riddhiHomePosition riddhiHomeObject">
+
+
+                
+            <img src="component/riddhiHomeBed.png" id="riddhiHomebed1" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeBed.png" id="riddhiHomebed2" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomekitchen01.jpg" id="riddhiHomekitchen" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomeDining.png" id="riddhiHomediningtable"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHometv1.png" id="riddhihometv1" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomeSofa1.png" id="riddhihomesofa1" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHometable12.png" id="riddhihometable1" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeSofa2.png" id="riddhihomeSofa2" class="riddhiHomePosition riddhiHomeObject">
+
+
+            <img src="component/riddhiHometv2.png" id="riddhihometv2" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHometv2.png" id="riddhihometv3" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomecupboard.png" id="riddhihomecupboard1"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomecupboard2.png" id="riddhihomecupboard2"
+                class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomebathtub.jpg" id="riddhihomebathtub" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeWashBasinL.jpg" id="riddhihomewashbasin"
+                class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhihomeStudyTable.png" id="riddhihomestudytable"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomechair01.png" id="riddhihomechair1" class="riddhiHomePosition riddhiHomeObject">
+
+
+            <img src="component/riddhiHomeFlower01.png" id="riddhihomeflower1" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFlower01.png" id="riddhihomeflower2" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFlower01.png" id="riddhihomeflower3" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFlower01.png" id="riddhihomeflower4" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomeFlower02.png" id="riddhihomeflower7" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFlower02.png" id="riddhihomeflower8" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomeFlower03.png" id="riddhihomeflower5" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFlower03.png" id="riddhihomeflower6" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomeFlower02.png" id="riddhihomeflower7" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFlower02.png" id="riddhihomeflower8" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHOmestudytable2.png" id="riddhihomestudytable2"
+                class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHOmechair3.png" id="riddhihomechair3" class="riddhiHomePosition riddhiHomeObject">
+
+            <img src="component/riddhiHomechair2.png" id="riddhihomechair5" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeToilet.png" id="riddhiHomeToilet" class="riddhiHomePosition riddhiHomeObject">
+            <img src="component/riddhiHomeFridge.png" id="riddhiHomeFridge" class="riddhiHomePosition riddhiHomeObject">
+
+
+            <img src="component/riddhiHomecarpet2.png" id="riddhihomecarpet" class="riddhiHomePosition">
+            <img src="component/riddhiHomedoormate.jpeg" id="riddhihomedoormate" class="riddhiHomePosition">
+        </div>
+
+        <!-- Police Station Map -->
+        <div id="policestationMap" class="policeStationInsideMap">
+            <img src="component/policestationwall_v1.png" id="policestationWall0001"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_v2.png" id="policestationWall0002"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_h1.png" id="policestationWall0003"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_h2.png" id="policestationWall0004"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_h2.png" id="policestationWall0005"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_h2.png" id="policestationWall0006"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_v2.png" id="policestationWall0008"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationWall_h2.png" id="policestationWall0007"
+                class="policestationPosition policeStationObject">
+
+
+            <img src="component/policestationWall_v1.png" id="policestationWall0010"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationWall_v1.png" id="policestationWall0011"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationWall_v1.png" id="policestationWall0012"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationwall_h1.png" id="policestationWall0009"
+                class="policestationPosition policeStationObject">
+
+
+
+            <img src="component/policestationsofa2.png" id="policestationsofa1"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationsofa2.png" id="policestationsofa2"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationsofa2.png" id="policestationsofa3"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationsofa1.png" id="policestationsofa4"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationcomputer1.png" id="policestationcomputer1"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationchair.png" id="policestationchair1"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationfile1.png" id="policestationFile1"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationfile1.png" id="policestationFile2"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationfile3.png" id="policestationFile3"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationfile3.png" id="policestationFile4"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationcomputer02.png" id="policestationcomputer2"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationcomputer03.png" id="policestationcomputer3"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationchair02.png" id="policestationchair3"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationchair03.png" id="policestationchair4"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationchair04.png" id="policestationchair5"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationchair04.png" id="policestationchair6"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationfireExt01.png" id="policestationfireext1"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationtable2.png" id="policestationtable2"
+                class="policestationPosition policeStationObject">
+
+
+
+            <img src="component/policestationman2.png" id="policestationman2"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationman3.png" id="policestationman3"
+                class="policestationPosition policeStationObject">
+
+            <img src="component/policestationsittingman4.png" id="policestationman4"
+                class="policestationPosition policeStationObject">
+            <img src="component/policestationsittiingman5.png" id="policestationman5"
+                class="policestationPosition policeStationObject">
+
+
+
+            <div id="policestationPerson1" class="policeStationObject cityPeople">
+                <img src="component/policestationcarecter.png" class="walk">
+
+            </div>
+
+            <div id="policestationPerson2" class="policeStationObject cityPeople">
+                <img src="component/policeman1.png" class="walk">
+
+            </div>
+
+            <img src="component/policestationbars.png" id="policestationBars1" class="policestationPosition ">
+            <img src="component/policestationbars.png" id="policestationBars2" class="policestationPosition">
+        </div>
+
+        <!-- Fire Station Map -->
+        <div id="firestationMap" class="fireStationInsideMap">
+            <img src="component/firestationline_v01.jpg" id="firestationwall01"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationline_h01.jpg" id="firestationwall03"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationline_V02.jpg" id="firestationwall05"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationline_h02.jpg" id="firestationwall07"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationline_h01.jpg" id="firestationwall08"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationline_h01.jpg" id="firestationwall09"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationline_v02.jpg" id="firestationwall10"
+                class="firestationPosition fireStationObject">
+
+
+
+            <img src="component/firestationshose.png" id="firestationShose1" class="firestationPosition fireStationObject">
+            <img src="component/firestationshose.png" id="firestationShose2" class="firestationPosition fireStationObject">
+
+            <img src="component/firestationhandgloves1.png" id="firestationhandgloves1"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationfirepipe.png" id="firestationpipe" class="firestationPosition fireStationObject">
+            <img src="component/firestationfireext012.png" id="firestationfireext01"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationfireext012.png" id="firestationfireext02"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationfireext04.png" id="firestationfireext03"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationfireext04.png" id="firestationfireext04"
+                class="firestationPosition fireStationObject">
+
+            <img src="component/firestationhelmet.png" id="firestationhelmet1"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationhelmet.png" id="firestationhelmet2"
+                class="firestationPosition fireStationObject">
+
+
+            <img src="component/FirestationVan01.png" id="firestationvan1" class="firestationPosition fireStationObject">
+            <img src="component/FirestationVan01.png" id="firestationvan2" class="firestationPosition fireStationObject">
+            <img src="component/FirestationVan01.png" id="firestationvan3" class="firestationPosition fireStationObject">
+
+            <img src="component/FirestationVan02.png" id="firestationvan4" class="firestationPosition fireStationObject">
+
+
+            <img src="component/firestationcomputer.png" id="firestationcomputer1"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationcomputer.png" id="firestationcomputer2"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationfile1.png" id="firestationfile" class="firestationPosition fireStationObject">
+
+            <img src="component/firestationtable01.png" id="firestationtable02"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationpaper.png" id="firestationpaper" class="firestationPosition fireStationObject">
+
+
+            <img src="component/firestationchair.png" id="firestationchair1" class="firestationPosition fireStationObject">
+            <img src="component/firestationchair.png" id="firestationchair2" class="firestationPosition fireStationObject">
+
+
+            <img src="component/firestationsittingman1.png" id="firestationman03"
+                class="firestationPosition fireStationObject">
+            <img src="component/firestationsittingman1.png" id="firestationman04"
+                class="firestationPosition fireStationObject">
+
+            <div id="firestationman1" class="fireStationObject cityPeople">
+                <img src="component/firestationman1.png" id="character" class="walk">
+            </div>
+
+            <div id="firestationman2" class="fireStationObject cityPeople">
+                <img src="component/firestationman2.png" id="character" class="walk">
+            </div>
+
+
+
+        </div>
+
+        <!-- Govt Office Map -->
+        <div id="govtofficeMap" class="govOfficeInsideMap">
+            <img src="component/govofficewallgov2.png" id="govofficewall12" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficewallgov.png" id="govofficewall01" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov2.png" id="govofficewall02" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov.png" id="govofficewall03" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov.png" id="govofficewall04" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov.png" id="govofficewall05" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficewallgov2.png" id="govofficewall06" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov2.png" id="govofficewall07" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov2.png" id="govofficewall08" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficewallgov2.png" id="govofficewall09" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov2.png" id="govofficewall10" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov.png" id="govofficewall11" class="govofficePosition govOfficeObject">
+            <img src="component/govofficewallgov2.png" id="govofficewall13" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficetablecomputer03.png" id="govofficeTablecomputer1"
+                class="govofficePosition govOfficeObject">
+            <img src="component/govofficetablecomputer04.png" id="govofficeTablecomputer2"
+                class="govofficePosition govOfficeObject">
+            <img src="component/govofficetablecomputer02.png" id="govofficeTablecomputer3"
+                class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficechair.png" id="govofficeChair1" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair.png" id="govofficeChair2" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govofficechair.png" id="govofficeChair9" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair.png" id="govofficeChair10" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair.png" id="govofficeChair11" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govofficechair2.png" id="govofficeChair12" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair2.png" id="govofficeChair13" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair2.png" id="govofficeChair14" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficechair.png" id="govofficeChair15" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair2.png" id="govofficeChair16" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair2.png" id="govofficeChair17" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficechair2.png" id="govofficeChair18" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair2.png" id="govofficeChair19" class="govofficePosition govOfficeObject">
+            <img src="component/govofficechair2.png" id="govofficeChair20" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficesofa2.png" id="govofficesofa1" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesofa2.png" id="govofficesofa2" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesofa2.png" id="govofficesofa3" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesofa2.png" id="govofficesofa4" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesofa2.png" id="govofficesofa5" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard1" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard2" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard3" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard4" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard5" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard6" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard7" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard8" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard9" class="govofficePosition govOfficeObject">
+            <img src="component/govofficecupboard.png" id="gov0fficeCupboard10" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govofficeDustbin.png" id="govofficeDustbin1" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficexerox.png" id="govofficezerox1" class="govofficePosition govOfficeObject">
+            <img src="component/govofficefireExt01.png" id="govofficeFireext1" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govoffice_screen.jpg" id="govofficeScreen2" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govofficetable012.png" id="govofficetable1" class="govofficePosition govOfficeObject">
+            <img src="component/govofficetable012.png" id="govofficetable2" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govofficefile2.png" id="govofficefile1" class="govofficePosition govOfficeObject">
+            <img src="component/govofficefile2.png" id="govofficefile2" class="govofficePosition govOfficeObject">
+            <img src="component/govofficefile2.png" id="govofficefile3" class="govofficePosition govOfficeObject">
+            <img src="component/govofficefile2.png" id="govofficefile4" class="govofficePosition govOfficeObject">
+            <img src="component/govofficefile1.png" id="govofficefile5" class="govofficePosition govOfficeObject">
+            <img src="component/govofficefile1.png" id="govofficefile6" class="govofficePosition govOfficeObject">
+
+
+            <img src="component/govofficesittingman2.png" id="govofficeman01" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman2.png" id="govofficeman02" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman2.png" id="govofficeman03" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficeman1.png" id="govofficeman04" class="govofficePosition govOfficeObject">
+            <img src="component/govofficeman2.png" id="govofficeman05" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficesittingman2.png" id="govofficeman06" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman2.png" id="govofficeman07" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman2.png" id="govofficeman08" class="govofficePosition govOfficeObject">
+
+            <img src="component/govofficesittingman1.png" id="govofficeman09" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman1.png" id="govofficeman10" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman1.png" id="govofficeman11" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman1.png" id="govofficeman12" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman1.png" id="govofficeman13" class="govofficePosition govOfficeObject">
+            <img src="component/govofficesittingman1.png" id="govofficeman14" class="govofficePosition govOfficeObject">
+
+            <div id="govofficeman1" class="govOfficeObject cityPeople">
+                <img src="component/govofficewalkingman1.png" id="character" class="walk">
+            </div>
+
+            <div id="govofficeman2" class="govOfficeObject cityPeople">
+                <img src="component/govofficewalkingman2.png" id="character" class="walk">
+            </div>
+
+            <div id="govofficeman3" class="govOfficeObject cityPeople">
+                <img src="component/govofficewalkingman3.png" id="character" class="walk">
+            </div>
+        </div>
+
+        <!-- Mall Map -->
+
+        <div id="mallMap" class="mallInsideMap">
+
+            <img src="component/mallwall_v1.png" id="mallWall01" class="mallposition mallObject">
+            <img src="component/mallwall_h1.png" id="mallwall02" class="mallposition mallObject">
+            <img src="component/mallwall_v2.png" id="mallWall03" class="mallposition mallObject">
+            <img src="component/mallwall_h2.png" id="mallwall05" class="mallposition mallObject">
+
+            <img src="component/mallwall_h2.png" id="mallwall07" class="mallposition mallObject">
+            <img src="component/mallwall_h2.png" id="mallwall08" class="mallposition mallObject">
+            <img src="component/mallwall_h2.png" id="mallwall09" class="mallposition mallObject">
+            <img src="component/mallwall_v2.png" id="mallWall10" class="mallposition mallObject">
+            <img src="component/mallwall_v2.png" id="mallWall11" class="mallposition mallObject">
+            <img src="component/mallwall_h2.png" id="mallwall12" class="mallposition mallObject">
+
+
+            <img src="component/mallcart04.png" id="mallCart1" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart2" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart3" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart4" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart5" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart6" class="mallposition mallObject">
+
+            <img src="component/mallcart04.png" id="mallCart7" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart8" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart9" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart10" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart11" class="mallposition mallObject">
+            <img src="component/mallcart04.png" id="mallCart12" class="mallposition mallObject">
+
+            <img src="component/mallRackF01.png" id="mallrack01" class="mallposition mallObject">
+            <img src="component/mallRackF02.png" id="mallrack02" class="mallposition mallObject">
+            <img src="component/mallRackF03.png" id="mallRack03" class="mallposition mallObject">
+            <img src="component/mallRackF06.png" id="mallRack04" class="mallposition mallObject">
+            <img src="component/mallRackF07.png" id="mallRack05" class="mallposition mallObject">
+            <img src="component/mallRackF08.png" id="mallRack06" class="mallposition mallObject">
+            <img src="component/mallRackF09.png" id="mallRack07" class="mallposition mallObject">
+            <img src="component/mallRackF10.png" id="mallRack08" class="mallposition mallObject">
+
+
+            <img src="component/mallcRoom.png" id="mallRoom01" class="mallposition mallObject">
+            <img src="component/mallcRoom2.png" id="mallRoom02" class="mallposition mallObject">
+            <img src="component/mallcRoom2.png" id="mallRoom03" class="mallposition mallObject">
+
+            <img src="component/mallRackPent1.png" id="mallpent1" class="mallposition mallObject">
+            <img src="component/mallRackPent2.png" id="mallpent2" class="mallposition mallObject">
+
+            <img src="component/mallRackTshirt1.png" id="mallTshirt1" class="mallposition mallObject">
+            <img src="component/mallRackTshirt2.png" id="mallTshirt2" class="mallposition mallObject">
+            <img src="component/mallRackShirt1.png" id="mallshirt1" class="mallposition mallObject">
+            <img src="component/mallRackshirt2.png" id="mallshirt2" class="mallposition mallObject">
+            14
+            <img src="component/mallWashRoom.png" id="mallWashroom1" class="mallposition mallObject">
+            <img src="component/mallWashRoom.png" id="mallWashroom2" class="mallposition mallObject">
+            15
+            <img src="component/mallRackK01Biscut.png" id="mallBiscuit01" class="mallposition mallObject">
+            <img src="component/mallRackK02Soap.png" id="mallsoap02" class="mallposition mallObject">
+            <img src="component/mallRackK03Soap.png" id="mallsoap03" class="mallposition mallObject">
+            <img src="component/mallRackK05Toothpaste.png" id="mallToothpaste04" class="mallposition mallObject">
+            <img src="component/mallRackK07WashingPowder.png" id="mallWashingpowder05" class="mallposition mallObject">
+            <img src="component/mallRackK06Toothpaste.png" id="mallWashingpowder06" class="mallposition mallObject">
+
+            <img src="component/mallwashbasin.jpg" id="mallwashbasin" class="mallposition mallObject">
+            <img src="component/mallwashbasin2.jpg" id="mallwashbasin2" class="mallposition mallObject">
+
+            <img src="component/malltable1.png" id="malltable1" class="mallposition mallObject">
+            <img src="component/malltable2.png" id="malltable2" class="mallposition mallObject">
+            <img src="component/mallchair2.png" id="mallchair1" class="mallposition mallObject">
+            <img src="component/mallchair2.png" id="mallchair2" class="mallposition mallObject">
+
+
+            <img src="component/mallsittingman1.png" id="mallsittingman1" class="mallposition mallObject">
+            <img src="component/mallsittingman1.png" id="mallsittingman2" class="mallposition mallObject">
+
+            <img src="component/mallicecreamstall.jpg" id="mallicecreamstall1" class="mallposition mallObject">
+
+
+
+
+            <div id="mallman1" class="mallObject cityPeople">
+                <img src="component/mallcarecter1.png" class="walk">
+
+            </div>
+            <div id="mallman2" class="mallObject cityPeople">
+                <img src="component/mallcarecter2.png" class="walk">
+            </div>
+
+            <div id="mallman3" class="mallObject cityPeople">
+                <img src="component/mallcharacter3.png" class="walk">
+            </div>
+            <div id="mallman4" class="mallObject cityPeople">
+                <img src="component/mallCharacter4.png" class="walk">
+            </div>
+        </div>
+
+        <!-- Hospital Map -->
+        <div id="hospitalMap" class="hospitaInsideMap">
+            <img src="component/hospitalNewWallHorizontal.png" class="hospitalPosition hospitalObject" id="hospitalWall0">
+            <img src="component/hospitalNewWallHorizontal.png" class="hospitalPosition hospitalObject" id="hospitalWall1">
+            <img src="component/hospitalNewWallVertical.png" class="hospitalPosition hospitalObject" id="hospitalWall2">
+            <img src="component/hospitalNewWallHorizontalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall4">
+            <img src="component/hospitalNewWallVertical.png" class="hospitalPosition hospitalObject" id="hospitalWall3">
+
+            <img src="component/hospitalNewWallVerticalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall5">
+
+
+            <img src="component/hospitalReceptionChair.png" class="hospitalPosition hospitalObject" id="receptionChair">
+
+            <img src="component/hospitalMan.png" class="hospitalPosition hospitalObject" id="hospitalMan">
+
+            <img src="component/hospitalNewWallVertical.png" class="hospitalPosition hospitalObject" id="hospitalWall6">
+            <img src="component/hospitalReceptionSquareTable.png" class="hospitalPosition hospitalObject"
+                id="receptionTable">
+            <img src="component/hospitalPlant.png" class="hospitalPosition hospitalObject" id="hospitalPlant">
+            <img src="component/hospitalReceptionSidetable.png" class="hospitalPosition hospitalObject"
+                id="hospitalSideTable">
+            <img src="component/hospitalReceptionSofa.png" class="hospitalPosition hospitalObject" id="receptionSofa1">
+            <img src="component/hospitalReceptionSofa2.png" class="hospitalPosition hospitalObject" id="receptionSofa2">
+            <img src="component/hospitalGanpatijiMurti.PNG" class="hospitalPosition hospitalObject"
+                id="hospitalGanpatiMurti">
+
+            <img src="component/hospitalNewWallHorizontalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall8">
+            <img src="component/hospitalNewWallVertical.png" class="hospitalPosition hospitalObject" id="hospitalWall7">
+
+            <img src="component/hospitalDoctorDesk.png" class="hospitalPosition hospitalObject" id="hospitalDoctor1Desk">
+            <img src="component/hospitalDoctorDesk.png" class="hospitalPosition hospitalObject" id="hospitalDoctor2Desk">
+            <img src="component/hospitalDoctorChair.png" class="hospitalPosition hospitalObject" id="hospitalDoctor1Chair">
+            <img src="component/hospitalDoctorChair.png" class="hospitalPosition hospitalObject" id="hospitalDoctor2Chair">
+            <img src="component/hospitalPatientSeat.png" class="hospitalPosition hospitalObject" id="hospitalDoctor1Seat1">
+            <img src="component/hospitalPatientSeat.png" class="hospitalPosition hospitalObject" id="hospitalDoctor1Seat2">
+            <img src="component/hospitalPatientSeat.png" class="hospitalPosition hospitalObject" id="hospitalDoctor2Seat1">
+            <img src="component/hospitalPatientSeat.png" class="hospitalPosition hospitalObject" id="hospitalDoctor2Seat2">
+
+            <img src="component/hospitalNewWallVertical.png" class="hospitalPosition hospitalObject" id="hospitalWall21">
+            <img src="component/hospitalNewWallHorizontalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall22">
+            <img src="component/hospitalMeetingRoomTable.png" class="hospitalPosition hospitalObject"
+                id="hospitalMeetingTable">
+
+            <img src="component/hospitalNewWallHorizontal.png" class="hospitalPosition hospitalObject" id="hospitalWall31">
+            <img src="component/hospitalNewWallVerticalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall32">
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed11">
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed12">
+            <img src="component/hospitalPatientSeat.png" class="hospitalPosition hospitalObject" id="hospitalSeat11">
+            <img src="component/hospitalPatientSeat.png" class="hospitalPosition hospitalObject" id="hospitalSeat12">
+
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed1">
+            <img src="component/hospitalPartition.png" class="hospitalPosition hospitalObject" id="hospitalPartition1">
+
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed2">
+            <img src="component/hospitalPartition.png" class="hospitalPosition hospitalObject" id="hospitalPartition2">
+
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed3">
+            <img src="component/hospitalPartition.png" class="hospitalPosition hospitalObject" id="hospitalPartition3">
+
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed4">
+            <img src="component/hospitalPartition.png" class="hospitalPosition hospitalObject" id="hospitalPartition4">
+
+            <img src="component/hospitalBed.png" class="hospitalPosition hospitalObject" id="hospitalBed5">
+            <img src="component/hospitalPartition.png" class="hospitalPosition hospitalObject" id="hospitalPartition5">
+
+            <img src="component/hospitalNewWallVerticalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall11">
+
+
+            <img src="component/hospitalRestroom.png" class="hospitalPosition hospitalObject" id="hospitalRestroom1">
+            <img src="component/hospitalNewWallHorizontal.png" class="hospitalPosition hospitalObject" id="hospitalWall12">
+            <img src="component/hospitalRestroom.png" class="hospitalPosition hospitalObject" id="hospitalRestroom2">
+            <img src="component/hospitalNewWallVerticalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall41">
+
+            <img src="component/hospitalNewWallHorizontal.png" class="hospitalPosition hospitalObject" id="hospitalWall13">
+            <img src="component/hospitalNewWallVerticalFlipped.png" class="hospitalPosition hospitalObject"
+                id="hospitalWall14">
+            <img src="component/hospitalNewWallHorizontal.png" class="hospitalPosition hospitalObject" id="hospitalWall15">
+            <img src="component/hospitalWashBasin.jpeg" class="hospitalPosition hospitalObject" id="hospitalWashBasin">
+
+
+            <img src="component/hospitalSittingMan.png" class="hospitalPosition hospitalObject" id="hospitalCharacter1">
+
+            <img src="component/hospitalDoctor.png" class="hospitalPosition hospitalObject" id="hospitalDoctor1">
+
+            <img src="component/hospitalDoctor.png" class="hospitalPosition hospitalObject" id="hospitalDoctor2">
+
+            <img src="component/hospitalPatientOn Wheelchair.png" class="hospitalPosition hospitalObject"
+                id="hospitalPatientOnWheelChair">
+
+            <img src="component/hospitalRelative1.png" class="hospitalPosition hospitalObject" id="hospitalRelative1">
+
+            <img src="component/hospitalPatient.png" class="hospitalPosition hospitalObject" id="hospitalPatient3">
+            <img src="component/hospitalSleepingMan.png" class="hospitalPosition hospitalObject" id="hospitalSleepingMan">
+
+            <div id="hospitalBlueMan" class="hospitalObject cityPeople">
+                <img src="component/gardenCharacter1.png" class="hospitalwalk">
+            </div>
+
+            <div id="hospitalRedMan" class="hospitalObject cityPeople">
+                <img src="component/hospitalRedMan.png" class="hospitalwalk">
+            </div>
+        </div>
+
+        <!-- Game-Zone Map -->
+        <div id="gamezoneMap">
+            <div id="main_game_zone" class="main_game_zone">
+                <div class="flex-container">
+        
+                    <div id="item1" class="flex-items">
+                        <a href="Games/Hungry_Snake_Game/snakegame.html" target="_blank"><img src="image/Hungry Snake.jpg"
+                                alt="Hungry Snake" title="Hungry Snake" class="game_zone_img"></a>
+                        <p class="game_zone_p">Hungry Snake</p>
+                    </div>
+        
+                    <div id="item2" class="flex-items">
+                        <a href="Games/Piano Master/piano_game.html" target="_blank"><img src="image/Piano Master.png"
+                                alt="Piano Master" title="Piano Master" class="game_zone_img"></a>
+                        <p class="game_zone_p">Piano Master</p>
+                    </div>
+        
+                    <div id="item3" class="flex-items">
+                        <a href="Games/Ball_Jumping/index.html" target="_blank"><img src="image/Bouncing Ball.png"
+                                alt="Bouncing Ball" title="Bouncing Ball" class="game_zone_img"></a>
+                        <p class="game_zone_p">Bouncing Ball</p>
+                    </div>
+        
+                    <div id="item4" class="flex-items">
+                        <a href="Games/Word_Search/word_search_game.html" target="_blank"><img src="image/Word Search.png"
+                                alt="Word Search" title="Word Search" class="game_zone_img"></a>
+                        <p class="game_zone_p">Word Search</p>
+                    </div>
+        
+                    <div id="item5" class="flex-items">
+                        <a href="Games/KBC/kbc_html.html" target="_blank"><img src="image/KBC.png" alt="Kaun Banega Crorepati"
+                                title="Kaun Banega Crorepati" class="game_zone_img"></a>
+                        <p class="game_zone_p">KBC</p>
+                    </div>
+        
+                    <div id="item6" class="flex-items">
+                        <a href="Games/Odd_One_Out/odd_one_out.html" target="_blank"><img src="image/Odd One Out.png"
+                                alt="Odd One Out!" title="Odd One Out!" class="game_zone_img"></a>
+                        <p class="game_zone_p">Odd One Out!</p>
+                    </div>
+        
+                    <div id="item7" class="flex-items">
+                        <a href="Games/Terriffic Traffic Racer/traffic_game.html" target="_blank"><img
+                                src="image/Terrific Traffic Racer.png" alt="Terrific Traffic Racer"
+                                title="Terrific Traffic Racer" class="game_zone_img"></a>
+                        <p class="game_zone_p">Terrific Traffic Racer</p>
+                    </div>
+        
+                    <div id="item8" class="flex-items">
+                        <a href="Games/Tic-Tac-Toe/tic_tac_toe.html" target="_blank"><img src="image/Tic-Tac-Toe.png"
+                                alt="Tic-Tac-Toe" title="Tic-Tac-Toe" class="game_zone_img"></a>
+                        <p class="game_zone_p">Tic-Tac-Toe</p>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- School Map -->
+        <div id="schoolMap" class="schoolInsideMap">
+            <img src="component/schoolNewWallVertical.png" id="schoolWall5" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall3" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallHorizontalFlipped.png" id="schoolWall2" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallHorizontalFlipped.png" id="schoolWall4" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallHorizontal.png" id="schoolWall1" class="schoolposition  schoolObject">
+
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall6" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall7" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall8" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall9" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWall.jpg" id="schoolWall10" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWall.jpg" id="schoolWall11" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWall.jpg" id="schoolWall12" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWall.jpg" id="schoolWall13" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWall.jpg" id="schoolWall14" class="schoolposition  schoolObject">
+
+            <img src="component/schoolNewWallHorizontal.png" id="schoolWall15" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall16" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVerticalFlipped.png" id="schoolWall18" class="schoolposition  schoolObject">
+
+            <img src="component/schoolNewWallHorizontal.png" id="schoolWall20" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVertical.png" id="schoolWall21" class="schoolposition  schoolObject">
+
+            <img src="component/schoolRestroom.png" id="schoolRestroom1" class="schoolposition  schoolObject">
+            <img src="component/schoolRestroom.png" id="schoolRestroom2" class="schoolposition  schoolObject">
+            <img src="component/schoolWashBasin.jpeg" id="schoolRestroomWashBasin" class="schoolposition  schoolObject">
+            <img src="component/schoolNewWallVertical.png" id="schoolRestRoomWall" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBench1.png" id="schoolClass1Desk1" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk2" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk3" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk4" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk5" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass1Desk6" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk7" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass1Desk8" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk9" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass1Desk10" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass1Desk11" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass1Desk12" class="schoolposition  schoolObject">
+
+
+            <img src="component/schoolBoard.png" id="schoolClass1Board" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBench1.png" id="schoolClass2Desk1" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass2Desk2" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass2Desk3" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass2Desk4" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass2Desk5" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass2Desk6" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass2Desk7" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass2Desk8" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass2Desk9" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass2Desk10" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass2Desk11" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass2Desk12" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBoard.png" id="schoolClass2Board" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk1" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass3Desk2" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk3" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass3Desk4" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk5" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk6" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass3Desk7" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk8" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass3Desk9" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk10" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass3Desk11" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass3Desk12" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBoard.png" id="schoolClass3Board" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass4Desk1" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass4Desk2" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass4Desk3" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass4Desk4" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass4Desk5" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass4Desk6" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass4Desk7" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass4Desk8" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass4Desk9" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass4Desk10" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass4Desk11" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass4Desk12" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBoard.png" id="schoolClass4Board" class="schoolposition  schoolObject">
+
+
+            <img src="component/schoolBench1.png" id="schoolClass5Desk1" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk2" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent2.png" id="schoolClass5Desk3" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk4" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk5" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk6" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk7" class="schoolposition  schoolObject">
+            <img src="component/schoolBenchWithStudent1.png" id="schoolClass5Desk8" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk9" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk10" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk11" class="schoolposition  schoolObject">
+            <img src="component/schoolBench1.png" id="schoolClass5Desk12" class="schoolposition  schoolObject">
+
+            <img src="component/schoolBoard.png" id="schoolClass5Board" class="schoolposition  schoolObject">
+
+            <img src="component/SchoolStaffRoomTable.png" id="schoolStaffRoomTable" class="schoolposition  schoolObject">
+            <img src="component/schoolStaffRoomShelf.png" id="schoolStaffRoomShelf" class="schoolposition  schoolObject">
+
+
+            <img src="component/schoolPrincipalTable.png" id="schoolPrincipalTable" class="schoolposition  schoolObject">
+            <img src="component/SchoolPrincipalChair.png" id="schoolPrincipalChair" class="schoolposition  schoolObject">
+            <img src="component/SchoolChair.png" id="schoolChair1" class="schoolposition  schoolObject">
+            <img src="component/SchoolChair.png" id="schoolChair2" class="schoolposition  schoolObject">
+
+            <img src="component/SchoolPlant.png" id="schoolPlant1" class="schoolposition  schoolObject">
+            <img src="component/SchoolPlant.png" id="schoolPlant2" class="schoolposition  schoolObject">
+            <img src="component/SchoolPlant.png" id="schoolPlant3" class="schoolposition  schoolObject">
+            <img src="component/SchoolPlant.png" id="schoolPlant4" class="schoolposition  schoolObject">
+            <img src="component/SchoolPlant.png" id="schoolPlant5" class="schoolposition  schoolObject">
+            <img src="component/SchoolPlant.png" id="schoolPlant6" class="schoolposition  schoolObject">
+
+            <img src="component/schoolPrincipal.png" id="schoolPrincipal" class="schoolposition  schoolObject">
+
+            <img src="component/schoolTeacher.png" id="schoolTeacher3" class="schoolposition  schoolObject">
+
+            <img src="component/schoolTeacher.png" id="schoolTeacher4" class="schoolposition  schoolObject">
+
+
+            <div class="schoolObject cityPeople" id="schoolPerson1">
+                <img src="component/schoolcarecter.png" class="schoolWalk">
+            </div>
+
+            <div class="schoolObject cityPeople" id="schoolPerson2">
+                <img src="component/schoolWalkingBoy1.png" class="schoolWalk">
+            </div>
+
+            <div class="schoolObject cityPeople" id="schoolPerson3">
+                <img src="component/schoolWalkingWomen.png" class="schoolWalk">
+            </div>
+        </div>
+
+        <!-- Post Office Map -->
+        <div id="postofficeMap" class="postOfficeInsideMap">
+
+            <img src="component/postOfficeWallV1.png" id="postOfficeWallVertical1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postofficeWallV2.png" id="postOfficeWallVertical2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallV1.png" id="postOfficeWallVertical3"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallV1.png" id="postOfficeWallVertical4"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallH1.png" id="postOfficeWallHorizontal1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallH1.png" id="postOfficeWallHorizontal2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallH1.png" id="postOfficeWallHorizontal3"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallH1.png" id="postOfficeWallHorizontal5"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeOfficeChair.png" id="postOfficeOfficeChair"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeManager.png" id="postOfficeManager" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeTable.png" id="postOfficeOfficeTable"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeSofa1.png" id="postOfficeOfficeSofa1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeSofa2.png" id="postOfficeOfficeSofa2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeTable2.png" id="postOfficeOfficeTable2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeChair1.png" id="postOfficeOfficeChair1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeChair1.png" id="postOfficeOfficeChair2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficePlant.png" class="postOfficePosition postOfficeObject" id="postOfficePlant1">
+            <img src="component/postOfficePlant.png" class="postOfficePosition postOfficeObject" id="postOfficePlant2">
+            <img src="component/postOfficeDustbin.png" id="postOfficeOfficeDustbin"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeOfficeCupboard.png" id="postOfficeOfficeCupboard"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallV1.png" id="postOfficeOfficeWallVertical"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeWallH1.png" id="postOfficeOfficeWallHorizontal"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeCabinet1.png" id="postOfficeCabinet1" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeBlackCupBoard.png" id="postOfficeBlackCupBoard"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeFiles.png" id="postOfficeFiles1" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeFiles.png" id="postOfficeFiles2" class="postOfficePosition postOfficeObject">
+
+
+            <img src="component/postOfficeCounterTable.png" id="postOfficeCounterTable"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeCounterTable2.png" id="postOfficeCounterTable2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficechair1.png" id="postOfficechair1" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficechair1.png" id="postOfficechair2" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeParcles.png" id="postOfficeParcles1" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeParcles.png" id="postOfficeParcles2" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeParcles1.png" id="postOfficeParcles3" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeCuriorBoy1.png" id="postOfficeManWithParcle"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeChairsVertical.png" id="postOfficeChairsVertical1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeChairsHorizontal.png" id="postOfficeChairsHorizontal"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeDustbin.png" id="postOfficeDustbin3" class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeDustbin.png" id="postOfficeDustbin4" class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeBrownTable.png" id="postOfficeBrownTable"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeMeeting.png" id="postOfficeMeetingTable"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postofficeWallV2.png" id="postOfficeMeetingRoomWallVertical1"
+                class="postOfficePosition postOfficeWashroomWallV postOfficeObject">
+            <img src="component/postOfficeWallH2.png" id="postOfficeMeetingRoomWallHorizontal1"
+                class="postOfficePosition postOfficeWashroomWallH postOfficeObject">
+            <img src="component/postofficeWallV2.png" id="postOfficeWashroomWallVertical2"
+                class="postOfficePosition postOfficeWashroomWallV postOfficeObject">
+            <img src="component/postOfficeWallH2.png" id="postOfficeWashroomWallHorizontal2"
+                class="postOfficePosition postOfficeWashroomWallH postOfficeObject">
+
+            <img src="component/postOfficeToilet.png" id="postOfficeToilet2" class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeWashBasin.png" id="postOfficeWashBasin2"
+                class="postOfficePosition postOfficeObject">
+
+            <img src="component/postOfficeBlacklineHorizontal.png" id="postOfficeBlacklineHorizontal"
+                class="postOfficePosition visibility postOfficeObject">
+            <img src="component/postOfficeBlacklineHorizontal.png" id="postOfficeBlacklineHorizontal2"
+                class="postOfficePosition visibility postOfficeObject">
+            <img src="component/postOfficeBlacklineVertical.png" id="postOfficeBlacklineVertical3"
+                class="postOfficePosition visibility postOfficeObject">
+
+            <img src="component/postOfficeSittingMan1.png" id="postOfficeSittingMan1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeSittingMan2.png" id="postOfficeSittingMan2"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeSittingMan3.png" id="postOfficeSittingMan3"
+                class="postOfficePosition postOfficeObject">
+
+
+            <img src="component/postOfficeSittingWoman1.png" id="postOfficeSittingWoman1"
+                class="postOfficePosition postOfficeObject">
+            <img src="component/postOfficeSittingWoman2.png" id="postOfficeSittingWoman2"
+                class="postOfficePosition postOfficeObject">
+
+            <div id="postOfficeCuriorBoy1" class="postOfficeObject cityPeople">
+                <img src="component/postOfficeCuriorBoy.png" class="postOfficewalk">
+            </div>
+
+            <div id="postOfficeYellowMan" class="postOfficeObject cityPeople">
+                <img src="component/postOfficeYellowMan.png" class="postOfficewalk">
+            </div>
+
+        </div>
+
+        <!-- Home Map -->
+        <div id="homeMap" class="homeInsideMap">
+            <img src="component/homeKitchenWall1.png" id="homeKitchenWall1" class="homePosition homeObject">
+            <img src="component/homeKitchenWall3.png" id="homeKitchenWall3" class="homePosition homeObject">
+            <img src="component/homeKitchenWall4.png" id="homeKitchenWall4" class="homePosition homeObject">
+            <img src="component/homeKitchenWall2.png" id="homeKitchenWall2" class="homePosition homeObject">
+            <img src="component/homeBedroomWall1.png" id="homeBedroomWall1" class="homePosition homeObject">
+            <img src="component/homeBedroomWall2.png" id="homeBedroomWall2" class="homePosition homeObject">
+            <img src="component/homeBedroomWall5.png" id="homeBedroomWall5" class="homePosition homeObject">
+            <img src="component/homeBedroomWall4.png" id="homeBedroomWall4" class="homePosition homeObject">
+            <img src="component/homeBedroomWall3.png" id="homeBedroomWall3" class="homePosition homeObject">
+            <img src="component/homeRestroomWall1.png" id="homeRestroomWall1" class="homePosition homeObject">
+            <img src="component/homeShoePlaceWall.png" id="homeShoePlaceWall" class="homePosition homeObject">
+            <img src="component/homeBed.png" id="homeBed" class="homePosition homeObject">
+            <img src="component/homeSofaHorizontal.png" id="homeSofaHorizontal" class="homePosition homeObject">
+            <img src="component/homeSofaVertical.png" id="homeSofaVertical" class="homePosition homeObject">
+            <img src="component/homeDiningTable.png" id="homeDiningTable" class="homePosition homeObject">
+            <img src="component/homeWashRoom.png" id="homeWashRoom" class="homePosition homeObject">
+            <img src="component/homeBathtub.jpeg" id="homeBathtub" class="homePosition homeObject">
+            <img src="component/homeWashBasin.jpeg" id="homeWashBasin" class="homePosition homeObject">
+            <img src="component/homeKitchenHorizontal.png" id="homeKitchenHorizontal"
+                class="homePosition homeObject homeObject">
+            <img src="component/homeKitchenVertical.png" id="homeKitchenVertical" class="homePosition homeObject">
+            <img src="component/homeTv.png" id="homeTv" class="homePosition homeObject">
+            <img src="component/homeStrawberry.png" id="homeStrawberry" class="homePosition homeObject">
+            <img src="component/homeKitchenCupboard.png" id="homeKitchenCupboard" class="homePosition homeObject">
+            <img src="component/homeTepoy.png" id="homeTepoy" class="homePosition homeObject">
+            <img src="component/homeSpect.png" id="homeSpect" class="homePosition homeObject">
+            <img src="component/homeCup.png" id="homeCup" class="homePosition homeObject">
+            <img src="component/homeCup.png" id="homeCup1" class="homePosition homeObject">
+            <img src="component/homeCup.png" id="homeCup2" class="homePosition homeObject">
+            <img src="component/homeCup.png" id="homeCup3" class="homePosition homeObject">
+            <img src="component/homeBookShelf.png" id="homeBookShelf" class="homePosition homeObject">
+            <img src="component/homeStudyTable.png" id="homeStudyTable" class="homePosition homeObject">
+            <img src="component/homeShoes.png" id="homeShoes" class="homePosition homeObject">
+            <img src="component/homeSkinBook.png" id="homeSkinBook" class="homePosition homeObject">
+            <img src="component/homeBedroomTable.png" id="homeBedroomTable" class="homePosition homeObject">
+            <img src="component/homePinkChair.png" id="homePinkChair1" class="homePosition homeObject">
+            <img src="component/homePinkChair.png" id="homePinkChair2" class="homePosition homeObject">
+            <img src="component/homeBedroomCupboard.png" id="homeBedroomCupboard" class="homePosition homeObject">
+            <img src="component/vas.png" id="homeBedRoomVas" class="homePosition homeObject">
+            <img src="component/homeGreenPlant.png" id="homeGreenPlant" class="homePosition homeObject">
+            <img src="component/homeLivingRoomCabinet.png" id="homeLivingRoomCabinet" class="homePosition homeObject">
+            <img src="component/homeBlueChair.png" id="homeBlueChair" class="homePosition homeObject">
+            <img src="component/blackline horizontal.png" id="blackline_h1" class="homePosition hide homeObject">
+            <img src="component/blackline horizontal.png" id="blackline_h2" class="homePosition hide homeObject">
+            <img src="component/blackline vertical.png" id="blackline_v1" class="homePosition hide homeObject">
+            <img src="component/blackline vertical.png" id="blackline_v2" class="homePosition hide homeObject">
+
+            <img src="component/homeBrownDoormat.png" id="homeBrownDoormat" class="homePosition">
+            <img src="component/homeLivingRoomCarpet.jpg" id="homeLivingRoomCarpet" class="homePosition">
+            <img src="component/homeBlueDoormat.png" id="homeBlueDoormat" class="homePosition">
+        </div>
+
+
+        <!-- Bank Map -->
+        <div id="bankMap" class="bankInsideMap">
+
+            <img src="component/bankWallVertical.png" id="bankWallVertical3" class="bankPosition bankWallV bankObject">
+            <img src="component/bankWallVertical.png" id="bankWallVertical4" class="bankPosition bankWallV bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankWallHorizontal1" class="bankPosition bankWallH bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankWallHorizontal2" class="bankPosition bankWallH bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankWallHorizontal3" class="bankPosition bankWallH bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankWallHorizontal4" class="bankPosition bankWallH bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankWallHorizontal5" class="bankPosition bankWallH bankObject">
+            <img src="component/bankWallVertical.png" id="bankWallVertical1" class="bankPosition bankWallV bankObject">
+            <img src="component/bankWallVertical.png" id="bankWallVertical2" class="bankPosition bankWallV bankObject">
+
+
+            <img src="component/bankSofa.png" id="bankSofa" class="bankPosition bankSofaClass bankObject">
+            <img src="component/bankSofa.png" id="bankSofa2" class="bankPosition bankSofaClass bankObject">
+            <img src="component/bankOfficeChair.png" id="bankOfficeChair" class="bankPosition bankObject">
+            <img src="component/bankManager.png" id="bankManager" class="bankPosition bankObject">
+            <img src="component/bankOfficeTable.png" id="bankOfficeTable" class="bankPosition bankObject">
+
+            <img src="component/bankOfficeSofa1.png" id="bankOfficeSofa1" class="bankPosition bankObject">
+            <img src="component/bankOfficeSofa2.png" id="bankOfficeSofa2" class="bankPosition bankObject">
+            <img src="component/bankOfficeTable2.png" id="bankOfficeTable2" class="bankPosition bankObject">
+            <img src="component/bankOfficeChair1.png" id="bankOfficeChair1" class="bankPosition bankObject">
+            <img src="component/bankOfficeChair1.png" id="bankOfficeChair2" class="bankPosition bankObject">
+            <img src="component/bankOfficeLamp.png" id="bankOfficeLamp" class="bankPosition bankObject">
+            <img src="component/bankDustbin.png" id="bankOfficeDustbin" class="bankPosition bankObject">
+            <img src="component/bankOfficeCupboard.png" id="bankOfficeCupboard" class="bankPosition bankObject">
+            <img src="component/bankWallVertical.png" id="bankOfficeWallVertical" class="bankPosition bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankOfficeWallHorizontal" class="bankPosition bankObject">
+
+            <img src="component/bankCabinet1.png" id="bankCabinet1" class="bankPosition bankObject">
+            <img src="component/bankBlackCupBoard.png" id="bankBlackCupBoard" class="bankPosition bankObject">
+            <img src="component/bankFiles.png" id="bankFiles1" class="bankPosition bankObject">
+            <img src="component/bankFiles.png" id="bankFiles2" class="bankPosition bankObject">
+            <img src="component/bankBlackTable.png" id="bankBlackTable" class="bankPosition bankObject">
+            <img src="component/bankCounterTable.png" id="bankCounterTable" class="bankPosition bankObject">
+            <img src="component/bankCounterTable2.png" id="bankCounterTable2" class="bankPosition bankObject">
+            <img src="component/bankFiles2.png" id="bankFiles2" class="bankPosition bankObject">
+            <img src="component/bankchair1.png" id="bankchair1" class="bankPosition bankObject">
+            <img src="component/bankchair1.png" id="bankchair2" class="bankPosition bankObject">
+            <img src="component/bankCalc.png" id="bankCalc" class="bankPosition bankObject">
+            <img src="component/bankATM.png" id="bankATM" class="bankPosition bankObject">
+            <img src="component/bankKioskMachine.png" id="bankKioskMachine1" class="bankPosition bankObject">
+            <img src="component/bankKioskMachine.png" id="bankKioskMachine2" class="bankPosition bankObject">
+
+            <img src="component/bankChairsVertical.png" id="bankChairsVertical1" class="bankPosition bankObject">
+            <img src="component/bankChairsHorizontal.png" id="bankChairsHorizontal" class="bankPosition bankObject">
+
+            <img src="component/bankDustbin.png" id="bankDustbin1" class="bankPosition bankObject">
+            <img src="component/bankDustbin.png" id="bankDustbin2" class="bankPosition bankObject">
+            <img src="component/bankDustbin.png" id="bankDustbin3" class="bankPosition bankObject">
+            <img src="component/bankDustbin.png" id="bankDustbin4" class="bankPosition bankObject">
+
+            <img src="component/bankBrownTable1.png" id="bankBrownTable1" class="bankPosition bankObject">
+            <img src="component/bankBrownTable.png" id="bankBrownTable" class="bankPosition bankObject">
+
+            <img src="component/bankWallHorizontal.png" id="bankWashroomWallHorizontal2"
+                class="bankPosition bankWashroomWallH bankObject">
+            <img src="component/bankWallHorizontal.png" id="bankWashroomWallHorizontal1"
+                class="bankPosition bankWashroomWallH bankObject">
+            <img src="component/bankWallVertical.png" id="bankWashroomWallVertical1"
+                class="bankPosition bankWashroomWallV bankObject">
+            <img src="component/bankWallVertical.png" id="bankWashroomWallVertical2"
+                class="bankPosition bankWashroomWallV bankObject">
+            <img src="component/bankToilet.png" id="bankToilet1" class="bankPosition bankObject">
+            <img src="component/bankToilet.png" id="bankToilet2" class="bankPosition bankObject">
+            <img src="component/bankWashBasin.png" id="bankWashBasin1" class="bankPosition bankObject">
+            <img src="component/bankWashBasin.png" id="bankWashBasin2" class="bankPosition bankObject">
+
+            <img src="component/bankBlacklineHorizontal.png" id="bankBlacklineHorizontal"
+                class="bankPosition visibility bankObject">
+            <img src="component/bankBlacklineHorizontal.png" id="bankBlacklineHorizontal2"
+                class="bankPosition visibility bankObject">
+            <img src="component/bankBlacklineVertical.png" id="bankBlacklineVertical"
+                class="bankPosition visibility bankObject">
+            <img src="component/bankBlacklineVertical.png" id="bankBlacklineVertical2"
+                class="bankPosition visibility bankObject">
+            <img src="component/bankBlacklineVertical.png" id="bankBlacklineVertical3"
+                class="bankPosition visibility bankObject">
+            <img src="component/bankSittingMan1.png" id="bankSittingMan1" class="bankPosition bankObject">
+            <img src="component/bankSittingMan2.png" id="bankSittingMan2" class="bankPosition bankObject">
+            <img src="component/bankSittingMan3.png" id="bankSittingMan3" class="bankPosition bankObject">
+            <img src="component/bankCounterMan1.png" id="bankCounterMan1" class="bankPosition bankObject">
+            <img src="component/bankCounterMan2.png" id="bankCounterMan2" class="bankPosition bankObject">
+
+
+            <img src="component/bankSittingWoman1.png" id="bankSittingWoman1" class="bankPosition bankObject">
+            <img src="component/bankSittingWoman2.png" id="bankSittingWoman2" class="bankPosition bankObject">
+
+            <div id="bankPolice1" class="bankObject cityPeople">
+                <img src="component/bankPolice.png" class="bankwalk">
+            </div>
+
+            <div id="bankYellowMan" class="bankObject cityPeople">
+                <img src="component/bankYellowMan.png" class="bankwalk">
+            </div>
+
+            <div id="bankRedMan" class="bankObject cityPeople">
+                <img src="component/bankRedMan.png" class="bankwalk">
+            </div>
+        </div>
+
+        <!-- Hotel Map -->
+        <div id="hotelMap" class="hotelInsideMap">
+
+            <img src="component/sofa_horizontal.png" id="HotelSofaHorizontal" class="hotelPosition hotelObject">
+            <img src="component/sofa_vertical.png" id="HotelSofaVertical" class="hotelPosition hotelObject">
+            <img src="component/hotelOvelTable.png" id="HotelOvelTable" class="hotelPosition hotelObject">
+            <img src="component/hotelCounterTable.png" id="hotelCounterTable" class="hotelPosition hotelObject">
+            <img src="component/hotelCounterChair.png" id="hotelCounterChair" class="hotelPosition hotelObject">
+
+            <img src="component/hotelTable.png" class="hotelTable hotelPosition hotelObject" id="hotelTable1">
+            <img src="component/hotelTable.png" class="hotelTable hotelPosition hotelObject" id="hotelTable2">
+            <img src="component/hotelTable.png" class="hotelTable hotelPosition hotelObject" id="hotelTable3">
+            <img src="component/hotelTable.png" class="hotelTable hotelPosition hotelObject" id="hotelTable4">
+            <img src="component/hotelTable.png" class="hotelTable hotelPosition hotelObject" id="hotelTable5">
+            <img src="component/hotelTable.png" class="hotelTable hotelPosition hotelObject" id="hotelTable6">
+
+            <img src="component/HotelKitchenHorizontal.png" id="hotelKitchenHorizontal" class="hotelPosition hotelObject">
+            <img src="component/hotelFridge2.png" id="hotelFridge2" class="hotelPosition hotelObject">
+            <img src="component/hotelCupBoard.png" id="hotelCupBoard" class="hotelPosition hotelObject">
+            <img src="component/hotelBrownKitchenVertical.png" class="hotelPosition hotelObject"
+                id="hotelBrownKitchenVertical">
+            <img src="component/hotelBrownPlatformHorizontal.png" class="hotelPosition hotelObject"
+                id="hotelBrownPlatformHorizontal">
+            <img src="component/hotelGreyPlatform2.png" class="hotelPosition hotelObject" id="hotelGreyPlatform2">
+            <img src="component/hotelGreyPlatform3.png" class="hotelPosition hotelObject" id="hotelGreyPlatform3">
+            <img src="component/hotelChocolateBowl.png" class="hotelPosition hotelObject" id="hotelChocolateBowl">
+            <img src="component/hotelGroceryTable.png" class="hotelPosition hotelObject" id="hotelGroceryTable">
+            <img src="component/hotelCookiesPlatform.png" class="hotelPosition hotelObject" id="hotelCookiesPlatform">
+            <img src="component/hotelPlatesPlatform.png" class="hotelPosition hotelObject" id="hotelPlatesPlatform">
+
+            <img src="component/hotelOrangeMan.png" class="hotelPosition hotelObject" id="hotelOrangeMan">
+            <img src="component/hotelPurpleWoman.png" class="hotelPosition hotelObject" id="hotelPurpleWoman">
+
+            <img src="component/hotelRedWoman.png" class="hotelPosition hotelObject" id="hotelRedWoman">
+            <img src="component/hotelBlueWoman.png" class="hotelPosition hotelObject" id="hotelBlueWoman">
+            <img src="component/hotelWhiteWoman.png" class="hotelPosition hotelObject" id="hotelWhiteWoman">
+            <img src="component/hotelGreenWoman.png" class="hotelPosition hotelObject" id="hotelGreenWoman">
+            <img src="component/hotelPinkWoman.png" class="hotelPosition hotelObject" id="hotelPinkWoman">
+            <img src="component/hotelCakePlate.png" class="hotelPosition hotelObject" id="hotelCakePlate">
+            <img src="component/hotelCoffeeCup.png" class="hotelPosition hotelObject" id="hotelCoffeeCup1">
+            <img src="component/hotelCoffeeCup.png" class="hotelPosition hotelObject" id="hotelCoffeeCup2">
+
+            <img src="component/hotelBlacklineVertical.png" class="hotelPosition hotelVisibility hotelObject"
+                id="hotelBlacklineVertical1">
+            <img src="component/hotelBlacklineVertical.png" class="hotelPosition hotelVisibility hotelObject"
+                id="hotelBlacklineVertical2">
+            <img src="component/hotelBlacklineVertical.png" class="hotelPosition hotelVisibility hotelObject"
+                id="hotelBlacklineVertical3">
+            <img src="component/hotelBlacklineVertical.png" class="hotelPosition hotelVisibility hotelObject"
+                id="hotelBlacklineVertical4">
+
+            <img src="component/hotelBlacklineHorizontal.png" class="hotelPosition hotelVisibility hotelObject"
+                id="hotelBlacklineHorizontal1">
+            <img src="component/hotelBlacklineHorizontal.png" class="hotelPosition hotelVisibility hotelObject"
+                id="hotelBlacklineHorizontal2">
+
+            <div id="hotelWhiteMan1" class="hotelObject cityPeople">
+                <img src="component/hotelWhiteMan.png" class="hotelwalk">
+            </div>
+            <div id="hotelWhiteMan2" class="hotelObject cityPeople">
+                <img src="component/hotelWhiteMan.png" class="hotelwalk">
+            </div>
+            <div id="hotelWhiteMan3" class="hotelObject cityPeople">
+                <img src="component/hotelWhiteMan.png" class="hotelwalk">
+            </div>
+        </div>
+
+        <!-- Garden Map -->
+        <div id="gardenMap" class="gardenInsideMap">
+
+            <img src="component/gardenRedSlide.png" id="gardenRedSlide" class="gardenPosition gardenObject">
+            <img src="component/gardenBlueSlide.png" id="gardenBlueSlide" class="gardenPosition gardenObject">
+
+            <img src="component/gardenFountain.png" id="gardenFountain" class="gardenPosition gardenObject">
+            <img src="component/gardenSwing.png" id="gardenSwing" class="gardenPosition gardenObject">
+            <img src="component/gardenSkateBoard.png" id="gardenSkateBoard" class="gardenPosition gardenObject">
+
+            <img src="component/gardenBenchHorizontal2.png" id="gardenBench4" class="gardenPosition gardenObject">
+            <img src="component/gardenBenchVertical.png" id="gardenBench3" class="gardenPosition gardenObject">
+            <img src="component/gardenBenchHorizontal1.png" id="gardenBench1" class="gardenPosition gardenObject">
+            <img src="component/gardenBenchVertical.png" id="gardenBench2" class="gardenPosition gardenObject">
+
+            <img src="component/gardenGreen_line1.png" id="gardenGreen_line1"
+                class="gardenPosition gardenVisibility gardenObject">
+            <img src="component/gardenGreen_line1.png" id="gardenGreen_line2"
+                class="gardenPosition gardenVisibility gardenObject">
+            <img src="component/gardenGreen_line2.png" id="gardenGreen_line3"
+                class="gardenPosition gardenVisibility gardenObject">
+            <img src="component/gardenGreen_line2.png" id="gardenGreen_line4"
+                class="gardenPosition gardenVisibility gardenObject">
+            <img src="component/gardenGreen_line2.png" id="gardenGreen_line5"
+                class="gardenPosition gardenVisibility gardenObject">
+
+            <img src="component/gardenGrass_horizontal.png" id="gardenGrass_h1" class="gardenPosition gardenObject">
+            <img src="component/gardenGrass_horizontal.png" id="gardenGrass_h2" class="gardenPosition gardenObject">
+            <img src="component/gardenGrass_vertical.png" id="gardenGrass_v1" class="gardenPosition gardenObject">
+            <img src="component/gardenGrass_vertical.png" id="gardenGrass_v2" class="gardenPosition gardenObject">
+            <img src="component/gardenGrass_vertical.png" id="gardenGrass_v3" class="gardenPosition gardenObject">
+
+            <img src="component/gardenSittingMan1.png" id="gardenSittingMan1" class="gardenPosition gardenObject">
+            <img src="component/gardenSittingMan2.png" id="gardenSittingMan2" class="gardenPosition gardenObject">
+
+            <img src="component/gardenSittingWoman.png" id="gardenSittingWoman" class="gardenPosition gardenObject">
+            <img src="component/gardenSittingWoman2.png" id="gardenSittingWoman2" class="gardenPosition gardenObject">
+            <img src="component/gardenSittingWoman3.png" id="gardenSittingWoman3" class="gardenPosition gardenObject">
+            <img src="component/gardenDog.png" id="gardenDog" class="gardenPosition gardenObject">
+
+            <div id="gardenBlueMan" class="gardenObject cityPeople">
+                <img src="component/gardenCharacter1.png" class="gardenWalk">
+            </div>
+            <div id="gardenPinkWoman" class="gardenObject cityPeople">
+                <img src="component/gardencharacter2.png" class="gardenWalk">
+            </div>
+            <div id="gardenBrownBoy" class="gardenObject cityPeople">
+                <img src="component/gardenCharacter3.png" class="gardenWalk">
+            </div>
+
+        </div>
+
+        <!-- advik Home Map -->
+        <div id="advikhomeMap" class="advikHomeInsideMap">
+            <img src="component/advikHomeSofaVertical.png" id="advikHomeSofaVertical"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeSofaHorizontal.png" id="advikHomeSofaHorizontal"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeTv.png" id="advikHomeTv" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomePinkFlower.png" id="advikHomePinkFlower" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeFlower.png" id="advikHomeFlower1" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeFlower.png" id="advikHomeFlower2" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBlueSofa.png" id="advikHomeBlueSofa" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBlueChair.png" id="advikHomeBlueChair" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeChair1.png" id="advikHomeChair1" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeChair2.png" id="advikHomeChair2" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBed.png" id="advikHomeBed" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeWashBasin.jpeg" id="advikHomeWashBasin" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBedroomCupboard.png" id="advikHomeBedroomCupboard"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeToilet.png" id="advikHomeToilet" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBathtub.jpeg" id="advikHomeBathtub" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBalconyTepoy.png" id="advikHomeBalconyTepoy"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeDiningTable.png" id="advikHomeDiningTable"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomePendrive.png" id="advikHomePendrive" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeKitchenHorizontal.png" id="advikHomeKitchenHorizontal"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeKitchenVertical.png" id="advikHomeKitchenVertical"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeGasStand.png" id="advikHomeGasStand" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeGas.png" id="advikHomeGas" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeLamp.png" id="advikHomeLamp" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBalconyFlower.png" id="advikHomeBalconyFlower"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeKitchenDrawer.png" id="advikHomeKitchenDrawer"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeSwing.png" id="advikHomeSwing" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBalconyTable1.png" id="advikHomeBalconyTable1"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeStudyTable.png" id="advikHomeStudyTable" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeStudyChair.png" id="advikHomeStudyChair" class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBedroomWall2.png" id="advikHomeBedroomWall2"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeWashroomWall1.png" id="advikHomeWashroomWall1"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeWashroomWall2.png" id="advikHomeWashroomWall2"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeWashroomWall3.png" id="advikHomeWashroomWall3"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBalconyWall.png" id="advikHomeBalconyWall"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeKitchenWall2.png" id="advikHomeKitchenWall2"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeKitchenWall1.png" id="advikHomeKitchenWall1"
+                class="advikHomePosition advikHomeObject">
+            <img src="component/advikHomeBlackline horizontal.png" id="advikHomeBlackline_h1"
+                class="advikHomePosition v advikHomeObject">
+            <img src="component/advikHomeBlackline horizontal.png" id="advikHomeBlackline_h2"
+                class="advikHomePosition v advikHomeObject">
+            <img src="component/advikHomeBlackline vertical.png" id="advikHomeBlackline_v1"
+                class="advikHomePosition v advikHomeObject">
+            <img src="component/advikHomeBlackline vertical.png" id="advikHomeBlackline_v2"
+                class="advikHomePosition v advikHomeObject">
+
+
+            <img src="component/advikHomeCarpet.png" id="advikHomeCarpet" class="advikHomePosition">
+            <img src="component/advikHomeDoormat.jpg" id="advikHomeDoormat" class="advikHomePosition">
+
+        </div>
+
+        <!-- Theater Map -->
+        <div id="theaterMap" class="theaterInsideMap">
+            <img src="component/theaterNewWallHorizontal.png" id="theaterWall1" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVertical.png" id="theaterWall3" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallHorizontal.png" id="theaterWall2" class="theaterPosition theaterObject">
+
+            <img src="component/theaterNewWallHorizontalFlipped.png" id="theaterWall4"
+                class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVertical.png" id="theaterWall5" class="theaterPosition theaterObject">
+
+            <img src="component/theaterPlant.png" id="theaterPlant1" class="theaterPosition theaterObject">
+            <img src="component/theaterPlant.png" id="theaterPlant2" class="theaterPosition theaterObject">
+            <img src="component/theaterPlant.png" id="theaterPlant3" class="theaterPosition theaterObject">
+            <img src="component/theaterPlant.png" id="theaterPlant4" class="theaterPosition theaterObject">
+            <img src="component/theaterPlant.png" id="theaterPlant5" class="theaterPosition theaterObject">
+
+            <img src="component/theaterTicketBooking.png" id="theaterTicketCounter" class="theaterPosition theaterObject">
+            <img src="component/theaterChair.png" id="theaterTicketCounterChair1" class="theaterPosition theaterObject">
+            <img src="component/theaterChair.png" id="theaterTicketCounterChair2" class="theaterPosition theaterObject">
+
+            <img src="component/theaterFoodCounter.png" id="theaterFoodCounter" class="theaterPosition theaterObject">
+            <img src="component/theaterFoodCounter2.png" id="theaterFoodCounter2" class="theaterPosition theaterObject">
+            <img src="component/theaterFoodFridge.png" id="theaterFoodFridge" class="theaterPosition theaterObject">
+
+            <img src="component/theaterScreen_1.png" title="screen" id="theaterScreen1"
+                class="theaterPosition theaterObject">
+
+            <img src="component/theaterRecliner.png" id="theaterSeats11" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats12" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats13" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats14" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats15" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats16" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats17" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats18" class="theaterPosition theaterObject">
+            <img src="component/theaterRecliner.png" id="theaterSeats19" class="theaterPosition theaterObject">
+
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall6" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall7" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall8" class="theaterPosition theaterObject">
+
+            <img src="component/theaterWashBasin.jpeg" id="theaterWashBasin" class="theaterPosition theaterObject">
+            <img src="component/theaterRestroom1.png" id="theaterRestRoom1" class="theaterPosition theaterObject">
+            <img src="component/theaterRestroom1.png" id="theaterRestRoom2" class="theaterPosition theaterObject">
+
+            <img src="component/theaterNewWallHorizontal.png" id="theaterWall9" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall10" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall14" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall15" class="theaterPosition theaterObject">
+
+            <img src="component/theaterScreen_3.png" title="screen" id="theaterScreen3"
+                class="theaterPosition theaterObject">
+
+            <img src="component/theaterSeatsWithPeople1.png" id="theaterSeats31" class="theaterPosition theaterObject">
+            <img src="component/theaterSeatsWithPeople2.png" id="theaterSeats32" class="theaterPosition theaterObject">
+            <img src="component/theaterSeatsWithPeople3.png" id="theaterSeats33" class="theaterPosition theaterObject">
+            <img src="component/theaterSeatsWithPeople1.png" id="theaterSeats36" class="theaterPosition theaterObject">
+
+            <img src="component/theaterSeatsWithPeople4.png" id="theaterSeats34" class="theaterPosition theaterObject">
+            <img src="component/theaterSeats_1.png" id="theaterSeats35" class="theaterPosition theaterObject">
+
+            <img src="component/theaterNewWallHorizontal.png" id="theaterWall11" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallHorizontal.png" id="theaterWall12" class="theaterPosition theaterObject">
+            <img src="component/theaterNewWallVerticalFlipped.png" id="theaterWall13" class="theaterPosition theaterObject">
+
+            <img src="component/theaterAudiance1.png" id="theaterPeople1" class="theaterPosition theaterObject">
+
+            <img src="component/theaterAudiance1.png" id="theaterPeople2" class="theaterPosition theaterObject">
+
+            <img src="component/theaterAudiance1.png" id="theaterPeople3" class="theaterPosition theaterObject">
+            <img src="component/theaterCounterMan.png" id="theaterCounterMan1" class="theaterPosition theaterObject">
+            <img src="component/theaterCounterMan.png" id="theaterCounterMan2" class="theaterPosition theaterObject">
+            <img src="component/theaterStandingMan.png" id="theaterStandingMan" class="theaterPosition theaterObject">
+
+            <div id="theaterChr1" class="theaterObject cityPeople">
+                <img src="component/theaterCharacter1.png" class="TheaterWalk">
+            </div>
+            <div id="theaterChr2" class="theaterObject cityPeople">
+                <img src="component/theaterCharacter2.png" class="TheaterWalk">
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter Password -->
+    <div id="popUpPage">
+        <div class="popUpContainer" id="popUpContainer">
+            <p id="popUpInstruction" class="popUpItems">
+                Enter Multiply of all previous number
+            </p>
+            <img src="component/cityscapeLogo.png" alt="" id="popUpLogoImage" class="popUpItems"><br>
+            <input type="number" id="messageKey" class="popUpItems"><br>
+            <input type="submit" value="submit" id="submitButton" class="popUpItems">
+        </div>
+    </div>
+
+    <!-- End Video -->
+    <div id="endVideoDiv">
+        <video id="endVideo">
+            <source src="component/endVideo.mp4">
+        </video>
+    </div>
+
+    <!-- Virtual Key -->
+    <div id="main_keys">
+        <img src="component/mainKeyUP.png" id="main_Key_UP" class="main_key">
+        <img src="component/mainKeyDown.png" id="main_Key_Down" class="main_key">
+        <img src="component/mainKeyLeft.png" id="main_Key_Left" class="main_key">
+        <img src="component/mainKeyRight.png" id="main_Key_Right" class="main_key">
+    </div>
+
+    <button type="button" id="exit_button" class="exit_button">Exit</button>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,10357 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* Starting page */
+/* --------------------------------------------------------------------- */
+#frontPage {
+    height: 100%;
+    width: 100%;
+    background: url('component/cityBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* filter: blur(8px); */
+}
+
+
+.buttonClass {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+    border: 2px solid orange;
+    height: 10%;
+    width: 14%;
+    background-color: rgb(59, 57, 57);
+    color: wheat;
+    font-size: 30px;
+    border-radius: 15px;
+    box-shadow: 7px 7px 10px rgba(12, 12, 12, 0.8);
+}
+
+.buttonClass:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(160, 87, 87), lightpink, pink, magenta, purple, navy, blue, lightblue, white);
+    position: absolute;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    left: 0;
+    top: 0;
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.buttonClass:active {
+    color: #000
+}
+
+.buttonClass:active:after {
+    background: transparent;
+}
+
+.buttonClass:hover:before {
+    opacity: 1;
+}
+
+.buttonClass:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#startButton {
+    left: 28%;
+    top: 70%;
+}
+
+#settingButton {
+    left: 28%;
+    top: 85%;
+}
+
+#aboutButton {
+    left: 57%;
+    top: 70%;
+}
+
+#howToPlayButton {
+    left: 57%;
+    top: 85%;
+}
+
+#cityscapeLogo {
+    position: absolute;
+    height: 60%;
+    width: 40%;
+    left: 30%;
+    top: 10%;
+}
+
+#SoundSettingDiv {
+    position: absolute;
+    height: 40%;
+    width: 30%;
+    background-color: wheat;
+    top: 30%;
+    left: 35%;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgb(57, 57, 57);
+    opacity: 0.9;
+    display: none;
+}
+
+#settingCloseButton {
+    position: relative;
+    height: 15%;
+    width: 10%;
+    left: 85%;
+    top: -15%;
+}
+
+#settingMuteButton {
+    position: relative;
+    height: 35%;
+    width: 23%;
+    top: 40%;
+    left: 12%;
+    border-radius: 10px;
+}
+
+#settingPlayButton {
+    position: relative;
+    height: 35%;
+    width: 23%;
+    left: 20%;
+    top: 40.5%;
+
+}
+
+#aboutDiv {
+
+    position: absolute;
+    height: 55%;
+    width: 45%;
+    background-color: wheat;
+    top: 20%;
+    left: 26%;
+    padding: 0px 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgb(57, 57, 57);
+    opacity: 0.9;
+    display: none;
+    overflow: auto;
+}
+
+#aboutCloseButton {
+    position: relative;
+    height: 10%;
+    width: 6%;
+    left: 89%;
+    top: 3%;
+}
+
+#howToPlayDiv {
+
+    position: absolute;
+    height: 72%;
+    width: 55%;
+    background-color: wheat;
+    top: 13%;
+    left: 23%;
+    padding: 0px 20px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgb(57, 57, 57);
+    opacity: 0.9;
+    display: none;
+    overflow: auto;
+}
+
+#howToPlayCloseButton {
+    position: relative;
+    height: 10%;
+    width: 6%;
+    left: 93%;
+    top: 3%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(66, 66, 66, 0.6);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(66, 66, 66, 0.89);
+}
+
+#startButton:hover,
+#settingButton:hover,
+#aboutButton:hover,
+#howToPlayButton:hover,
+#settingPlayButton:hover,
+#settingCloseButton:hover,
+#settingMuteButton:hover,
+#skipButton:hover,
+#aboutButton:hover,
+#howToPlayButton:hover,
+#aboutCloseButton:hover,
+#howToPlayCloseButton:hover {
+    transform: scale(1.07);
+    transition: transform 0.3s ease;
+}
+
+#storyPage {
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: black;
+}
+
+#storyVideo {
+    position: relative;
+    left: 2.5%;
+    top: 2.5%;
+    width: 95%;
+    border-radius: 25px;
+    height: 95%;
+    object-fit: fill;
+}
+
+#skipButton {
+    display: none;
+    position: absolute;
+    height: 7%;
+    width: 10%;
+    border-radius: 15px;
+    box-shadow: 7px 7px 10px rgba(12, 12, 12, 0.8);
+    top: 90%;
+    left: 83%;
+    background-color: rgb(212, 175, 107);
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+#popUpPage {
+    height: 100%;
+    width: 100%;
+    background: url('component/cityScapeFrontPage.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+.popUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: whitesmoke;
+    background: conic-gradient(orangered 90deg, grey 90deg 270deg, orangered 270deg 360deg);
+    box-shadow: 0px 0px 20px black;
+    font-family: cursive;
+    font-size: medium;
+    height: 280px;
+    padding: 20px;
+    width: 280px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popUpContainer:hover {
+    box-shadow: 0px 0px 20px orangered;
+    background: conic-gradient(orange 0deg 90deg, black 90deg 270deg, orange 270deg 360deg);
+    opacity: 1;
+}
+
+#submitButton {
+    background-color: orangered;
+    border-radius: 1%;
+    border: 2px solid white;
+    padding: 7px;
+    font-size: 15px;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+#submitButton:hover {
+    box-shadow: 0px 0px 15px white;
+    font-weight: bold;
+}
+
+#popUpLogoImage {
+    background-color: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 35%;
+    width: 35%;
+}
+
+#messageKey {
+    height: 10%;
+    width: 70%;
+    border: 2px solid orangered;
+    border-radius: 10px;
+}
+
+.popUpItems {
+    flex-wrap: wrap;
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.801);
+    display: none;
+}
+
+.loading>img {
+    position: absolute;
+    height: 75%;
+    width: 40%;
+    left: 30%;
+    top: 5%;
+}
+
+.loading>.box {
+    position: fixed;
+    height: 1%;
+    width: 0%;
+    background-color: rgb(212, 149, 30);
+    bottom: 3%;
+    align-self: flex-start;
+    animation: load 3s 1 0s ease-in-out forwards;
+}
+
+@keyframes load {
+    100% {
+        width: 100%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    height: 10%;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar>#msg {
+    color: white;
+    width: 85%;
+    height: 100%;
+    padding: 0.5%;
+    overflow: auto;
+    display: inline-block;
+}
+
+.navbar>.container {
+    height: 100%;
+    width: 15%;
+    color: white;
+    font-weight: bold;
+    padding: 0% 1%;
+    display: inline-block;
+}
+
+.container>div {
+    height: calc(100%/3);
+    padding: 1% 0%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.energyContainer>#energyScore {
+    width: 85%;
+    padding: 0% 5%;
+    display: inline-block;
+}
+
+.energyContainer>img {
+    height: 100%;
+    float: right;
+}
+
+
+.lifeContainer>#lifeScore {
+    width: 85%;
+    padding: 0% 5%;
+    display: inline-block;
+}
+
+.lifeContainer>img {
+    height: 100%;
+    float: right;
+}
+
+
+.coinContainer>#coinScore {
+    width: 85%;
+    padding: 0% 5%;
+    display: inline-block;
+}
+
+.coinContainer>img {
+    height: 100%;
+    float: right;
+}
+
+#main_keys {
+    display: none;
+}
+
+.main_key {
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.main_key:hover {
+    opacity: 2;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+
+}
+
+#main_Key_UP {
+    top: 79.5%;
+    left: 10%;
+}
+
+#main_Key_Down {
+    top: 90%;
+    left: 10%;
+}
+
+#main_Key_Left {
+    top: 90%;
+    left: 3%;
+}
+
+#main_Key_Right {
+    top: 90%;
+    left: 17%;
+}
+
+
+/* Map Icon */
+#mapIcon {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 89%;
+    left: 94%;
+    border-radius: 10px;
+    z-index: 2;
+    height: 8%;
+    width: 4%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#cityMap {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+#cityMapImage {
+    position: relative;
+    top: 12%;
+    left: 4%;
+    height: 80%;
+    width: 90%;
+}
+
+#cityMapCloseImage {
+    position: relative;
+    width: 2%;
+    top: -65%;
+    left: 4%;
+}
+
+#cityMapIcon {
+    height: 100%;
+    width: 100%;
+}
+
+#cityMapIcon:hover {
+    box-shadow: 0px 0px 20px #bbc1c1;
+}
+
+#cityMapCloseImage:hover {
+    box-shadow: 0px 0px 20px #b13838;
+}
+
+/* Camera */
+.camera {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+/* Message */
+#massegeContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#massegeContainer>p {
+    font-size: 500%;
+    color: orange;
+    font-weight: bold;
+}
+
+/* MAP */
+.map {
+    height: 300%;
+    width: 300%;
+    background-color: rgb(58, 57, 57);
+    position: relative;
+    display: none;
+}
+
+.item {
+    border: 10px solid rgb(255, 255, 255);
+    border-style: groove;
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(72, 216, 72);
+    border-radius: 12px;
+}
+
+/* Player */
+.player {
+    position: absolute;
+    width: calc(10% / 2);
+    height: 10%;
+    top: 0%;
+    left: 33%;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+}
+
+.player>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: walk .6s infinite steps(2);
+}
+
+@keyframes walk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+/* Places */
+.item>img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#riddhihome {
+    background-image: url("component/stone.jfif");
+    height: 20%;
+    width: 10%;
+    top: 0%;
+    left: 0%;
+}
+
+#riddhihome>img {
+    margin: 10% 20%;
+    height: 80%;
+    width: 60%;
+}
+
+#policestation {
+    height: 25%;
+    width: 18%;
+    top: 0%;
+    left: 15%;
+}
+
+#firestation {
+    height: 25%;
+    width: 17%;
+    top: 0%;
+    left: 38%;
+}
+
+#govtoffice {
+    height: 25%;
+    width: 11%;
+    top: 0%;
+    left: 60%;
+}
+
+#mall {
+    background-image: url("component/walkway.jfif");
+    height: 27%;
+    width: 25%;
+    top: 0%;
+    left: 75%;
+    background-color: #bbc1c1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mall>img {
+    height: 75%;
+    width: 85%;
+}
+
+#hospital>img {
+    height: 100%;
+    width: 100%;
+}
+
+#hospital {
+    height: 30%;
+    width: 20%;
+    top: 35%;
+    left: 0%;
+}
+
+
+#gamezone {
+    height: 30%;
+    width: 25%;
+    top: 35%;
+    left: 25%;
+}
+
+#school {
+    height: 25%;
+    width: 20%;
+    top: 35%;
+    left: 55%;
+}
+
+#postoffice {
+    height: 20%;
+    width: 20%;
+    top: 35%;
+    left: 80%;
+}
+
+#postoffice>img {
+    height: 90%;
+    width: 95%;
+    top: 5%;
+    left: 5%;
+}
+
+#home {
+    background-image: url("component/bg_home.jpg");
+    height: 25%;
+    width: 15%;
+    top: 75%;
+    left: 0%;
+}
+
+#home>img {
+    height: 90%;
+    width: 50%;
+    top: 6%;
+    left: 25%;
+}
+
+#bank {
+    height: 25%;
+    width: 20%;
+    top: 75%;
+    left: 20%;
+}
+
+
+
+#hotel {
+    height: 25%;
+    width: 10%;
+    top: 75%;
+    left: 45%;
+}
+
+#garden {
+    height: 25%;
+    width: 20%;
+    top: 75%;
+    left: 60%;
+}
+
+#garden>img {
+    height: 100%;
+    width: 100%;
+}
+
+#theater {
+    height: 17%;
+    width: 10%;
+    top: 61%;
+    left: 85%;
+}
+
+#advikhome {
+    height: 15%;
+    width: 15%;
+    top: 85%;
+    left: 85%;
+}
+
+#advikhome>img {
+    height: 100%;
+    width: 100%;
+}
+
+.car {
+    position: absolute;
+    height: 7%;
+    width: 1.8%;
+}
+
+.car>img {
+    height: 100%;
+    width: 100%;
+}
+
+#policecar1 {
+    animation: policecar1 15s infinite linear;
+}
+
+#policecar2 {
+    animation: policecar2 13s infinite linear;
+}
+
+#car1 {
+    top: 53%;
+    left: 100%;
+    animation: car1 8s infinite linear;
+}
+
+#car2 {
+    top: 55%;
+    left: 99%;
+    animation: car2 5s infinite linear;
+}
+
+@keyframes policecar1 {
+    0% {
+        top: -2%;
+        left: 13%;
+        transform: rotate(180deg);
+    }
+
+    14% {
+        top: 25%;
+        left: 13%;
+        transform: rotate(180deg);
+    }
+
+    17% {
+        top: 25%;
+        left: 13%;
+        transform: rotate(90deg);
+    }
+
+    45% {
+        top: 25%;
+        left: 53%;
+        transform: rotate(90deg);
+    }
+
+    48% {
+        top: 25%;
+        left: 53%;
+        transform: rotate(180deg);
+    }
+
+    63% {
+        top: 67.3%;
+        left: 53%;
+        transform: rotate(180deg);
+    }
+
+    66% {
+        top: 67.3%;
+        left: 53%;
+        transform: rotate(270deg);
+    }
+
+    85% {
+        top: 67.3%;
+        left: 18%;
+        transform: rotate(270deg);
+    }
+
+    88% {
+        top: 67.3%;
+        left: 18%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 100%;
+        left: 18%;
+        transform: rotate(180deg);
+    }
+
+}
+
+@keyframes policecar2 {
+    0% {
+        top: -2%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+
+    17% {
+        top: 28%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+
+    20% {
+        top: 28%;
+        left: 58%;
+        transform: rotate(90deg);
+    }
+
+    38% {
+        top: 28%;
+        left: 78%;
+        transform: rotate(90deg);
+    }
+
+    41% {
+        top: 28%;
+        left: 78%;
+        transform: rotate(180deg);
+    }
+
+    62% {
+        top: 68%;
+        left: 78%;
+        transform: rotate(180deg);
+    }
+
+    65% {
+        top: 68%;
+        left: 78%;
+        transform: rotate(270deg);
+    }
+
+    83% {
+        top: 68%;
+        left: 58%;
+        transform: rotate(270deg);
+    }
+
+    86% {
+        top: 68%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 100%;
+        left: 58%;
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes car1 {
+    0% {
+        top: 63%;
+        left: -2%;
+        transform: rotate(90deg);
+    }
+
+    33% {
+        top: 63%;
+        left: 20%;
+        transform: rotate(90deg);
+    }
+
+    36% {
+        top: 63%;
+        left: 20%;
+        transform: rotate(0deg);
+    }
+
+    64% {
+        top: 29.99%;
+        left: 20%;
+        transform: rotate(0deg);
+    }
+
+    67% {
+        top: 29.99%;
+        left: 20%;
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        top: 29.99%;
+        left: -2%;
+        transform: rotate(-90deg);
+    }
+
+}
+
+@keyframes car2 {
+    0% {
+        top: 55%;
+        left: 98.5%;
+        transform: rotate(-90deg);
+    }
+
+    40% {
+        top: 55%;
+        left: 83%;
+        transform: rotate(-90deg);
+    }
+
+    45% {
+        top: 55%;
+        left: 83%;
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        top: 100%;
+        left: 83%;
+        transform: rotate(-180deg);
+    }
+}
+
+#cityyellowman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman01 21s infinite linear;
+}
+
+#cityyellowman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk1 {
+    animation: cityWalk .8s infinite steps(2);
+}
+
+
+
+@keyframes cityWalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+@keyframes cityman01 {
+    0% {
+        top: 81.6%;
+        left: 85%;
+        transform: rotate(90deg);
+    }
+
+    25% {
+        top: 81.6%;
+        left: 98%;
+        transform: rotate(90deg);
+    }
+
+    26% {
+        top: 81.6%;
+        left: 98%;
+        transform: rotate(0deg);
+    }
+
+    49% {
+        top: 61%;
+        left: 98%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 61%;
+        left: 98%;
+        transform: rotate(-90deg);
+    }
+
+    58% {
+        top: 61%;
+        left: 95.2%;
+        transform: rotate(-90deg);
+    }
+
+    59% {
+        top: 61%;
+        left: 95.2%;
+        transform: rotate(-180deg);
+    }
+
+    75% {
+        top: 78.3%;
+        left: 95.2%;
+        transform: rotate(-180deg);
+    }
+
+    76% {
+        top: 78.3%;
+        left: 95.2%;
+        transform: rotate(-90deg);
+    }
+
+    94% {
+        top: 78.3%;
+        left: 85%;
+        transform: rotate(-90deg);
+    }
+
+    95% {
+        top: 78.3%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+
+    99% {
+        top: 81.6%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        top: 81.6%;
+        left: 85%;
+        transform: rotate(-270deg);
+    }
+}
+
+#citypinkman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman02 10s infinite linear;
+}
+
+#citypinkman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes cityman02 {
+    0% {
+        top: 0%;
+        left: 71%;
+        transform: rotate(180deg);
+    }
+
+    50% {
+        top: 23%;
+        left: 71%;
+        transform: rotate(180deg);
+    }
+
+    52% {
+        top: 23%;
+        left: 71%;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: 0%;
+        left: 71%;
+        transform: rotate(0deg);
+    }
+}
+
+
+#cityblueman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman04 10s infinite linear;
+}
+
+#cityblueman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes cityman04 {
+    0% {
+        top: 28%;
+        left: 100%;
+        transform: rotate(270deg);
+    }
+
+    50% {
+        top: 28%;
+        left: 82%;
+        transform: rotate(270deg);
+    }
+
+    52% {
+        top: 28%;
+        left: 82%;
+        transform: rotate(90deg);
+    }
+
+    100% {
+        top: 28%;
+        left: 100%;
+        transform: rotate(90deg);
+    }
+}
+
+#citygreenwoman {
+    position: absolute;
+    width: calc(3% / 2);
+    height: 3%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: cityman03 23s infinite linear;
+}
+
+#citygreenwoman>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes cityman03 {
+    0% {
+        top: 20%;
+        left: 0%;
+        transform: rotate(90deg);
+    }
+
+    25% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(90deg);
+    }
+
+    27% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 0%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+
+    52% {
+        top: 0%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+
+    75% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+
+    78% {
+        top: 20%;
+        left: 10%;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: 20%;
+        left: 0%;
+        transform: rotate(270deg);
+    }
+}
+
+
+.insideMap {
+    height: 200%;
+    width: 190%;
+    background-color: green;
+    display: none;
+    color: white;
+    font-size: 230px;
+    position: relative;
+}
+
+#endVideoDiv {
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: black;
+}
+
+#endVideo {
+    position: relative;
+    border-radius: 20px;
+    left: 2.5%;
+    top: 2.5%;
+    width: 95%;
+    height: 95%;
+    object-fit: fill;
+}
+
+
+@media (max-width : 600px) {
+
+    #loadingLogo,
+    #cityscapeLogo {
+        height: 40%;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+    }
+
+    .buttonClass {
+        font-size: 120%;
+        width: 20%;
+    }
+
+    #skipButton {
+        font-size: 120%;
+        left: 75%;
+        width: 20%;
+    }
+
+    .navbar {
+        font-size: 70%;
+    }
+
+    .car {
+        width: 2%;
+        height: 5%;
+    }
+
+    .player {
+        left: 80%;
+    }
+
+    .map {
+        height: 200%;
+        width: 800%;
+    }
+
+    #riddhihome {
+        width: 10%;
+        height: 20%;
+    }
+
+    #policestation {
+        height: 25%;
+        width: 15%;
+        top: 0%;
+        left: 15%;
+    }
+
+    #firestation {
+        height: 25%;
+        width: 17%;
+        top: 0%;
+        left: 35%;
+    }
+
+    #govtoffice {
+        height: 25%;
+        width: 11%;
+        top: 0%;
+        left: 60%;
+    }
+
+    #mall {
+        height: 25%;
+        width: 25%;
+    }
+
+    #hospital {
+        height: 28%;
+        width: 20%;
+        top: 35%;
+        left: 0%;
+    }
+
+}
+
+@media (max-height : 600px) {
+
+    #loadingLogo,
+    #cityscapeLogo {
+        height: 60%;
+        top: 10%;
+        left: 20%;
+        width: 60%;
+    }
+
+    .buttonClass {
+        font-size: 100%;
+        width: 16%;
+    }
+
+    #howToPlayButton,
+    #aboutButton{
+        left: 55%;
+    }
+
+    #skipButton {
+        font-size: 120%;
+        left: 77%;
+        top: 85%;
+        width: 15%;
+        height: 10%;
+    }
+
+}
+
+.advikHomeInsideMap{
+    height: 150%;
+    width: 150%;
+    background-image:url('component/advikHomeBaseImage.png');
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.advikHomePosition {
+    position: absolute;
+}
+
+#advikHomeSofaVertical {
+    top: 23%;
+    left: 6.5%;
+    height: 28.5%;
+    width: 7.5%;
+}
+
+#advikHomeSofaHorizontal {
+    top: 7%;
+    left: 14%;
+    height: 14.5%;
+    width: 14.5%;
+}
+
+#advikHomePinkFlower {
+    height: 11%;
+    width: 5%;
+    top: 9%;
+    left: 8%;
+}
+
+#advikHomeTv {
+    top: 63%;
+    left: 45.5%;
+    height: 20%;
+    width: 1.5%;
+}
+
+#advikHomeBlueSofa {
+    top: 79.5%;
+    left: 30%;
+    height: 15%;
+    width: 12%;
+}
+
+#advikHomeBlueChair {
+    top: 55%;
+    left: 7%;
+    height: 14%;
+    width: 7%;
+}
+
+#advikHomeFlower2 {
+    top: 85%;
+    left: 43%;
+    height: 9%;
+    width: 4.3%;
+}
+
+#advikHomeFlower1 {
+    top: 53%;
+    left: 43%;
+    height: 9%;
+    width: 4.3%;
+}
+
+#advikHomeCarpet {
+    top: 60%;
+    left: 33%;
+    height: 20%;
+    width: 7%;
+}
+
+#advikHomeChair1 {
+    top: 13%;
+    left: 76%;
+    height: 10%;
+    width: 5%;
+}
+
+#advikHomeChair2 {
+    top: 13%;
+    left: 89%;
+    height: 10%;
+    width: 5%;
+}
+
+#advikHomeBed {
+    top: 72%;
+    left: 77%;
+    height: 23%;
+    width: 10%;
+}
+
+#advikHomeStudyTable {
+    top: 42%;
+    left: 88.8%;
+    height: 18%;
+    width: 5.5%;
+}
+
+#advikHomeStudyChair {
+    top: 51%;
+    left: 85%;
+    height: 8.5%;
+    width: 4.5%;
+}
+
+#advikHomeBedroomCupboard {
+    height: 23%;
+    width: 4.8%;
+    left: 91%;
+    top: 71.6%;
+}
+
+#advikHomeLamp {
+    height: 7%;
+    width: 4.5%;
+    left: 70.5%;
+    top: 87.8%;
+}
+
+#advikHomeBathtub {
+    top: 6%;
+    left: 59%;
+    height: 9%;
+    width: 9%;
+}
+
+#advikHomeToilet {
+    top: 19%;
+    left: 64%;
+    height: 7%;
+    width: 4%;
+}
+
+#advikHomeWashBasin {
+    top: 6.5%;
+    left: 48.5%;
+    height: 8%;
+    width: 4.5%;
+}
+
+#advikHomeDoormat {
+    top: 85%;
+    left: 7%;
+    height: 9%;
+    width: 8%;
+}
+
+#advikHomeBalconyTepoy {
+    top: 10%;
+    left: 82%;
+    height: 12%;
+    width: 5.5%;
+}
+
+#advikHomeLivingRoomTepoy {
+    top: 50%;
+    left: 32%;
+    height: 33%;
+    width: 15%;
+}
+
+#advikHomePendrive {
+    top: 13%;
+    left: 81.7%;
+    height: 4.8%;
+    width: 4.8%;
+}
+
+#advikHomeDiningTable {
+    top: 47.5%;
+    left: 61.5%;
+    height: 12%;
+    width: 6.5%;
+}
+
+#advikHomeGasStand {
+    top: 67%;
+    left: 52%;
+    height: 9%;
+    width: 8%;
+}
+
+#advikHomeKitchenHorizontal {
+    top: 85.5%;
+    left: 54%;
+    height: 9%;
+    width: 14%;
+}
+
+#advikHomeKitchenVertical {
+    top: 72.5%;
+    left: 64%;
+    height: 13%;
+    width: 4%;
+}
+
+#advikHomeGas {
+    top: 67%;
+    left: 53.5%;
+    height: 7%;
+    width: 4.5%;
+}
+
+#advikHomeKitchenDrawer {
+    height: 11%;
+    width: 5%;
+    top: 84%;
+    left: 48%;
+}
+
+#advikHomeBalconyFlower {
+    height: 9%;
+    width: 4.5%;
+    top: 6.7%;
+    left: 31%;
+}
+
+#advikHomeBalconyTable1 {
+    height: 9%;
+    width: 4.5%;
+    top: 17%;
+    left: 32.5%;
+}
+
+#advikHomeSwing {
+    height: 14%;
+    width: 5%;
+    top: 10%;
+    left: 42%;
+}
+
+#advikHomeBedroomWall2 {
+    height: 56%;
+    width: 2%;
+    top: 45%;
+    left: 68%;
+}
+
+#advikHomeWashroomWall1 {
+    height: 29.5%;
+    width: 2%;
+    top: 0%;
+    left: 68%;
+}
+
+#advikHomeWashroomWall2 {
+    height: 3%;
+    width: 13%;
+    top: 28%;
+    left: 57%;
+}
+
+#advikHomeWashroomWall3 {
+    height: 30%;
+    width: 0.8%;
+    top: 0%;
+    left: 47.5%;
+}
+
+#advikHomeBalconyWall {
+    height: 30%;
+    width: 3.5%;
+    top: -0.5%;
+    left: 28.5%;
+}
+
+#advikHomeKitchenWall1 {
+    height: 2%;
+    width: 12%;
+    top: 45%;
+    left: 58%;
+}
+
+#advikHomeKitchenWall2 {
+    height: 55%;
+    width: 0.8%;
+    top: 45%;
+    left: 47%;
+}
+
+#advikHomeBlackline_h1 {
+    top: 0%;
+    left: 0%;
+    height: 6.5%;
+    width: 100%;
+}
+
+#advikHomeBlackline_h2 {
+    top: 94.5%;
+    left: 0%;
+    height: 5%;
+    width: 100%;
+}
+
+#advikHomeBlackline_v1 {
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 6.4%;
+}
+
+#advikHomeBlackline_v2 {
+    top: 0%;
+    left: 94%;
+    height: 100%;
+    width: 6%;
+}
+
+.v {
+    visibility: hidden;
+}
+
+
+.fireStationInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/firestationfloor1.jpg');
+    position: relative;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.firestationPosition {
+    position: absolute;
+}
+
+
+
+#firestationwall01 {
+    height: 100%;
+    width: 002%;
+    top: 000%;
+    left: 000%;
+}
+
+
+#firestationwall03 {
+    height: 004%;
+    width: 99%;
+    top: 000%;
+    left: 001%;
+}
+
+
+#firestationwall05 {
+    height: 97.9%;
+    width: 002%;
+    top: 1.99%;
+    left: 98%;
+}
+
+
+#firestationwall07 {
+    height: 004%;
+    width: 041%;
+    top: 096%;
+    left: 001%;
+}
+
+#firestationwall08 {
+    height: 004%;
+    width: 045%;
+    top: 037%;
+    left: 53.9%;
+}
+
+#firestationwall09 {
+    height: 004%;
+    width: 030%;
+    top: 037%;
+    left: 001%;
+}
+
+#firestationwall10 {
+    height: 054%;
+    width: 002%;
+    top: 044%;
+    left: 040%;
+}
+
+#firestationwall11 {
+    height: 004%;
+    width: 007%;
+    top: 095%;
+    left: 050%;
+}
+
+#firestationwall12 {
+    height: 037%;
+    width: 002%;
+    top: 060%;
+    left: 055%;
+}
+
+
+#firestationShose1 {
+    height: 07%;
+    width: 12%;
+    top: 06%;
+    left: 03%;
+}
+
+#firestationShose2 {
+    height: 07%;
+    width: 12%;
+    top: 29%;
+    left: 03%;
+}
+
+#firestationhandgloves1 {
+    height: 07%;
+    width: 12%;
+    top: 06%;
+    left: 35%;
+}
+
+#firestationpipe {
+    height: 07%;
+    width: 12%;
+    top: 06%;
+    left: 54%;
+}
+
+#firestationfireext01 {
+    height: 07%;
+    width: 12%;
+    top: 29%;
+    left: 70%;
+}
+
+#firestationfireext02 {
+    height: 07%;
+    width: 12%;
+    top: 6%;
+    left: 70%;
+}
+
+#firestationfireext03 {
+    height: 07%;
+    width: 12%;
+    top: 6%;
+    left: 17%;
+}
+
+#firestationfireext04 {
+    height: 07%;
+    width: 12%;
+    top: 29%;
+    left: 17%;
+}
+
+#firestationhelmet1 {
+    height: 07%;
+    width: 12%;
+    top: 06%;
+    left: 85%;
+}
+
+#firestationhelmet2 {
+    height: 07%;
+    width: 12%;
+    top: 30%;
+    left: 85%;
+}
+
+#firestationvan1 {
+    height: 52%;
+    width: 8.5%;
+    top: 48%;
+    left: 90%;
+}
+
+#firestationvan2 {
+    height: 52%;
+    width: 8.5%;
+    top: 48%;
+    left: 79%;
+}
+
+#firestationvan3 {
+    height: 52%;
+    width: 8.5%;
+    top: 48%;
+    left: 64%;
+}
+
+#firestationvan4 {
+    height: 41%;
+    width: 6.5%;
+    top: 57%;
+    left: 54%;
+}
+
+
+#firestationcomputer1 {
+    height: 9%;
+    width: 07%;
+    top: 50%;
+    left: 05%;
+}
+
+#firestationcomputer2 {
+    height: 9%;
+    width: 07%;
+    top: 50%;
+    left: 20%;
+}
+
+#firestationfile {
+    height: 07%;
+    width: 12%;
+    top: 88%;
+    left: 05%;
+}
+
+#firestationtable02 {
+    height: 13%;
+    width: 07%;
+    top: 80%;
+    left: 31%;
+}
+
+#firestationpaper {
+    height: 07%;
+    width: 03.5%;
+    top: 83%;
+    left: 33%;
+}
+
+#firestationchair1 {
+    height: 7%;
+    width: 05%;
+    top: 42%;
+    left: 06%;
+}
+
+#firestationchair2 {
+    height: 7%;
+    width: 05%;
+    top: 42%;
+    left: 21%;
+}
+
+#firestationman03 {
+    height: 5%;
+    width: 5%;
+    top: 46%;
+    left: 6%;
+}
+
+#firestationman04 {
+    height: 5%;
+    width: 5%;
+    top: 46%;
+    left: 21%;
+}
+
+#firestationman1 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: fireStationMan1 25s infinite linear;
+}
+
+#firestationman1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: fireStaionwalk .8s infinite steps(2);
+}
+
+
+
+@keyframes fireStaionwalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+@keyframes fireStationMan1 {
+    0% {
+        top: 60%;
+        left: 44%;
+        transform: rotate(0deg);
+    }
+
+    17% {
+        top: 17%;
+        left: 44%;
+        transform: rotate(0deg);
+    }
+
+    18% {
+        top: 17%;
+        left: 44%;
+        transform: rotate(90deg);
+    }
+
+    43% {
+        top: 17%;
+        left: 90%;
+        transform: rotate(90deg);
+    }
+
+    44% {
+        top: 17%;
+        left: 90%;
+        transform: rotate(180deg);
+    }
+
+    46% {
+        top: 21%;
+        left: 90%;
+        transform: rotate(180deg);
+    }
+
+    47% {
+        top: 21%;
+        left: 90%;
+        transform: rotate(270deg);
+    }
+
+    73% {
+        top: 21%;
+        left: 50%;
+        transform: rotate(270deg);
+    }
+
+    74% {
+        top: 21%;
+        left: 50%;
+        transform: rotate(180deg);
+    }
+
+    92% {
+        top: 60%;
+        left: 50%;
+        transform: rotate(180deg);
+    }
+
+    93% {
+        top: 60%;
+        left: 50%;
+        transform: rotate(270deg);
+    }
+
+    98% {
+        top: 60%;
+        left: 44%;
+        transform: rotate(270deg);
+    }
+
+    99% {
+        top: 60%;
+        left: 44%;
+        transform: rotate(360deg);
+    }
+
+    100% {
+        top: 60%;
+        left: 44%;
+        transform: rotate(360deg);
+    }
+}
+
+#firestationman2 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: fireStationMan2 28s infinite linear;
+
+
+
+}
+
+#firestationman2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes fireStationMan2 {
+
+    0% {
+        top: 15%;
+        left: 35%;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        top: 70%;
+        left: 35%;
+        transform: rotate(0deg);
+    }
+
+    21% {
+        top: 70%;
+        left: 35%;
+        transform: rotate(90deg);
+    }
+
+    30% {
+        top: 70%;
+        left: 20%;
+        transform: rotate(90deg);
+    }
+
+    31% {
+        top: 70%;
+        left: 20%;
+        transform: rotate(180deg);
+    }
+
+    36% {
+        top: 60%;
+        left: 20%;
+        transform: rotate(180deg);
+    }
+
+    37% {
+        top: 60%;
+        left: 20%;
+        transform: rotate(270deg);
+    }
+
+    47% {
+        top: 60%;
+        left: 35%;
+        transform: rotate(270deg);
+    }
+
+    48% {
+        top: 60%;
+        left: 35%;
+        transform: rotate(180deg);
+    }
+
+    70% {
+        top: 15%;
+        left: 35%;
+        transform: rotate(180deg);
+    }
+
+    71% {
+        top: 15%;
+        left: 35%;
+        transform: rotate(90deg);
+    }
+
+    85% {
+        top: 15%;
+        left: 10%;
+        transform: rotate(90deg);
+    }
+
+    86% {
+        top: 15%;
+        left: 10%;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: 15%;
+        left: 35%;
+        transform: rotate(270deg);
+    }
+
+
+
+
+}
+
+
+.bankPosition{
+    position: absolute;
+}
+.bankInsideMap{
+    height:180%;
+    width:180%;
+    background-image: url('component/bankBaseImage.png');
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+    position: relative;
+}
+#bankWallVertical1{
+    left:2%;
+    height: 35.8%;
+}
+
+#bankWallVertical2{   
+    left: 20%;
+    height: 35.5%;
+}
+#bankWallVertical3{
+    left: 35.7%;
+    height: 22%;
+}
+#bankWallVertical4{
+    left: 52.2%;
+    height: 22%;
+}
+.bankWallV{
+    top: 64.3%;
+    width: 0.85%;
+}
+
+#bankWallHorizontal1{
+    left: 2%; 
+   height: 1.7%;
+    width: 11%;
+}
+#bankWallHorizontal2{
+    left:20%;
+    height: 1.7%;
+    width: 5%;
+}
+#bankWallHorizontal3{
+    left: 31.5%;
+    height: 1.7%;
+    width: 5%;
+}
+#bankWallHorizontal4{
+    left: 36.5%;
+    height: 1.7%;
+    width: 5%;
+}
+#bankWallHorizontal5{
+    left: 48%;
+    height: 1.7%;
+    width: 5%;
+}
+.bankWallH{
+    top:63%;
+}
+
+
+
+#bankChair1{
+    top: 25%;
+    left: 11.5%;
+    width: 5%;
+    height:12%;
+}
+
+#bankChair2{
+    top: 25%;
+    left: 31.5%;
+    height: 10%;
+    width: 5.8%; 
+}
+
+#bankChair3{
+    top: 25%;
+    left: 52%;
+    height: 10%;
+    width: 5.8%; 
+}
+#bankSofa{
+    left: 27.5%;
+}
+#bankSofa2{
+    left: 38%;
+}
+.bankSofaClass{
+    top: 2.6%;
+    height: 10.5%;
+    width: 10.5%;
+}
+
+#bankOfficeTable{
+    top: 3%;
+    left: 87.9%;
+    height: 22%;
+    width: 5.3%;
+}
+#bankOfficeChair{
+    top: 10%;
+    left: 93.5%;
+    height: 7.5%;
+    width: 5%;
+}
+#bankOfficeSofa1{
+    top: 2.6%;
+    left: 75%;
+    height: 8.5%;
+    width: 4.5%;
+}
+#bankOfficeSofa2{
+    top: 11%;
+    left: 70%;
+    height: 16.7%;
+    width: 4.7%;
+}
+#bankOfficeTable2{
+    top: 12.5%;
+    left: 75.5%;
+    height: 14%;
+    width: 4%;
+}
+#bankOfficeChair1{
+    top: 6%;
+    left: 84.3%;
+    height: 7.5%;
+    width: 3.5%;
+}
+#bankOfficeChair2{
+    top: 15%;
+    left: 84.3%;
+    height: 7.5%;
+    width: 3.5%;
+}
+#bankOfficeLamp{
+    top: 4%;
+    left:70.5%;
+    height: 6%;
+    width: 3%;
+}
+#bankOfficeDustbin{
+    top: 4%;
+    left:95%;
+    width: 2.5%;
+    height: 5%;
+}
+#bankOfficeCupboard{
+    top: 38.8%;
+    left: 70%;
+    height: 6.7%;
+    width: 9.7%;
+}
+#bankOfficeWallVertical{
+    top: 1%;
+    left: 69.3%;
+    height: 45%;
+    width: 0.8%;
+}
+#bankOfficeWallHorizontal{
+    top: 45%;
+    left: 69.3%;
+    height: 1.85%;
+    width: 20%;
+}
+
+#bankCabinet1{
+    top: 84.5%;
+    left:2.93%;
+    height: 13%;
+    width: 3.5%;
+}
+#bankBlackCupBoard{
+    top: 91%;
+    left: 9%;
+    height: 7.5%;
+    width: 11%;
+}
+#bankFiles1{
+    top: 75%;
+    left: 3%;
+    height:5%;
+    width: 2.7%;
+}
+#bankFiles2{
+    top: 80%;
+    left: 3.8%;
+    height:5%;
+    width: 2.7%;
+}
+#bankBlackTable{
+    top: 64.7%;
+    left: 2.85%;
+    height: 10%;
+    width: 10.1%;
+}
+#bankCounterTable{
+    top: 66%;
+    left: 23%;
+    height: 9%;
+    width: 10%;
+}
+#bankCounterTable2{
+    top: 66%;
+    left: 40%;
+    height: 9%;
+    width: 10%;
+}
+#bankchair1{
+    top: 75%;
+    left: 25.8%;
+    height:8%;
+    width: 5%;
+}
+#bankchair2{
+    top: 75%;
+    left: 43%;
+    height:8%;
+    width: 5%;
+}
+#bankFiles2{
+    top: 77%;
+    left: 21%;
+    height: 6.3%;
+    width: 2.3%;
+}
+
+#bankCalc{
+    top: 14%;
+    left: 77%;
+    height: 4.3%;
+    width: 2.3%;
+}
+#bankATM{
+    top: 2.6%;
+    left: 2%;
+    height: 12%;
+    width: 8%;
+}
+#bankKioskMachine1{
+    top: 2.6%;
+    left: 15.5%;
+    height: 16%;
+    width: 6%;
+}
+#bankKioskMachine2{
+    top: 2.6%;
+    left: 21.5%;
+    height: 16%;
+    width: 6%; 
+}
+#bankChairsVertical1{
+    top: 2.6%;
+    left: 65.7%;
+    height: 25%;
+    width: 3.5%;
+}
+#bankChairsHorizontal{
+    top: 2.6%;
+    height: 7.5%;
+    width: 12%;
+    left: 49%;
+}
+
+#bankDustbin1{
+    top: 2.8%;
+    height: 5%;
+    width: 2.5%;
+    left: 10%;
+}
+#bankDustbin2{
+    top: 2.8%;
+    height: 5%;
+    width: 2.5%;
+    left: 12.5%;
+}
+#bankDustbin3{
+    height: 5%;
+    width: 2.5%;
+    left: 33%;
+    top: 70%;
+}
+#bankDustbin4{
+    height: 5%;
+    width: 2.5%;
+    left: 36.7%;
+    top: 70%;
+}
+#bankBrownTable{
+    top: 31%;
+    left: 35%;
+    height: 10%;
+    width: 10%;
+}
+#bankBrownTable1{
+    top: 41%;
+    left: 35%;
+    height: 10%;
+    width:10%;
+}
+.bankWashroomWallV{
+    top: 74%;
+    height: 25%;
+    width: 1%;
+}
+#bankWashroomWallVertical1{
+    left:69%; 
+}
+#bankWashroomWallVertical2{
+left:84.1%;
+}
+
+.bankWashroomWallH{
+    top: 73%;
+    height:1.7%;
+    width: 7.9%;
+}
+#bankWashroomWallHorizontal1{
+    left:69%;
+}
+#bankWashroomWallHorizontal2{
+    left: 84.1%;
+}
+#bankToilet1{
+    top: 78.5%;
+    left: 70%;
+    height: 7.5%;
+    width: 5%;
+}
+#bankToilet2{
+    top: 78.5%;
+    left: 85%;
+    height: 7.5%;
+    width: 5%;
+}
+#bankWashBasin1{
+    top: 91.5%;
+    left: 76%;
+    height: 7%;
+    width: 7%;
+}
+#bankWashBasin2{
+    top: 91.5%;
+    left: 91%;
+    height: 7%;
+    width: 7%;
+}
+
+#bankBlacklineHorizontal{
+    top: 0%;
+    left: 0%;
+    height: 3%;
+    width: 100%;
+}
+#bankBlacklineHorizontal2{
+    top: 97%;
+    left: 0%;
+    height: 3%;
+    width: 100%;
+}
+#bankBlacklineVertical{
+    top: 0%;
+    left: 0%;
+    height:21%;
+    width: 2%;
+}
+#bankBlacklineVertical2{
+    top: 78%;
+    left: 0%;
+    height:20%;
+    width: 2%;
+}
+#bankBlacklineVertical3{
+    top: 0%;
+    left: 98.8%;
+    height:100%;
+    width: 1.2%;
+}
+.visibility{
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+#bankSittingMan1{
+    top: 8%;
+    left: 40%;
+    height: 7.5%;
+    width:3.5%;
+}
+#bankSittingMan2{
+    top: 5.5%;
+    left: 55%;
+    height: 6.5%;
+    width: 2.6%;
+}
+#bankSittingMan3{
+    top: 9%;
+    left: 64.5%;
+    height: 5.5%;
+    width: 4%;
+}
+#bankCounterMan1{
+    top: 72.9%;
+    left: 26.6%;
+    height: 7.5%;
+    width: 3.3%;
+}
+#bankCounterMan2{
+    top: 73%;
+    left: 43.5%;
+    height: 7.5%;
+    width: 4%;
+}
+#bankSittingWoman1{
+    top: 7%;
+    left: 30%;
+    height: 8.5%;
+    width: 4%;
+}
+#bankSittingWoman2{
+    top: 20.5%;
+    left: 64.5%;
+    height: 5.5%;
+    width: 4%;
+}
+#bankManager{
+    top: 11%;
+    left: 92.5%;
+    height: 5.6%;
+    width: 4.8%;
+}
+
+
+/* -------------------------------------------------------------- */
+#bankPolice1{
+    position: absolute;
+    width: calc(7% / 2);
+    height: 6%;
+    top: 18%;
+    left: 4%;
+    z-index: 1;
+    overflow: hidden;
+     /* display: none;  */
+    animation: bankPoliceAnimation 11s infinite linear ;
+}
+
+#bankPolice1 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes bankPoliceAnimation {
+    0%{
+        top: 18%;
+        left: 4%;
+        transform:rotate(0deg);
+    }
+    33%{
+        top: 53%;
+        left: 4%;
+        transform:rotate(0deg);
+    }
+    34%{
+        transform:rotate(-90deg);
+        left: 4%;
+        top: 53%;
+    }
+    50%{
+        transform:rotate(-90deg);
+        left: 10%;
+        top: 53%;
+    }
+    55%{
+        transform:rotate(90deg);
+        left: 10%;
+        top: 53%;
+    }
+    70%{
+        transform:rotate(90deg);
+        left: 4%;
+        top: 53%;
+    }
+    71%{
+        transform:rotate(180deg);
+        left: 4%;
+        top: 53%;
+    }
+    98%{
+        transform:rotate(180deg);
+        left: 4%;
+        top: 18%;
+    }
+    100%{
+        top: 18%;
+        left: 4%;
+        transform:rotate(0deg);
+    }
+}
+/* ----------------------------------------------------- */
+#bankYellowMan{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 20%;
+    left: 22%;
+    z-index: 1;
+    overflow: hidden;
+     /* display: none;  */
+    animation: bankYellowManAni  40s infinite linear ;
+}
+
+#bankYellowMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes bankYellowManAni{
+    0%{
+        transform:rotate(0deg);
+        top: 20%;
+        left: 22%;
+    }
+    1%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 22%;
+    }
+    11%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 54%;
+    }
+    12%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 54%;
+    }
+    24%{
+        transform:rotate(180deg);
+        top: 87%;
+        left: 54%;
+    }
+    25%{
+        transform:rotate(270deg);
+        top: 87%;
+        left: 54%;
+    }
+    30%{
+        transform:rotate(270deg);
+        top: 87%;
+        left: 38%;
+    }
+    31%{
+        transform:rotate(90deg);
+        top: 87%;
+        left: 38%;
+    }
+    37%{
+        transform:rotate(90deg);
+        top: 87%;
+        left: 54%;
+    }
+    38%{
+        transform:rotate(0deg);
+        top: 87%;
+        left: 54%;
+    }
+    44%{
+        transform:rotate(0deg);
+        top: 50%;
+        left: 54%;
+    }
+    45%{
+        transform:rotate(90deg);
+        top: 50%;
+        left: 54%;
+    }
+    57%{
+        transform:rotate(90deg);
+        top: 50%;
+        left: 92%;
+    }
+    58%{
+        transform:rotate(0deg);
+        top: 50%;
+        left: 92%;
+    }
+    62%{
+        transform:rotate(0deg);
+        top: 27%;
+        left: 92%;
+    }
+    64%{
+        transform:rotate(180deg);
+        top: 27%;
+        left: 92%;
+    }
+    69%{
+        transform:rotate(180deg);
+        top: 50%;
+        left: 92%;
+    }
+    70%{
+        transform:rotate(270deg);
+        top: 50%;
+        left: 92%;
+    }
+    83%{
+        transform:rotate(270deg);
+        top: 50%;
+        left: 54%;
+    }   
+    84%{
+        transform:rotate(360deg);
+        top: 50%;
+        left: 54%;
+    }   
+    89%{
+        transform:rotate(360deg);
+        top: 20%;
+        left: 54%;
+    }
+    90%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 54%;
+    }
+    100%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 22%;
+    }
+   
+   
+}
+/* --------------------------------------------------------*/
+
+#bankRedMan{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 20%;
+    left: 8.5%;
+    z-index: 1;
+    overflow: hidden;
+     /* display: none;  */
+    animation: bankRedManAni  20s infinite linear ;
+}
+
+#bankRedMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes bankRedManAni {
+    0%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 8.5%;
+    }
+    1%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 8.5%;
+    }
+    7%{
+        transform:rotate(270deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    8%{
+        transform:rotate(360deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    35%{
+        transform:rotate(360deg);
+        top: 80%;
+        left: 13.5%;
+    }
+    37%{
+        transform:rotate(180deg);
+        top: 80%;
+        left: 13.5%;
+    }
+    47%{
+        transform:rotate(180deg);
+        top: 55%;
+        left: 13.5%;
+    }
+    48%{
+        transform:rotate(270deg);
+        top: 55%;
+        left: 13.5%;
+    }
+    58%{
+        transform:rotate(270deg);
+        top: 55%;
+        left: 27%;
+    }
+    59%{
+        transform:rotate(360deg);
+        top: 55%;
+        left: 27%;
+    }
+    62%{
+        transform:rotate(360deg);
+        top: 58%;
+        left: 27%;
+    }
+    64%{
+        transform:rotate(180deg);
+        top: 58%;
+        left: 27%;
+    }
+    67%{
+        transform:rotate(180deg);
+        top: 50%;
+        left: 27%;
+    }
+    74%{
+        transform:rotate(180deg);
+        top: 35%;
+        left: 27%;
+    }
+    75%{
+        transform:rotate(90deg);
+        top: 35%;
+        left: 27%;
+    }
+    85%{
+        transform:rotate(90deg);
+        top: 35%;
+        left: 13.5%;
+    }
+    86%{
+        transform:rotate(180deg);
+        top: 35%;
+        left: 13.5%;
+    }
+    94%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    95%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 13.5%;
+    }
+    99%{
+        transform:rotate(90deg);
+        top: 20%;
+        left: 8.5%;
+    }
+    100%{
+        transform:rotate(180deg);
+        top: 20%;
+        left: 8.5%;
+    }
+   
+}
+
+/* ---------------------------------------------------------------- */
+
+.bankwalk{
+    animation: bankwalk .8s infinite steps(2);
+}
+@keyframes bankwalk {
+    0%{
+        left: 0%;
+    }
+    
+    100%{
+        left: -200%;
+    }
+}
+
+*
+{
+	margin:0%;
+	padding:0%;
+	
+}
+
+.main_game_zone{
+    display: none;
+}
+
+#main_game_zone
+{
+	background: url("image/background_game.jpg") no-repeat center fixed;
+	background-size: cover;
+	height:100vh;
+	width:100vw;
+}
+
+.flex-container
+{
+	height:100%;
+	width:100%;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: center;
+	align-items: center;
+	border:5px grooved black;
+	background-color:rgba(38,15,34,0.7);
+	
+}	
+.flex-items
+{
+	height:28%;
+	width:15%;
+	padding:3%;
+	padding-right: 4%;
+	margin:4%;
+	border:4px ridge magenta;
+	box-shadow: 0.4em 0.4em  #DFCCFB;	
+	border-radius:10%;
+	background-color:rgba(23,08,34,0.8);
+	justify-content:center;
+	text-align:center;
+}
+
+.game_zone_p
+{
+	color:white;
+	font-size: 1rem;
+	font-family:consolas;
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+
+}
+.game_zone_img
+{
+	height:100%;
+	width:120%;
+	border:4px double white;
+	border-radius:8%;
+}
+.flex-items:hover
+{
+	background: linear-gradient(45deg,navy,rgba(55,56,95,0.5), rgba(140,193,241,0.5),white);
+	border:4px ridge rgb(5,6,42);
+	transform: scale(1.1);
+}
+
+@media (max-width : 600px){
+
+	.flex-container{
+	height:100%;
+	width:100%;
+	margin: 0%;
+	}	
+
+	.flex-items{
+	height:20%;
+	width:40%;
+	padding:1%;
+	}
+
+	.game_zone_img{
+		width: 90%;
+	}
+
+	.game_zone_p{
+		display: none;
+	}
+}
+
+
+.gardenPosition{
+    position: absolute;
+}
+
+.gardenInsideMap{
+  height: 150%;
+  width: 150%;
+  background-image: url('component/gardenBaseImage.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+  position: relative;
+}
+/* ------------------------------------------ */
+#gardenBlueMan{
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    top: 17%;
+    left: 26%;
+    z-index: 1;
+    overflow: hidden;
+    animation: gardenBlueMan 17s infinite linear ;
+}
+#gardenBlueMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes gardenBlueMan {
+    0%{
+        top: 17%;
+        left: 26%;
+        transform: rotate(0deg); 
+    }
+    32%{
+        top: 76%;
+        left: 26%;
+        transform: rotate(0deg); 
+    }
+    33%{
+        top: 76%;
+        left: 26%;
+        transform: rotate(-90deg); 
+    }
+    50%{
+        top: 76%;
+       left: 53%; 
+       transform: rotate(-90deg); 
+    }
+    51%{
+        top: 76%;
+        left: 53%; 
+        transform: rotate(-180deg); 
+    }
+    80%{
+        left: 53%; 
+        top: 17%;
+        transform: rotate(-180deg); 
+    }
+    81%{
+        transform: rotate(-270deg);
+        left: 53%; 
+        top: 17%;
+    }
+    100% {
+        left: 26%; 
+        top: 17%;
+        transform: rotate(-270deg); 
+    }
+
+    
+}
+/* ------------------------------------------------------- */
+#gardenPinkWoman{
+    position: absolute;
+    width: calc(6.5% / 2);
+    height: 6.5%;
+    top: 35%;
+    left: 5%;
+    overflow: hidden;
+    animation: gardenPinkWoman 32s infinite linear ;
+}
+#gardenPinkWoman > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes gardenPinkWoman {
+    0%{
+        transform: rotate(-90deg);
+        top: 35%;
+        left:5%
+    }
+    8%{
+        transform: rotate(-90deg);
+        left: 20%;
+        top: 35%;
+    }
+    9%{
+        transform: rotate(-180deg);
+        left: 20%;
+        top: 35%;
+    }
+    16%{
+        left: 20%;
+        top: 9%;
+        transform: rotate(-180deg);
+    }
+    17%{
+       left: 20%;
+        top: 9%;
+        transform: rotate(-90deg);
+    }
+    47%{
+        left: 80%;
+        top: 9%;
+        transform: rotate(-90deg);
+    }
+    48%{
+         transform: rotate(90deg);
+         left: 80%;
+         top: 9%;
+    }
+    72%{
+        transform: rotate(90deg);
+        left: 20%;
+        top: 9%;
+   }
+   73%{
+        transform: rotate(0deg);
+        left: 20%;
+        top: 9%;
+   }
+   83%{
+    transform: rotate(0deg);
+    left: 20%;
+    top: 60%;
+   }
+   84%{
+    transform: rotate(90deg);
+    left: 20%;
+    top: 60%;
+   }
+
+   85%{
+    transform: rotate(90deg);
+    left: 20%;
+    top: 60%;
+   }
+   90%{
+    transform: rotate(90deg);
+    left: 5%;
+    top: 60%;
+   }
+   91%{
+    transform: rotate(180deg);
+    left: 5%;
+    top: 60%;
+   }
+   99%{
+    transform: rotate(180deg);
+    left: 5%;
+    top: 35%;
+   }
+   100%{
+    transform: rotate(270deg);
+    left: 5%;
+    top: 35%;
+   }
+}
+
+
+/* ------------------------------------------------------------- */
+#gardenBrownBoy{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 5%;
+    top: 85%;
+    left: 23%;
+    overflow: hidden;
+    animation: gardenBrownBoy 28s  infinite linear ;
+}
+#gardenBrownBoy > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes gardenBrownBoy {
+    0%{
+        top: 85%;
+        left: 23%;
+        transform: rotate(-90deg);
+    }
+    19%{
+        top: 85%;
+        left: 62%; 
+        transform: rotate(-90deg);
+    }
+    20%{
+        top: 85%;
+        left: 62%; 
+        transform: rotate(-180deg);
+    }
+    29%{
+        top: 50%;
+        left: 62%; 
+        transform: rotate(-180deg);
+    }
+    30%{
+        top: 50%;
+        left: 62%; 
+        transform: rotate(-90deg);
+    }
+    39%{
+        top: 50%;
+        left: 80%; 
+        transform: rotate(-90deg);
+    }
+    40%{
+        top: 50%;
+        left: 80%; 
+        transform: rotate(0deg);
+    }
+    48%{
+        top: 80%;
+        left: 80%; 
+        transform: rotate(0deg);
+    }
+    49%{
+        top: 80%;
+        left: 80%; 
+        transform: rotate(90deg);
+    }
+    54%{
+        top: 80%;
+        left: 70%; 
+        transform: rotate(90deg);
+    }
+    55%{
+        top: 80%;
+        left: 70%; 
+        transform: rotate(270deg);
+    }
+    60%{
+        top: 80%;
+        left: 80%; 
+        transform: rotate(270deg);
+    }
+    61%{
+        transform: rotate(180deg);
+        top: 80%;
+        left: 80%; 
+    }
+    68%{
+        transform: rotate(180deg);
+        top: 50%;
+        left: 80%; 
+    }
+    69%{
+        transform: rotate(90deg);
+        left: 80%; 
+        top: 50%;
+    }
+    76%{
+        transform: rotate(90deg);
+        left: 62%; 
+        top: 50%;
+    }
+    77%{
+        transform: rotate(0deg);
+        left: 62%; 
+        top: 50%;
+    }
+    85%{
+        transform: rotate(0deg);
+        left: 62%; 
+        top: 85%;
+    }
+    86%{
+        transform: rotate(90deg);
+        left: 62%; 
+        top: 85%;
+    }
+    99%{
+        transform: rotate(90deg);
+        left: 23%; 
+        top: 85%;
+    }
+    100%{
+        transform: rotate(-90deg);
+        left: 23%; 
+        top: 85%; 
+    }
+ 
+
+/* ------------------------------------------------------------------- */
+}
+.gardenWalk{
+    animation: gardenWalk .9s infinite steps(2);
+}
+
+@keyframes gardenWalk {
+    0%{
+        left: 0%;
+    }
+
+    100%{
+        left: -200%;
+    }
+}
+
+#gardenSittingMan1{
+    top: 15%;
+    left: 5.5%;
+    height: 7%;
+    width: 5%;
+}
+#gardenSittingMan2{
+    top: 79%;
+    left: 15%;
+    height: 9%;
+    width: 3%;
+}
+#gardenSittingWoman{
+    top: 12.3%;
+    left: 13%;
+    height: 8%;
+    width: 2.7%;
+}
+
+#gardenSittingWoman2{
+    top: 75%;
+    left: 8%;
+    height: 6.5%;
+    width: 4.3%;
+}
+#gardenSittingWoman3{
+    top: 8%;
+    left: 87%;
+    height: 9.5%;
+    width: 4.3%;
+}
+#gardenDog{
+    top: 10%;
+    left: 92%;
+    height:6%;
+    width: 2%;
+}
+
+
+#gardenRedSlide{
+    height: 13%;
+    top: 33%;
+    left: 83%;
+    width: 12%;
+}
+#gardenBlueSlide{
+    height: 22%;
+    top: 68%;
+    left: 83%;
+    width: 13%;
+}
+#gardenSwing{
+    width: 10%;
+    height: 10%;
+    top: 33%;
+    left: 68%;
+}
+
+#gardenFountain{
+    top: 38%;
+    height: 20%;
+    left: 42%;
+    width: 10%;
+}
+#gardenSkateBoard{
+    top: 76%;
+    left: 18%;
+    height: 4%;
+    width: 5%;
+}
+
+#gardenBench4{
+    height: 8.5%;
+    width: 9%;
+    top: 82%;
+    left: 13%;
+}
+#gardenBench3{
+    height: 17%;
+    width: 4%;
+    top: 73%;
+    left: 7%;
+}
+#gardenBench1{
+    height: 8.5%;
+    top: 10%;
+    left: 11%;
+    width: 9%;
+}
+#gardenBench2{
+    height: 17%;
+    width: 4%;
+    top: 13%;
+    left: 5%;
+}
+
+#gardenGreen_line1{
+    top: 0%;
+    left: 0%;
+    height: 6.5%;
+    width: 100%;
+}
+#gardenGreen_line2{
+    top: 91%;
+    left: 0%;
+    height: 9%;
+    width: 100%;
+}
+#gardenGreen_line3{
+    top: 0%;
+    left: 0%;
+    height: 65%;
+    width: 3.5%;
+}
+#gardenGreen_line4{
+    top: 64%;
+    left: 0%;
+    height: 30%;
+    width: 5%;
+}
+#gardenGreen_line5{
+    top: 0%;
+    left: 97.5%;
+    height: 100%;
+    width: 2.5%;
+}
+
+#gardenGrass_h1{
+    top: 28.5%;
+    left: 66%;
+    height:5%;
+    width: 30%;
+}
+#gardenGrass_h2{
+    top: 90%;
+    left: 66%;
+    height:5%;
+    width: 30%;
+}
+#gardenGrass_v1{
+    top: 30%;
+    left: 65%;
+    height: 15%;
+    width: 3%;
+}
+#gardenGrass_v2{
+    top: 30%;
+    left: 95%;
+    height: 64%;
+    width: 3%;
+}
+#gardenGrass_v3{
+    top: 59%;
+    left: 65%;
+    height: 35%;
+    width: 3%;
+}
+.gardenVisibility{
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+
+.govOfficeInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/floor142.jpg');
+    position: relative;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.govofficePosition {
+    position: absolute;
+}
+
+
+#govofficewall01 {
+    height: 100%;
+    width: 1.5%;
+    top: 0%;
+    left: 0%;
+}
+
+#govofficewall02 {
+    height: 3%;
+    width: 98.5%;
+    top: 0%;
+    left: 1.5%;
+}
+
+#govofficewall03 {
+    height: 97.8%;
+    width: 1.5%;
+    top: 1.6%;
+    left: 98.5%;
+}
+
+#govofficewall04 {
+    height: 52.5%;
+    width: 1%;
+    top: 1.6%;
+    left: 22%;
+}
+
+#govofficewall05 {
+    height: 52%;
+    width: 1%;
+    top: 1.6%;
+    left: 68%;
+}
+
+#govofficewall06 {
+    height: 2%;
+    width: 16%;
+    top: 55%;
+    left: 1.5%;
+}
+
+#govofficewall07 {
+    height: 2%;
+    width: 18%;
+    top: 53%;
+    left: 36%;
+}
+
+#govofficewall08 {
+    height: 2%;
+    width: 25%;
+    top: 56.5%;
+    left: 74.3%;
+
+}
+
+#govofficewall09 {
+    height: 2.5%;
+    width: 24%;
+    top: 97.5%;
+    left:0.8%;
+}
+
+#govofficewall10 {
+    height: 2.5%;
+    width: 61%;
+    top: 97.5%;
+    left: 39%;
+}
+
+#govofficewall11 {
+    height: 51.5%;
+    width: 1%;
+    top: 1.6%;
+    left: 45%;
+
+}
+
+#govofficewall12 {
+    height: 2%;
+    width: 7%;
+    top: 53%;
+    left: 22%;
+}
+
+#govofficewall13 {
+    height: 2%;
+    width: 9%;
+    top: 53%;
+    left: 60%;
+}
+
+
+#govofficeTablecomputer1 {
+    height: 13%;
+    width: 20%;
+    left: 75%;
+    top: 26%;
+
+}
+
+#govofficeTablecomputer2 {
+    height: 10%;
+    width: 10%;
+    left: 06%;
+    top: 26%;
+}
+
+#govofficeTablecomputer3 {
+    height: 8%;
+    width: 20%;
+    left: 75%;
+    top: 58.5%;
+
+
+}
+
+#govofficeChair1 {
+    height: 7%;
+    width: 4%;
+    left: 34%;
+    top: 25%;
+}
+
+#govofficeChair2 {
+    height: 7%;
+    width: 4%;
+    left: 54.3%;
+    top: 24%;
+}
+
+#govofficeChair9 {
+    height: 7%;
+    width: 4%;
+    left: 76%;
+    top: 19%;
+}
+
+#govofficeChair10 {
+    height: 7%;
+    width: 4%;
+    left: 82.6%;
+    top: 19%;
+}
+
+#govofficeChair11 {
+    height: 7%;
+    width: 4%;
+    left: 90.3%;
+    top: 19%;
+}
+
+#govofficeChair12 {
+    height: 7%;
+    width: 4%;
+    left: 76%;
+    top: 38.9%;
+}
+
+#govofficeChair13 {
+    height: 7%;
+    width: 4%;
+    left: 82.6%;
+    top: 38.9%;
+}
+
+#govofficeChair14 {
+    height: 7%;
+    width: 4%;
+    left: 90.3%;
+    top: 38.9%;
+}
+
+#govofficeChair15 {
+    height: 7%;
+    width: 4%;
+    left: 09%;
+    top: 19%;
+}
+
+#govofficeChair16 {
+    height: 7%;
+    width: 4%;
+    left: 6%;
+    top: 37%;
+}
+
+#govofficeChair17 {
+    height: 7%;
+    width: 4%;
+    left: 12%;
+    top: 37%;
+}
+
+#govofficeChair18 {
+    height: 7%;
+    width: 4%;
+    left: 75.3%;
+    top: 66%;
+}
+
+#govofficeChair19 {
+    height: 7%;
+    width: 4%;
+    left: 83%;
+    top: 66%;
+}
+
+#govofficeChair20 {
+    height: 7%;
+    width: 4%;
+    left: 90%;
+    top: 66%;
+}
+
+#govofficesofa1 {
+    height: 9%;
+    width: 9%;
+    left: 1.5%;
+    top: 89%;
+}
+
+#govofficesofa2 {
+    height: 9%;
+    width: 9%;
+    left: 15%;
+    top: 89%;
+}
+
+#govofficesofa3 {
+    height: 9%;
+    width: 9%;
+    left: 40%;
+    top: 89%;
+}
+
+#govofficesofa4 {
+    height: 9%;
+    width: 9%;
+    left: 55%;
+    top: 89%;
+}
+
+#govofficesofa5 {
+    height: 9%;
+    width: 9%;
+    left: 70%;
+    top: 89%;
+}
+
+#govofficesofa6 {
+    height: 8%;
+    width: 8%;
+    left: 85%;
+    top: 89%;
+}
+
+#gov0fficeCupboard1 {
+    height: 6%;
+    width: 5%;
+    left: 1.5%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard2 {
+    height: 6%;
+    width: 7%;
+    left: 58%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard3 {
+    height: 6%;
+    width: 7%;
+    left: 69%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard4 {
+    height: 6%;
+    width: 5%;
+    left: 9%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard5 {
+    height: 6%;
+    width: 5%;
+    left: 16%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard6 {
+    height: 6%;
+    width: 7%;
+    left: 48%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard7 {
+    height: 6%;
+    width: 7%;
+    left: 27%;
+    top: 3%;
+
+
+}
+
+#gov0fficeCupboard8 {
+    height: 6%;
+    width: 7%;
+    left: 37%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard9 {
+    height: 6%;
+    width: 7%;
+    left: 79%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard10 {
+    height: 6%;
+    width: 7%;
+    left: 89%;
+    top: 3%;
+
+}
+
+
+
+#govofficeDustbin1{
+    height: 6%;
+    width: 3%;
+    left: 95%;
+    top: 91%;
+
+}
+
+#govofficezerox1 {
+    height: 8%;
+    width: 5%;
+    left: 2%;
+    top: 59%;
+
+}
+
+
+#govofficeFireext1 {
+    height: 3%;
+    width: 3%;
+    left: 13%;
+    top: 60%;
+}
+
+
+#govofficeFireext2 {
+    height: 3%;
+    width: 3%;
+    left: 97%;
+    top: 51%;
+}
+
+#govofficeScreen1 {
+    height: 30%;
+    width: 1%;
+    left: 26%;
+    top: 13%;
+}
+
+#govofficeScreen2 {
+    height: 27%;
+    width: 1%;
+    left: 69%;
+    top: 16%;
+}
+
+
+#govofficetable1 {
+    height: 8%;
+    width: 8%;
+    top: 31%;
+    left: 32%;
+}
+
+#govofficetable2 {
+    height: 8%;
+    width: 8%;
+    top: 31%;
+    left: 53%;
+}
+
+#govofficefile1 {
+    height: 13%;
+    width: 2.5%;
+    top: 14%;
+    left: 23%;
+}
+
+#govofficefile2 {
+    height: 13%;
+    width: 2.5%;
+    top: 30%;
+    left: 23%;
+}
+
+#govofficefile3 {
+    height: 13%;
+    width: 2.5%;
+    top: 14%;
+    left: 46%;
+}
+
+#govofficefile4 {
+    height: 13%;
+    width: 2.5%;
+    top: 30%;
+    left: 46%;
+}
+
+#govofficefile5 {
+    height: 13%;
+    width: 2.5%;
+    top: 14%;
+    left: 65.5%;
+}
+
+#govofficefile6 {
+    height: 13%;
+    width: 2.5%;
+    top: 30%;
+    left: 65.5%;
+}
+
+
+
+#govofficeman01 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 21%;
+    left: 8.7%;
+
+}
+
+#govofficeman02 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 26%;
+    left: 33.7%;
+
+}
+
+#govofficeman03 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 26%;
+    left: 54%;
+
+}
+
+#govofficeman04 {
+    height: 6.7%;
+    width: 4%;
+    top: 87%;
+    left: 7%;
+
+}
+
+#govofficeman05 {
+    height: 6.7%;
+    width: 3%;
+    top: 87%;
+    left: 43%;
+
+}
+
+#govofficeman06 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 21%;
+    left: 76%;
+
+}
+
+#govofficeman07 {
+    height: 6.7%;
+    width: 4%;
+    top: 21%;
+    left: 82.8%;
+
+}
+
+#govofficeman08 {
+    height: 6.7%;
+    width: 4%;
+    top: 21%;
+    left: 90.3%;
+
+}
+
+#govofficeman09 {
+    height: 6.7%;
+    width: 4.4%;
+    top: 37.2%;
+    left: 76%;
+
+}
+
+#govofficeman10 {
+    height: 6.7%;
+    width: 4%;
+    top: 37.2%;
+    left: 82.2%;
+
+}
+
+#govofficeman11 {
+    height: 6.7%;
+    width: 4%;
+    top: 37.2%;
+    left: 90.4%;
+
+}
+
+#govofficeman12 {
+    height:6.7%;
+    width: 4.7%;
+    top: 65%;
+    left: 75%;
+
+}
+
+#govofficeman13 {
+    height: 6.7%;
+    width: 4%;
+    top: 65%;
+    left: 83%;
+
+}
+
+#govofficeman14 {
+    height: 6.7%;
+    width: 4%;
+    top: 65%;
+    left: 90%;
+
+}
+
+
+
+
+
+
+#govofficeman1 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 42%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: govOfficeman1 20s infinite linear;
+}
+
+#govofficeman1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: govOfficewalk .8s infinite steps(2);
+}
+
+
+
+@keyframes govOfficewalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+
+
+@keyframes govOfficeman1 {
+
+    0%{
+        top: 42%;
+        left: 30%;
+        transform: rotate(180deg);
+    }
+    15%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(180deg);
+    }
+    16%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(90deg);
+    }
+    49%{
+        top: 60%;
+        left: 70%;
+        transform: rotate(90deg);
+    }
+    51%{
+        top: 60%;
+        left: 70%;
+        transform: rotate(-90deg);
+    }
+    85%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(-90deg);
+    }
+    86%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+    98%{
+        top: 42%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+    100%{
+        top: 42%;
+        left: 30%;
+        transform: rotate(180deg);
+    }
+   
+}
+
+#govofficeman2 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 42%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: govOfficeman2 20s infinite linear;
+}
+
+#govofficeman2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+
+
+@keyframes govOfficeman2 {
+
+    0%{
+        top: 80%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+    10%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+    11%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(-90deg);
+    }
+    40%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(-90deg);
+    }
+    41%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+    50%{
+        top: 60%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+    52%{
+        top: 60%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+    60%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+    61%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(90deg);
+    }
+    90%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(90deg);
+    }
+    91%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(180deg);
+    }
+    98%{
+        top: 80%;
+        left: 40%;
+        transform: rotate(180deg);
+    }
+    100%{
+        top: 80%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+}
+
+#govofficeman3{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 42%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: govOfficeman3 20s infinite linear;
+}
+
+#govofficeman3>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes govOfficeman3 {
+
+    0%{
+        top: 85%;
+        left: 50%;
+        transform: rotate(0deg);
+    }
+    6%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(0deg);
+    }
+    7%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(90deg);
+    }
+   
+   
+    50%{
+        top: 80%;
+        left: 90%;
+        transform: rotate(90deg);
+    }
+    52%{
+        top: 80%;
+        left: 90%;
+        transform: rotate(-90deg);
+    }
+   
+   
+    90%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(-90deg);
+    }
+    91%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(-180deg);
+    }
+    98%{
+        top: 85%;
+        left: 50%;
+        transform: rotate(-180deg);
+    }
+    100%{
+        top: 85%;
+        left: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+.homeInsideMap{
+    height: 130%;
+    width: 130%;
+    background-image: url('component/homeFloor.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    position: relative;
+}
+
+.homePosition {
+    position: absolute;
+}
+
+#homeBed{
+    height: 27%;
+    width: 13%;
+    top: 7%;
+    left: 13%;
+}
+#homeBedroomCupboard{
+    height: 30%;
+    width: 6.5%;
+    top: 4%;
+    left: 2%;
+}
+#homeBedRoomVas{
+    height: 10%;
+    width: 5%;
+    top: 42%;
+    left: 31.5%;
+}
+#homeBedroomTable {
+    height: 10%;
+    width: 7%;
+    top: 8%;
+    left: 29%;
+}
+
+#homePinkChair1 {
+    height: 10%;
+    width: 5%;
+    top: 20%;
+    left: 30%;
+}
+
+#homePinkChair2{
+    height: 9%;
+    width: 5%;
+    top: 64%;
+    left: 15%;
+}
+#homeStudyTable {
+    height: 15%;
+    width: 5%;
+    top: 48%;
+    left: 5%;
+}
+#homeBookShelf {
+    height: 9%;
+    width: 9%;
+    top: 64%;
+    left: 5%;
+}
+#homeBedroomWall1{
+    top: 1.6%;
+    left: 37%;
+    height: 54%;
+    width: 1.7%;
+}
+#homeBedroomWall2{
+    top: 52.5%;
+    left: 31%;
+    height: 3%;
+    width: 6%;
+}
+
+#homeBedroomWall3{
+    top: 54%;
+    left: 20%;
+    height: 22.5%;
+    width: 2%;
+}
+#homeBedroomWall4{
+    top: 73%;
+    left: 5%;
+    width: 16%;
+    height: 3.5%; 
+}
+#homeBedroomWall5{
+    top: 52.5%;
+    left: 20%;
+    height: 3.5%;
+    width: 4%;
+}
+/* ----------------------------------------- */
+#homeSofaHorizontal{
+    height: 15%;
+    width: 20%;
+    top: 7%;
+    left: 65%;
+}
+
+#homeSofaVertical{
+    height: 35%;
+    width:9%;
+    top: 25%;
+    left: 88%;
+}
+#homeLivingRoomCabinet {
+    height: 10%;
+    width: 13%;
+    top: 7%;
+    left: 39%;
+}
+#homeTv{
+    height: 26%;
+    width: 2.2%;
+    top: 18%;
+    left: 38.7%;
+}
+#homeLivingRoomCarpet{
+    height: 29%;
+    width: 9%;
+    top: 20%;
+    left: 50%;
+}
+#homeBlueChair {
+    height: 12%;
+    width: 6%;
+    top: 7.5%;
+    left: 58%;
+}
+#homeTepoy {
+    height: 19%;
+    width: 10%;
+    top: 31%;
+    left: 70%
+}
+#homeSkinBook {
+    height: 8%;
+    width: 5%;
+    top: 12%;
+    left: 70%;
+}
+#homeGreenPlant {
+    height: 16%;
+    width:8%;
+    top: 9%;
+    left: 87%;
+}
+/* ---------------------------------------------------- */
+#homeWashRoom {
+    height: 8%;
+    width: 5.5%;
+    top: 87%;
+    left: 5%;
+}
+
+#homeBathtub {
+    height: 9%;
+    width: 9%;
+    top: 77%;
+    left: 5%;
+}
+
+#homeWashBasin{
+    height: 7%;
+    width: 4%;
+    top: 89%;
+    left: 20%;
+}
+/* -------------------------------------------------------- */
+#homeStrawberry {
+    height: 7%;
+    width: 3.2%;
+    top: 88%;
+    left: 89%;
+}
+#homeDiningTable{
+    height: 15%;
+    width: 9%;
+    top: 64%;
+    left: 59%;
+}
+#homeSpect {
+    height: 3%;
+    width: 2%;
+    top: 73%;
+    left: 65%;
+}
+#homeKitchenCupboard {
+    height: 8%;
+    width: 14%;
+    top: 88%;
+    left: 64%;
+}
+#homeKitchenHorizontal{
+    height: 8.5%;
+    width: 9%;
+    top: 87%;
+    left: 88%;
+}
+#homeKitchenVertical{
+    height: 25%;
+    width: 5%;
+    top:62.5%;
+    left: 92%;
+}
+
+#homeCup {
+    height: 8%;
+    width: 4%;
+    top: 88%;
+    left: 64%;
+}
+
+#homeCup1 {
+    height: 8%;
+    width: 4%;
+    top: 88%;
+    left: 67%;
+}
+
+#homeCup2 {
+    height: 8%;
+    width: 4%;
+    top: 88%;
+    left: 71%;
+}
+
+#homeCup3 {
+    height: 8%;
+    width: 4%;
+    top: 88%;
+    left: 74%;
+}
+
+
+/* ------------------------------------------------- */
+
+
+
+#homeBrownDoormat{
+    height: 9%;
+    width: 7%;
+    top: 65%;
+    left: 23%;
+}
+
+#homeBlueDoormat{
+    height: 10%;
+    width: 8%;
+    top: 83%;
+    left: 46%;
+}
+
+
+
+
+/* #key {
+    height: 4.5%;
+    width: 1.5%;
+    top: 69%;
+    left: 6.5%;
+} */
+
+
+
+#homeShoes {
+    height: 20%;
+    width: 5%;
+    top: 76%;
+    left: 33%;
+}
+
+
+
+
+
+
+
+#homeKitchenWall1{
+    top: 60%;
+    left: 89.6%;
+    height: 3%;
+    width: 10%;
+}
+#homeKitchenWall2{
+    top: 60%;
+    left: 55%;
+    height: 15%;
+    width: 1.5%;
+}
+#homeKitchenWall3{
+    top: 90%;
+    left: 55%;
+    height: 10%;
+    width: 1.5%;
+  
+}
+#homeKitchenWall4{
+    top: 60%;
+    left: 55%;
+    width: 18%;
+    height: 3%;
+}
+
+
+#homeRestroomWall1{
+    top: 73%;
+    left: 30%;
+    height: 27%;
+    width: 1.8%;
+}
+#homeShoePlaceWall{
+    top: 73%;
+    left: 30%;
+    height: 3%;
+    width: 10%;
+  
+}
+#blackline_h1{
+    left: 0%;
+    top: 0%;
+    height: 7%;
+    width: 100%;
+}
+#blackline_h2{
+    left: 0%;
+    top: 96%;
+    height: 7%;
+    width: 100%;
+}
+#blackline_v1{
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 5%;
+}
+#blackline_v2{
+    left: 97%;
+    top: 0%;
+    height: 100%;
+    width: 3%;
+}
+.hide{
+    visibility: hidden;
+}
+
+.hospitalPosition
+{
+    position: absolute;
+}
+.hospitaInsideMap
+{
+    background-image: url("component/hospitalBaseImageA.PNG");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 150%;
+    width: 170%;
+    display: none;
+    position:relative;
+}
+
+/* OUTER WALLS */
+
+#hospitalWall1
+{
+    top:0%;
+    left:0%;
+    height:2%;
+    width:100%;
+}
+#hospitalWall2
+{
+    top:0.8%;
+    left:0%;
+    height:37%;
+    width:1%;
+}
+#hospitalWall3
+{
+    top:58.8%;
+    left:0%;
+    height:40.5%;
+    width:1%;
+}
+#hospitalWall4
+{
+    top:98%;
+    left:0%;
+    height:2%;
+    width:100%;
+}
+#hospitalWall5
+{
+    top:0.8%;
+    left:99%;
+    height:98.4%;
+    width:1%;
+}
+#hospitalWall0{
+    top: 58%;
+    left: 0%;
+    height: 2%;
+    width: 50%;
+   
+
+}
+
+/* RECEPTION AREA */
+#hospitalMan{
+    top: 16.5%;
+    left: 3.8%;
+    height: 5.2%;
+    width: 3.2%;
+}
+#hospitalWall6
+{
+    top:0.8%;
+    left:42%;
+    height:35%;
+    width:1%;
+}
+
+#receptionTable
+{
+    height: 25%;
+    width: 5%;
+    top: 6%;
+    left: 6%;
+}
+#receptionChair
+{
+    height: 8%;
+    width: 3%;
+    top: 15%;
+    left: 3%;
+}
+#hospitalPlant
+{
+    height: 6%;
+    width: 4%;
+    left: 26%;
+    top:5%;
+}
+#hospitalSideTable
+{
+    height: 12%;
+    width: 6%;
+    left: 17%;
+    top:17%;
+}
+#receptionSofa1
+{
+    height: 13%;
+    width: 10%;
+    top: 2%;
+    left: 15%;
+}
+
+#receptionSofa2
+{
+    height: 22%;
+    width: 6%;
+    top: 15%;
+    left: 25%;
+}
+#hospitalGanpatiMurti
+{
+    height: 16%;
+    width: 8%;
+    top: 2%;
+    left: 33%;
+}
+/* DOCTOR CABIN */
+
+#hospitalWall7
+{
+    top:0.8%;
+    left:62%;
+    height:35%;
+    width:1%;
+}
+
+#hospitalWall8
+{
+    top:34.5%;
+    left:52%;
+    height:2%;
+    width:18%;
+}
+
+#hospitalDoctor1Desk
+{
+    height:10%;
+    width: 12%;
+    top: 15%;
+    left: 50%;
+}
+
+
+#hospitalDoctor1Chair
+{
+    height: 6.2%;
+    width: 3.2%;
+    top: 6.5%;
+    left: 53%;
+}
+#hospitalDoctor1Seat1
+{
+    height:5.5%;
+    width: 3%;
+    top: 26%;
+    left: 52%;
+}
+#hospitalDoctor1Seat2
+{
+    height:5.5%;
+    width: 3%;
+    top: 26%;
+    left: 57%;
+}
+#hospitalDoctor2Desk
+{
+    height:10%;
+    width: 12%;
+    top: 15%;
+    left: 63%;
+}
+
+#hospitalDoctor2Chair
+{
+    height: 6.2%;
+    width: 3.2%;
+    top: 6.5%;
+    left: 67%;
+}
+#hospitalDoctor2Seat1
+{
+    height:5.5%;
+    width: 3%;
+    top: 26%;
+    left: 63%;
+}
+#hospitalDoctor2Seat2
+{
+    height:5.5%;
+    width: 3%;
+    top: 26%;
+    left: 68%;
+}
+
+/* MEETING ROOM */
+
+#hospitalWall21
+{
+    height: 35%;
+    width: 1%;
+    left: 80%;
+    top: 0.8%;
+}
+
+#hospitalWall22
+{
+    height: 2%;
+    width: 12%;
+    left: 80.41%;
+    top: 33.8%;
+}
+
+#hospitalMeetingTable
+{
+    height: 30%;
+    width: 10%;
+    top: 5%;
+    left: 81%;
+}
+/* SPECIAL ROOM */
+
+#hospitalWall31
+{
+    top:67%;
+    left:84%;
+    height:2%;
+    width:9%;
+}
+#hospitalWall32
+{
+    top:67.7%;
+    left:88%;
+    height:31.5%;
+    width:1%;
+}
+
+#hospitalBed11
+{
+    height: 23%;
+    width: 6%;
+    left: 78%;
+    top: 75%;
+}
+
+#hospitalBed12
+{
+    height: 23%;
+    width: 6%;
+    left: 89%;
+    top: 75%;
+}
+#hospitalSideTable11
+{
+    height: 5%;
+    width: 4%;
+    left: 84%;
+    top: 93%;
+}
+#hospitalSideTable12
+{
+    height: 5%;
+    width: 4%;
+    left:  95%;
+    top: 93%;
+}
+#hospitalSeat11
+{
+    height:4%;
+    width: 3%;
+    top: 88%;
+    left: 85%;
+}
+#hospitalSeat12
+{
+    height:4%;
+    width: 3%;
+    top: 88%;
+    left: 96%;
+}
+/* GENERAL WARD */
+
+#hospitalBed1
+{
+    height: 23%;
+    width: 6%;
+    left: 1%;
+    top: 75%;
+}
+
+#hospitalPartition1
+{
+    height: 30%;
+    width: 3%;
+    left: 9%;
+    top: 70%;
+}
+
+#hospitalBed2
+{
+    height: 23%;
+    width: 6%;
+    left: 12%;
+    top: 75%;
+}
+
+#hospitalPartition2
+{
+    height: 30%;
+    width: 3%;
+    left: 20%;
+    top: 70%;
+}
+
+#hospitalBed3
+{
+    height: 23%;
+    width: 6%;
+    left: 23%;
+    top: 75%;
+}
+
+#hospitalPartition3
+{
+    height: 30%;
+    width: 3%;
+    left: 31%;
+    top: 70%;
+}
+
+#hospitalBed4
+{
+    height: 23%;
+    width: 6%;
+    left: 34%;
+    top: 75%;
+}
+
+#hospitalPartition4
+{
+    height: 30%;
+    width: 3%;
+    left: 42%;
+    top: 70%;
+}
+
+
+#hospitalBed5
+{
+    height: 23%;
+    width: 6%;
+    left: 45%;
+    top: 75%;
+}
+
+#hospitalPartition5
+{
+    height: 30%;
+    width: 3%;
+    left: 53%;
+    top: 70%;
+}
+
+#hospitalWall11
+{
+    height: 31.2%;
+    width: 1%;
+    left: 57%;
+    top: 68%;
+}
+
+#hospitalRestroom1
+{
+    height: 6.5%;
+    width: 3.5%;
+    left: 58%;
+    top: 75%;
+}
+
+
+#hospitalWall41
+{
+    height: 12%;
+    width: 1%;
+    left: 65.4%;
+    top: 77%;
+}
+
+#hospitalWall12
+{
+    height: 2%;
+    width: 9%;
+    left: 58%;
+    top: 68%;
+}
+
+#hospitalRestroom2
+{
+    height: 6.5%;
+    width: 3.5%;
+    left: 58%;
+    top: 84%;
+}
+
+
+#hospitalWall13
+{
+    height: 2%;
+    width: 8%;
+    left: 58%;
+    top: 82%;
+}
+
+
+#hospitalWall14
+{
+    height: 31.2%;
+    width: 1%;
+    left: 77%;
+    top: 68%;
+}
+
+
+#hospitalWall15
+{
+    height: 2%;
+    width: 5%;
+    left: 72.62%;
+    top: 68%;
+}
+
+#hospitalWashBasin
+{
+    height: 15%;
+    width: 3%;
+    left: 74%;
+    top: 74%;
+
+}
+
+/* PEOPLE */
+
+#hospitalCharacter1{
+    height: 7%;
+    width: 2%;
+    left: 20%;
+    top: 8.5%;
+}
+
+#hospitalDoctor1{
+    height: 5%;
+    width: 3%;
+    left: 48%;
+    top: 8.5%;
+}
+
+#hospitalDoctor2{
+    height: 5%;
+    width: 3%;
+    left: 94%;
+    top: 71%;
+}
+
+#hospitalPatientOnWheelChair
+{
+    height: 7%;
+    width: 3.5%;
+    left: 46%;
+    top: 15%;
+}
+
+#hospitalRelative1
+{
+    height: 5%;
+    width: 2.3%;
+    left: 52.3%;
+    top: 25.2%;
+}
+
+
+#hospitalPatient1
+{
+    height: 5%;
+    width: 3%;
+    left: 4%;
+    top: 77%;
+}
+
+
+#hospitalPatient2
+{
+    height: 5%;
+    width: 3%;
+    left: 26%;
+    top: 77%;
+}
+
+#hospitalPatient3
+{
+    height: 5%;
+    width: 3%;
+    left: 92%;
+    top: 77%;
+}
+
+#hospitalSleepingMan
+{
+    height: 10%;
+    width: 3%;
+    left: 2.5%;
+    top: 81.2%;
+}
+
+.hospitalwalk{
+    animation: hospitalwalk .8s infinite steps(2);
+}
+@keyframes hospitalwalk {
+    0%{
+        left: 0%;
+    }
+    
+    100%{
+        left: -200%;
+    }
+}
+
+#hospitalBlueMan{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 32%;
+    left: 10%;
+    z-index: 1;
+    overflow: hidden;
+    animation: hospitalBlueManAni 20s infinite linear ;
+}
+
+#hospitalBlueMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes hospitalBlueManAni{
+    0%{
+        top: 32%;
+        left: 10%;
+        transform:rotate(0deg);
+    }
+    15%{
+        top: 50%;
+        left: 10%;
+        transform:rotate(0deg);
+    }
+    16%{
+        top: 50%;
+        left: 10%;
+        transform:rotate(-90deg);
+    }
+    48%{
+        top: 50%;
+        left: 50%;
+        transform:rotate(-90deg);
+    }
+    50%{
+        top: 50%;
+        left: 50%;
+        transform:rotate(90deg);
+    }
+    86%{
+        top: 50%;
+        left: 10%;
+        transform:rotate(90deg);
+    }
+    87%{
+        top: 50%;
+        left: 10%;
+        transform:rotate(180deg);
+    }
+    98%{
+        top: 32%;
+        left: 10%;
+        transform:rotate(180deg);
+    }
+    100%{
+        top: 32%;
+        left: 10%;
+        transform:rotate(0deg);
+    }
+}
+
+
+#hospitalRedMan{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 30%;
+    left: 10%;
+    z-index: 1;
+    overflow: hidden;
+    animation: hospitalRedManAni 20s infinite linear ;
+}
+
+#hospitalRedMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes hospitalRedManAni{
+    0%{
+        top: 3%;
+        left: 95%;
+        transform:rotate(0deg);
+    }
+    20%{
+        top: 40%;
+        left: 95%;
+        transform:rotate(0deg);
+    }
+    21%{
+        top:40%;
+        left: 95%;
+        transform:rotate(90deg);
+    }
+    40%{
+        top: 40%;
+        left: 76%;
+        transform:rotate(90deg);
+    }
+    41%{
+        top: 40%;
+        left: 76%;
+        transform:rotate(180deg);
+    }
+
+    50%{
+        top: 20%;
+        left: 76%;
+        transform:rotate(180deg);
+
+    }
+    52%{
+        top: 20%;
+        left: 76%;
+        transform:rotate(0deg);
+    }
+    62%{
+        top: 40%;
+        left: 76%;
+        transform:rotate(0deg);
+
+    }
+    63%{
+        top: 40%;
+        left: 76%;
+        transform:rotate(-90deg);
+    }
+    80%{
+        top: 40%;
+        left: 95%;
+        transform:rotate(-90deg);
+    }
+    81%{
+        top: 40%;
+        left: 95%;
+        transform:rotate(-180deg);
+
+    }
+    98%{
+        top: 3%;
+        left: 95%;
+        transform:rotate(-180deg);
+
+    }
+    100%{
+        top: 3%;
+        left: 95%;
+        transform:rotate(0deg);
+
+    }
+ 
+    
+}
+
+
+.hotelInsideMap{
+    height: 170%;
+    width:170%;
+    background-image: url('component/hotelBaseImage.png');
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+    position: relative;
+}
+.hotelPosition{
+    position:absolute;
+}
+
+#HotelSofaHorizontal{
+    top: 4.8%;
+    left: 3%;
+    height: 13%;
+    width: 15%;
+}
+#HotelSofaVertical{
+    top: 17.8%;
+    left: 3%;
+    height: 15%;
+    width: 5.5%;
+}
+#HotelOvelTable{
+    top: 20.4%;
+    left: 10%;
+    height: 10%;
+    width: 6.5%;
+}
+#hotelCounterTable{
+    top: 70%;
+    left: 4%;
+    height:23%;
+    width:12%;
+}
+#hotelCounterChair{
+    top: 80%;
+    left: 4%;
+    height: 12%;
+    width: 6%;
+}
+
+.hotelTable{
+    height: 20%;
+    width: 9.5%;
+}
+
+#hotelTable1{
+    top: 4%;
+    left: 35%;
+}
+#hotelTable2{
+    top: 4%;
+    left:53%;
+}
+#hotelTable3{
+    top: 38%;
+    left: 25%;
+}
+#hotelTable4{
+    top: 38%;
+    left: 45%;
+}
+#hotelTable5{
+    top:75%;
+    left: 35%;
+}
+#hotelTable6{
+    top:75%;
+    left: 53%;
+}
+#hotelOrangeMan{
+    top: 13%;
+    left: 13%;
+    height: 7.5%;
+    width: 3.3%;
+}
+#hotelPurpleWoman{
+    top: 23.5%;
+    left: 6%;
+    height:5.5%;
+    width: 3.5%;
+}
+#hotelRedWoman{
+    top: 37.6%;
+    left: 47.9%;
+    height: 6%;
+    width: 3.7%;
+}
+#hotelBlueWoman{
+    top: 73.9%;
+    left: 37.8%;
+    height:6.5%;
+    width:4%;
+}
+#hotelWhiteWoman{
+    top: 90.3%;
+    left: 38.1%;
+    height:5%;
+    width:3%;
+}
+#hotelGreenWoman{
+    top: 53.7%;
+    left: 48.7%;
+    height: 4.5%;
+    width: 2%;
+}
+#hotelPinkWoman{
+    top: 3.7%;
+    left: 40.3%;
+    height: 6%;
+    width: 4.3%;
+}
+#hotelCakePlate{
+    top: 43.5%;
+    left: 48%;
+    height: 4.5%;
+    width: 2.5%;
+}
+#hotelCoffeeCup1{
+    top: 81%;
+    left: 39%;
+    height: 2.2%;
+    width: 1.2%;
+}
+#hotelCoffeeCup2{
+    top: 88%;
+    left: 40%;
+    height: 2.2%;
+    width: 1.2%;
+}
+
+
+#hotelKitchenHorizontal{
+    top: 4%;
+    left: 70.3%;
+    height:10%;
+    width: 10%;
+}
+
+#hotelFridge2{
+    top: 75%;
+    left: 70.4%;
+    height: 12%;
+    width: 5%;
+}
+#hotelCupBoard{
+    top: 1.5%;
+    left: 92.5%;
+    height: 18%;
+    width: 4.5%;
+}
+
+#hotelBrownKitchenVertical{
+    top: 79%;
+    left: 91%;
+    height: 18%;
+    width: 4.5%;
+}
+#hotelBrownPlatformHorizontal{
+    top: 88%;
+    left: 81%;
+    height: 9%;
+    width: 10%;
+}
+
+#hotelGreyPlatform2{
+    height:10%;
+    width: 12%;
+    top: 4%;
+    left: 80.2%;
+}
+#hotelGreyPlatform3{
+    height:10%;
+    width: 6.5%;
+    top: 86.7%;
+    left: 70.4%;
+}
+#hotelChocolateBowl{
+    top: 10%;
+    left: 75%;
+    height: 4%;
+    width: 0.8;
+}
+#hotelGroceryTable{
+    top: 60%;
+    left: 70.2%;
+    height: 14.5%;
+    width: 13%;
+}
+#hotelCookiesPlatform{
+    top: 14%;
+    left: 70.2%;
+    height: 22%;
+    width: 5%;
+}
+#hotelPlatesPlatform{
+    top: 20%;
+    left: 90.3%;
+    height: 25%;
+    width: 5.5%;
+}
+
+
+
+#hotelBlacklineVertical1{
+    top: 0%;
+    height: 100%;
+    width: 3%;
+    left: 0%;
+}
+#hotelBlacklineVertical2{
+    top: 0%;
+    height: 100%;
+    width: 4.5%;
+    left: 95.5%;
+}
+#hotelBlacklineVertical3{
+    top: 0%;
+    height: 36%;
+    width: 3%;
+    left: 67.4%;
+}
+#hotelBlacklineVertical4{
+    top: 52%;
+    height: 48%;
+    width: 3%;
+    left: 67.4%;
+}
+#hotelBlacklineVertical5{
+    top: 65%;
+    height: 35%;
+    width:6%;;
+    left: 59.4%;
+}
+#hotelBlacklineHorizontal1{
+    top: 0%;
+    height: 5%;
+    width: 100%;
+    left: 0%;
+}
+#hotelBlacklineHorizontal2{
+    top: 94%;
+    height: 6%;
+    width: 100%;
+    left: 0%;
+}
+#hotelBlacklineHorizontal3{
+    top: 0%;
+    height: 16%;
+    width:3%;
+    left: 35%;
+}
+#hotelBlacklineHorizontal4{
+    top: 0%;
+    height: 10%;
+    width: 8%;
+    left: 44.8%;
+}
+#hotelBlacklineHorizontal5{
+    top: 0%;
+    height: 16%;
+    width: 6%;
+    left: 59%;
+}
+#hotelBlacklineHorizontal6{
+    top: 84.5%;
+    height: 14%;
+    width: 43%;
+    left: 0%; 
+}
+#hotelBlacklineHorizontal7{
+    top: 87%;
+    height: 11.5%;
+    width: 20%;
+    left: 43%; 
+}
+.hotelVisibility{
+    opacity: 0.4;
+    visibility: hidden;
+}
+/* ----------------------------------------------------------- */
+
+.hotelwalk{
+    animation: hotelwalk .8s infinite steps(2);
+}
+@keyframes hotelwalk {
+    0%{
+        left: 0%;
+    }
+    
+    100%{
+        left: -200%;
+    }
+}
+
+#hotelWhiteMan1{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 5.5%;
+    top: 75%;
+    left: 17%;
+    z-index: 1;
+    overflow: hidden;
+    animation: hotelWhiteManAni1 35s infinite linear ;
+}
+
+#hotelWhiteMan1 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+@keyframes hotelWhiteManAni1 {
+    0%{
+        transform: rotate(90deg);
+        top: 75%;
+        left: 17%;
+    }
+   
+    2%{
+        transform: rotate(-90deg);
+        top: 75%;
+        left: 17%;
+    }
+    8%{
+        transform: rotate(-90deg);
+        top: 75%;
+        left: 30%;
+    }
+    9%{
+        transform: rotate(-180deg);
+        top: 75%;
+        left: 30%;
+    }
+    11%{
+        transform: rotate(-180deg);
+        top: 65%;
+        left:30%;
+    }
+    12%{
+        transform: rotate(-90deg);
+        top: 65%;
+        left: 30%;
+    }
+    23%{
+        transform: rotate(-90deg);
+        top: 65%;
+        left: 60%;
+    }
+    24%{
+        transform: rotate(-180deg);
+        top: 65%;
+        left: 60%;
+    }
+    29%{
+        transform: rotate(-180deg);
+        top: 40%;
+        left: 60%;
+    }
+    30%{
+        transform: rotate(-90deg);
+        top: 40%;
+        left: 60%;
+    }
+    37%{
+        transform: rotate(-90deg);
+        top: 40%;
+        left: 76%;
+    }
+    38%{
+        transform: rotate(-180deg);
+        top: 40%;
+        left: 76%;
+    }
+    43%{
+        transform: rotate(-180deg);
+        top: 16%;
+        left: 76%;
+    }
+    44%{
+        transform: rotate(-90deg);
+        top: 16%;
+        left: 76%;
+    }
+    48%{
+        transform: rotate(-90deg);
+        top: 16%;
+        left: 86%;
+    }
+    50%{
+        transform: rotate(90deg);
+        top: 16%;
+        left: 86%;
+    }
+    55%{
+        transform: rotate(90deg);
+        top: 16%;
+        left: 77%;
+    }
+    56%{
+        transform: rotate(0deg);
+        top: 16%;
+        left: 77%;
+    }
+    61%{
+        transform: rotate(0deg);
+        top: 40%;
+        left: 77%;
+    }
+    62%{
+        transform: rotate(90deg);
+        top: 40%;
+        left: 77%;
+    }
+    68%{
+        transform: rotate(90deg);
+        top: 40%;
+        left: 60%;
+    }
+    69%{
+        transform: rotate(0deg);
+        top: 40%;
+        left: 60%;
+    }
+    75%{
+        transform: rotate(0deg);
+        top: 65%;
+        left: 60%;
+    }
+    76%{
+        transform: rotate(90deg);
+        top: 65%;
+        left: 60%;
+    }
+    87%{
+        transform: rotate(90deg);
+        top: 65%;
+        left: 30%;
+    }
+    88%{
+        transform: rotate(0deg);
+        top: 65%;
+        left: 30%;
+    }
+    91%{
+        transform: rotate(0deg);
+        top: 75%;
+        left: 30%;
+    }
+    92%{
+        transform: rotate(90deg);
+        top: 75%;
+        left: 30%;
+    }
+    98%{
+        transform: rotate(90deg);
+        top: 75%;
+        left: 17%;
+    }
+    100%{
+        transform: rotate(90deg);
+        top: 75%;
+        left: 17%;
+    }
+}
+
+#hotelWhiteMan2{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 5.5%;
+    top: 40%;
+    left: 8%;
+    z-index: 1;
+    overflow: hidden;
+    animation: hotelWhiteManAni2 30s infinite linear ;
+}
+
+#hotelWhiteMan2 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes hotelWhiteManAni2 {
+    0%{
+        transform: rotate(0deg);
+        top: 40%;
+        left: 8%;
+    }
+    7%{
+        transform: rotate(0deg);
+        top: 61%;
+        left: 8%;
+    }
+    8%{
+        transform: rotate(0deg);
+        top: 61%;
+        left: 8%;
+    }
+    9%{
+        transform: rotate(-180deg);
+        top: 61%;
+        left: 8%;
+    }
+    18%{
+        transform: rotate(-180deg);
+        top: 40%;
+        left: 8%;
+    }
+    19%{
+        transform: rotate(-90deg);
+        top: 40%;
+        left: 8%;
+    }
+    25%{
+        transform: rotate(-90deg);
+        top: 40%;
+        left: 18%;
+    }
+    26%{
+        transform: rotate(-180deg);
+        top: 40%;
+        left: 18%;
+    }
+    30%{
+        transform: rotate(-180deg);
+        top: 30%;
+        left: 18%;
+    }
+    31%{
+        transform: rotate(-90deg);
+        top: 30%;
+        left: 18%;
+    }
+    53%{
+        transform: rotate(-90deg);
+        top: 30%;
+        left: 54%;
+    }
+    54%{
+        transform: rotate(-180deg);
+        top: 30%;
+        left: 54%;
+    }
+    56%{
+        transform: rotate(-180deg);
+        top: 27%;
+        left: 54%;
+    }
+    58%{
+        transform: rotate(-270deg);
+        top: 27%;
+        left: 54%;
+    }
+    82%{
+        transform: rotate(-270deg);
+        top: 27%;
+        left: 19%;
+    }
+    83%{
+        transform: rotate(-360deg);
+        top: 27%;
+        left: 19%;
+    }
+    89%{
+        transform: rotate(-360deg);
+        top: 40%;
+        left: 19%;
+    }
+    90%{
+        transform: rotate(-270deg);
+        top: 40%;
+        left: 19%;
+    }
+    
+    99%{
+        transform: rotate(-270deg);
+        top: 40%;
+        left: 8%;
+    }
+    100%{
+        transform: rotate(-360deg);
+        top: 40%;
+        left: 8%;
+    }
+
+}
+
+#hotelWhiteMan3{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 5.5%;
+    top: 54%;
+    left: 71%;
+    z-index: 1;
+    overflow: hidden;
+    animation: hotelWhiteManAni3 25s infinite linear ;
+}
+
+#hotelWhiteMan3 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+@keyframes hotelWhiteManAni3 {
+   
+    0%{
+        transform: rotate(0deg);
+        top: 54%;
+        left: 71%;
+    }
+    1%{
+        transform: rotate(-90deg);
+        top: 54%;
+        left: 71%;
+    }
+    23%{
+        transform: rotate(-90deg);
+        top: 54%;
+        left: 87%;
+    }
+    24%{
+        transform: rotate(0deg);
+        top: 54%;
+        left: 87%;
+    }
+   
+    42%{
+        transform: rotate(0deg);
+        top: 80%;
+        left: 87%;
+    }
+    43%{
+        transform: rotate(90deg);
+        top: 80%;
+        left: 87%;
+    }
+    56%{
+        transform: rotate(90deg);
+        top: 80%;
+        left: 77%;
+    }
+    57%{
+        transform: rotate(180deg);
+        top: 80%;
+        left: 77%;
+    }
+    62%{
+        transform: rotate(180deg);
+        top: 75%;
+        left: 77%;
+    }
+    63%{
+        transform: rotate(270deg);
+        top: 75%;
+        left: 77%;
+    }
+    72%{
+        transform: rotate(270deg);
+        top: 75%;
+        left: 87%;
+    }
+    73%{
+        transform: rotate(180deg);
+        top: 75%;
+        left: 87%;
+    } 
+    83%{
+        transform: rotate(180deg);
+        top: 54%;
+        left: 87%;
+    }
+    84%{
+        transform: rotate(90deg);
+        top: 54%;
+        left: 87%;
+    }
+    98%{
+        transform: rotate(90deg);
+        top: 54%;
+        left: 71%;
+    }
+    100%{
+        transform: rotate(90deg);
+        top: 54%;
+        left: 71%;
+    }
+}
+
+
+.mallInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/floor123.jpg');
+    position: relative;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.mallposition {
+    position: absolute;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#mallWall01 {
+    height: 100%;
+    width: 1.2%;
+    top: 0%;
+    left: 0%;
+}
+
+#mallwall02 {
+    height: 3%;
+    width: 099.3%;
+    top: 0%;
+    left: 0.74%;
+}
+
+#mallWall03 {
+    height: 98.1%;
+    width: 1.5%;
+    top: 1.9%;
+    left: 98.5%;
+}
+
+
+#mallwall05 {
+    height: 3%;
+    width: 20%;
+    top: 55%;
+    left: 0.75%;
+}
+
+
+
+#mallwall07 {
+    height: 3%;
+    width: 25.5%;
+    top: 97%;
+    left: 0.75%;
+}
+
+#mallwall08 {
+    height: 3%;
+    width: 30%;
+    top: 97%;
+    left: 35%;
+}
+
+#mallwall09 {
+    height: 3%;
+    width: 24.1%;
+    top: 97%;
+    left: 75%;
+}
+
+#mallWall10 {
+    height: 23.1%;
+    width: 1%;
+    top: 76.9%;
+    left: 74.5%;
+}
+
+#mallWall11 {
+    height: 20%;
+    width: 0.5%;
+    top: 78%;
+    left: 87%;
+}
+
+#mallwall12 {
+    height: 2%;
+    width: 9%;
+    top: 76%;
+    left: 82.8%;
+}
+
+#mallTablechair1 {
+    height: 12%;
+    width: 7%;
+    top: 70%;
+    left: 35%;
+}
+
+#mallTablechair2 {
+    height: 12%;
+    width: 7%;
+    top: 80%;
+    left: 45%;
+}
+
+#mallTablechair3 {
+    height: 12%;
+    width: 7%;
+    top: 80%;
+    left: 55%;
+}
+
+#mallCart1 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 03%;
+}
+
+#mallCart2 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 06%;
+}
+
+#mallCart3 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 09%;
+}
+
+#mallCart4 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 12%;
+}
+
+#mallCart5 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 15%;
+}
+
+#mallCart6 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 18%;
+}
+
+#mallCart7 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 03%;
+}
+
+#mallCart8 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 06%;
+}
+
+#mallCart9 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 09%;
+}
+
+#mallCart10 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 12%;
+}
+
+#mallCart11 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 15%;
+}
+
+#mallCart12 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 18%;
+}
+
+#mallCart13 {
+    height: 8%;
+    width: 6%;
+    top: 40%;
+    left: 50%;
+}
+
+#mallCart14 {
+    height: 8%;
+    width: 6%;
+    top: 70%;
+    left: 45%;
+}
+
+#mallCart15 {
+    height: 10%;
+    width: 4%;
+    top: 5%;
+    left: 60%;
+}
+
+#mallCart16 {
+    height: 10%;
+    width: 4%;
+    top: 5%;
+    left: 29%;
+}
+
+#mallrack01 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 5%
+}
+
+#mallrack02 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 5%
+}
+
+#mallRack03 {
+    height: 14%;
+    width: 3%;
+    top:2.6%;
+    left: 10%
+}
+
+#mallRack04 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 10%
+}
+
+#mallRack05 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 17%
+}
+
+#mallRack06 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 17%
+}
+
+#mallRack07 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 22%
+}
+
+#mallRack08 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 22%
+}
+
+#mallRoom01 {
+    height: 11%;
+    width: 4%;
+    top: 3%;
+    left: 94.5%
+}
+
+#mallRoom02 {
+    height: 11%;
+    width: 5%;
+    top: 19%;
+    left: 93.5%
+}
+
+#mallRoom03 {
+    height: 11%;
+    width: 5%;
+    top: 35%;
+    left: 93.5%
+}
+
+#mallpent1 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 80%
+}
+
+#mallpent2 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 80%
+}
+
+#mallTshirt1 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 72%
+}
+
+#mallTshirt2 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 72%
+}
+
+#mallshirt1 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 64%
+}
+
+#mallshirt2 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 64%
+}
+
+#mallWashroom1 {
+    height: 11%;
+    width: 4%;
+    top: 85%;
+    left: 83%;
+}
+
+#mallWashroom2 {
+    height: 11%;
+    width: 4%;
+    top: 85%;
+    left: 88%;
+}
+
+#mallBiscuit01 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 37%
+}
+
+#mallsoap02 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 37%
+}
+
+#mallsoap03 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 44%
+}
+
+#mallToothpaste04 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 44%
+}
+
+#mallWashingpowder05 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 51%
+}
+
+#mallWashingpowder06 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 51%
+}
+
+#mallrack11 {
+    height: 11%;
+    width: 8%;
+    top: 48%;
+    left: 55%
+}
+
+#mallrack12 {
+    height: 11%;
+    width: 8%;
+    top: 48%;
+    left: 40%
+}
+
+#mallwashbasin {
+    height: 10%;
+    width: 3%;
+    top: 87%;
+    left: 75.5%;
+
+}
+#mallwashbasin2{
+    height: 10%;
+    width: 3%;
+    top: 87%;
+    left: 95.5%;
+
+}
+
+#malltable1 {
+    height: 10%;
+    width: 18%;
+    left: 45%;
+    top: 65%;
+
+}
+
+#malltable2 {
+    height: 22%;
+    width: 5%;
+    top: 75%;
+    left: 45%;
+}
+
+#mallchair1 {
+    height: 9%;
+    width: 5%;
+    top: 75%;
+    left: 58%;
+}
+
+#mallchair2 {
+    height: 9%;
+    width: 5%;
+    top: 75%;
+    left: 50%;
+}
+
+#mallsittingman1{
+    height:8%;
+    width:6%;
+    top:73.5%;
+    left:57.5%;
+
+}
+#mallsittingman2{
+    height:8%;
+    width:6%;
+    top:73.5%;
+    left:49.5%;
+
+}
+
+#mallicecreamstall1{
+    height:10%;
+    width:8%;
+    top:87%;
+    left:35%;
+}
+
+#mallman1 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallMan1 20s infinite linear;
+
+
+
+}
+
+#mallman1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: mallWalk .8s infinite steps(2);
+}
+
+
+
+@keyframes mallWalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+
+
+@keyframes mallMan1 {
+    0% {
+        top: 60%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        top: 18%;
+        left: 30%;
+        transform: rotate(0deg);
+
+    }
+
+    21% {
+        top: 18%;
+        left: 30%;
+        transform: rotate(90deg);
+
+    }
+
+    40% {
+        top: 18%;
+        left: 55%;
+        transform: rotate(90deg);
+
+    }
+
+    41% {
+        top: 18%;
+        left: 55%;
+        transform: rotate(00deg);
+
+    }
+
+    50% {
+        top: 7%;
+        left: 55%;
+        transform: rotate(0deg);
+
+    }
+    52% {
+        top: 7%;
+        left: 55%;
+        transform: rotate(180deg);
+
+    }
+    60% {
+        top:18%;
+        left: 55%;
+        transform: rotate(180deg);
+
+    }
+    61% {
+        top:18%;
+        left: 55%;
+        transform: rotate(270deg);
+
+    }
+    80% {
+        top:18%;
+        left: 30%;
+        transform: rotate(270deg);
+
+    }
+    81% {
+        top:18%;
+        left: 30%;
+        transform: rotate(180deg);
+
+    }
+    98% {
+        top:60%;
+        left: 30%;
+        transform: rotate(180deg);
+
+    }
+    100% {
+        top:60%;
+        left: 30%;
+        transform: rotate(0deg);
+
+    }
+    
+
+   
+
+}
+
+/*-----------------------    man 2 -------------------------*/
+#mallman2 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    top: 65%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallMan2 20s infinite linear;
+
+
+
+}
+
+#mallman2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes mallMan2 {
+    0% {
+        top: 65%;
+        left: 25%;
+        transform: rotate(0deg);
+    }
+
+    15% {
+        top: 43%;
+        left: 25%;
+        transform: rotate(0deg);
+    }
+
+    16% {
+        top: 43%;
+        left: 25%;
+        transform: rotate(-90deg);
+    }
+
+    38% {
+        top: 43%;
+        left: 1.7%;
+        transform: rotate(-90deg);
+    }
+
+    39% {
+        top: 43%;
+        left: 1.7%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 18%;
+        left: 1.7%;
+        transform: rotate(0deg);
+    }
+
+    51% {
+        top: 18%;
+        left: 1.7%;
+        transform: rotate(90deg);
+    }
+
+    75% {
+        top: 18%;
+        left: 25%;
+        transform: rotate(90deg);
+    }
+
+    76% {
+        top: 18%;
+        left: 25%;
+        transform: rotate(180deg);
+    }
+    98% {
+        top: 65%;
+        left: 25%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 65%;
+        left: 25%;
+        transform: rotate(0deg);
+    }
+
+
+}
+
+#mallman3 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallMan3 20s infinite linear;
+
+
+
+}
+
+#mallman3>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes mallMan3 {
+    0% {
+        top: 60%;
+        left: 85%;
+        transform: rotate(0deg);
+    }
+    25% {
+        top: 20%;
+        left: 85%;
+        transform: rotate(0deg);
+    }
+    26% {
+        top: 20%;
+        left: 85%;
+        transform: rotate(-90deg);
+    }
+    50% {
+        top: 20%;
+        left: 60%;
+        transform: rotate(-90deg);
+    }
+    51% {
+        top: 20%;
+        left: 60%;
+        transform: rotate(-180deg);
+    }
+    65% {
+        top: 44%;
+        left: 60%;
+        transform: rotate(-180deg);
+    }
+    66% {
+        top: 44%;
+        left: 60%;
+        transform: rotate(-270deg);
+    }
+    87% {
+        top: 44%;
+        left: 85%;
+        transform: rotate(-270deg);
+    }
+    88% {
+        top: 44%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+    98% {
+        top: 60%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+    100% {
+        top: 60%;
+        left: 85%;
+        transform: rotate(0deg);
+    }
+}
+
+#mallman4 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 75%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallWoman2 20s infinite linear;
+
+}
+
+#mallman4>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes mallWoman2 {
+    0%{
+        top: 75%;
+        left: 35%;
+        transform: rotate(180deg);
+    }
+    2%{
+        top: 75%;
+        left: 35%;
+        transform: rotate(0deg);
+    }
+    23%{
+        top: 43%;
+        left: 35%;
+        transform: rotate(0deg);
+    }
+    24%{
+        top: 43%;
+        left: 35%;
+        transform: rotate(90deg);
+    }
+    35%{
+        top: 43%;
+        left: 48%;
+        transform: rotate(90deg);
+    }
+    36%{
+        top: 43%;
+        left: 48%;
+        transform: rotate(0deg);
+    }
+    45%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(0deg);
+    }
+    46%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(-90deg);
+    }
+    48%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(-90deg);
+    }
+    49%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(-180deg);
+    }
+    65%{
+        top:50%;
+        left: 48%;
+        transform: rotate(-180deg);
+    }
+    66%{
+        top:50%;
+        left: 48%;
+        transform: rotate(-90deg);
+    }
+    80%{
+        top:50%;
+        left: 35%;
+        transform: rotate(-90deg);
+    }
+    81%{
+        top:50%;
+        left: 35%;
+        transform: rotate(-180deg);
+    }
+    98%{
+        top:75%;
+        left: 35%;
+        transform: rotate(-180deg);
+    }
+    100%{
+        top:75%;
+        left: 35%;
+        transform: rotate(-180deg);
+    }  
+   
+   
+}
+
+
+.policeStationInsideMap {
+	height: 130%;
+	width: 130%;
+	background-image: url('component/policestationFloor1.jpg');
+	position: relative;
+	display: none;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+
+.hidden {
+	position: absolute;
+
+}
+
+.policestationPosition {
+	position: absolute;
+}
+
+.hidden {
+	visibility: hidden;
+
+}
+
+
+
+#policestationWall0001 {
+	height: 099.9%;
+	width: 001%;
+	top: 00%;
+	left: 000%;
+}
+
+#policestationWall0002 {
+	height: 099.9%;
+	width: 001%;
+	top: 0%;
+	left: 099%;
+}
+
+#policestationWall0003 {
+	height:2%;
+	width: 98.8%;
+	top: 0%;
+	left: 0.6%;
+}
+
+#policestationWall0004 {
+	height: 002%;
+	width: 050%;
+	top: 098%;
+	left: 000.6%;
+}
+
+#policestationWall0005 {
+	height:2%;
+	width: 40%;
+	top: 98%;
+	left: 59.4%;
+}
+
+#policestationWall0006 {
+	height: 002%;
+	width: 018%;
+	top: 051%;
+	left: 000.6%;
+}
+#policestationWall0008 {
+	height: 051.8%;
+	width: 001%;
+	top: 1.3%;
+	left: 046%;
+}
+
+#policestationWall0007 {
+	height: 002%;
+	width: 020%;
+	top: 051%;
+	left: 026.4%;
+}
+
+
+
+
+
+#policestationWall0010 {
+	height: 030%;
+	width: 001%;
+	top: 1.3%;
+	left: 081%;
+}
+
+#policestationWall0011 {
+	height: 020%;
+	width: 001%;
+	top: 045%;
+	left: 081%;
+}
+
+#policestationWall0012 {
+	height: 020%;
+	width: 001%;
+	top: 078.7%;
+	left: 081%;
+}
+#policestationWall0009 {
+	height: 002%;
+	width: 017.8%;
+	top: 055%;
+	left: 081.6%;
+}
+
+
+#policestationBars1 {
+	height: 52.4%;
+	width: 17%;
+	top: 2%;
+	left: 82%;
+	z-index: 3;
+}
+
+#policestationBars2 {
+	height: 42%;
+	width: 17%;
+	top: 56.5%;
+	left: 82%;
+	z-index: 3;
+
+}
+
+#policestationsofa1 {
+	height: 8.5%;
+	width: 9.5%;
+	left: 3%;
+	top: 90%;
+}
+
+#policestationsofa2 {
+	height: 8.5%;
+	width: 9.5%;
+	left: 15%;
+	top: 90%;
+}
+
+#policestationsofa3 {
+	height: 8.5%;
+	width: 9.5%;
+	left: 27%;
+	top: 90%;
+}
+
+#policestationsofa4 {
+	height: 19%;
+	width: 4%;
+	left: 1%;
+	top: 65%;
+}
+
+#policestationcomputer1 {
+	height: 9%;
+	width: 9%;
+	left: 17%;
+	top: 25%;
+}
+
+#policestationchair1 {
+	height: 9%;
+	width: 4%;
+	left: 19.5%;
+	top: 15%;
+
+}
+
+#policestationFile1 {
+	height: 23%;
+	width: 4%;
+	top: 5%;
+	left: 1%;
+
+}
+
+#policestationFile2 {
+	height: 21%;
+	width: 4%;
+	top: 29%;
+	left: 1%;
+
+}
+
+#policestationFile3 {
+	height: 23%;
+	width: 4%;
+	top: 5%;
+	left: 42%;
+
+}
+
+#policestationFile4 {
+	height: 21%;
+	width: 4%;
+	top: 29%;
+	left: 42%;
+
+}
+
+#policestationcomputer2 {
+	height: 19%;
+	width: 4%;
+	left: 70%;
+	top: 13%;
+}
+
+#policestationcomputer3 {
+	height: 19%;
+	width: 4%;
+	left: 55%;
+	top: 13%;
+}
+
+#policestationchair3 {
+	height: 9%;
+	width: 3.5%;
+	left: 74.5%;
+	top: 18%;
+
+}
+
+#policestationchair4 {
+	height: 9%;
+	width: 3.5%;
+	left: 51%;
+	top: 18%;
+
+}
+
+#policestationchair5 {
+	height: 8%;
+	width: 3.5%;
+	left: 68%;
+	top: 90%;
+
+}
+
+#policestationchair6 {
+	height: 8%;
+	width: 3.5%;
+	left: 64%;
+	top: 90%;
+
+}
+
+#policestationfireext1 {
+	height: 5%;
+	width: 3%;
+	top: 45%;
+	left: 47%;
+
+}
+
+#policestationman1 {
+	height: 6%;
+	width: 3%;
+	top: 60%;
+	left: 74%;
+}
+
+#policestationtable2 {
+	height: 12%;
+	width: 11%;
+	top: 2%;
+	left: 30%;
+}
+
+
+#policestationman2{
+	height:7%;
+	width:4%;
+	top:87%;
+	left:16%;
+}
+
+#policestationman3{
+	height:7%;
+	width:4%;
+	top:76%;
+	left:2.9%;
+}
+#policestationman4 {
+	height: 7%;
+	width: 5%;
+	left: 19%;
+	top: 18%;
+
+}
+#policestationman5{
+	height:7%;
+	width:4%;
+	left:73%;
+	top:18.5%;
+}
+
+
+/* carecter movment */
+
+#policestationPerson1 {
+	position: absolute;
+	width: calc(6% / 2);
+	height: 6%;
+	left: 35%;
+	z-index: 1;
+	overflow: hidden;
+	animation: policestationman1 25s infinite linear;
+
+
+
+}
+
+
+
+#policestationPerson1>img {
+	position: relative;
+	height: 100%;
+	width: 200%;
+	top: 0%;
+	left: 0%;
+}
+
+.walk {
+	animation: policeStationWalk .9s infinite steps(2);
+}
+
+
+
+@keyframes policeStationWalk {
+	0% {
+		left: 0%;
+	}
+
+	100% {
+		left: -200%;
+	}
+}
+
+@keyframes policestationman1 {
+
+	0% {
+		top: 80%;
+		left: 20%;
+		transform: rotate(0deg);
+	}
+
+	10% {
+		top: 60%;
+		left: 20%;
+		transform: rotate(0deg);
+	}
+
+	11% {
+		top: 60%;
+		left: 20%;
+		transform: rotate(90deg);
+
+	}
+
+
+	35% {
+		top: 60%;
+		left: 60%;
+		transform: rotate(90deg);
+	}
+
+	36% {
+		top: 60%;
+		left: 60%;
+		transform: rotate(0deg);
+
+	}
+
+	50% {
+		top: 26%;
+		left: 60%;
+		transform: rotate(0deg);
+
+	}
+
+	52% {
+		top: 26%;
+		left: 60%;
+		transform: rotate(-180deg);
+	}
+
+	66% {
+		top: 60%;
+		left: 60%;
+		transform: rotate(-180deg);
+	}
+
+	67% {
+		top: 60%;
+		left: 60%;
+		transform: rotate(-90deg);
+
+
+	}
+
+	90% {
+		top: 60%;
+		left: 20%;
+		transform: rotate(-90deg);
+
+	}
+
+	91% {
+		top: 60%;
+		left: 20%;
+		transform: rotate(-180deg);
+
+
+	}
+	98% {
+		top: 80%;
+		left: 20%;
+		transform: rotate(-180deg);
+
+
+	}
+	100% {
+		top: 80%;
+		left: 20%;
+		transform: rotate(0deg);
+
+	}
+
+
+
+}
+
+#policestationPerson2{
+	position: absolute;
+	width: calc(7% / 2);
+	height: 6%;
+	left: 35%;
+	z-index: 1;
+	overflow: hidden;
+	animation: policestationman2 30s infinite linear;
+
+
+
+}
+
+
+
+#policestationPerson2>img {
+	position: relative;
+	height: 100%;
+	width: 200%;
+	top: 0%;
+	left: 0%;
+}
+
+
+@keyframes policestationman2 {
+
+	0% {
+		top: 80%;
+		left: 65%;
+		transform: rotate(0deg);
+	}
+
+	
+	20% {
+		top: 50%;
+		left: 65%;
+		transform: rotate(0deg);
+	}
+
+	40% {
+		top: 4%;
+		left: 65%;
+		transform: rotate(0deg);
+	}
+	41% {
+		top: 4%;
+		left: 65%;
+		transform: rotate(90deg);
+	}
+	50% {
+		top: 4%;
+		left: 75%;
+		transform: rotate(90deg);
+	}
+	51% {
+		top:4%;
+		left: 75%;
+		transform: rotate(-90deg);
+	}
+	60% {
+		top: 4%;
+		left: 65%;
+		transform: rotate(-90deg);
+	}
+	61% {
+		top: 4%;
+		left: 65%;
+		transform: rotate(-180deg);
+	}
+	80% {
+		top: 50%;
+		left: 65%;
+		transform: rotate(-180deg);
+	}
+	100% {
+		top: 80%;
+		left: 65%;
+		transform: rotate(-180deg);
+	}
+
+}
+
+.postOfficePosition {
+    position: absolute;
+  }
+  .postOfficeInsideMap {
+    height: 150%;
+    width: 150%;
+    background-image: url("component/postOfficeBaseC.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    position: relative;
+    /* border: 5px solid red; */
+  }
+  
+  /* WALLS */
+  #postOfficeWallVertical1 {
+    top: 0.4%;
+    left: 3.7%;
+    height: 99%;
+    width: 0.85%;
+  }
+  
+  #postOfficeWallVertical2 {
+    top: 0.4%;
+    width: 0.85%;
+    left: 20%;
+    height: 43.5%;
+  }
+  #postOfficeWallVertical3 {
+    top: 23%;
+    width: 0.85%;
+    left: 35.7%;
+    height: 21%;
+  }
+  #postOfficeWallVertical4 {
+    top: 23%;
+    width: 0.85%;
+    left: 52.2%;
+    height: 21%;
+  }
+  
+  #postOfficeWallHorizontal1 {
+    top: 44%;
+    left: 4.3%;
+    height: 1.7%;
+    width: 10%;
+  }
+  #postOfficeWallHorizontal2 {
+    top: 44%;
+    left: 20%;
+    height: 1.7%;
+    width: 5%;
+  }
+  #postOfficeWallHorizontal3 {
+    top: 44%;
+    left: 32%;
+    height: 1.7%;
+    width: 8.5%;
+  }
+  /* #postOfficeWallHorizontal4 {
+    top: 44%;
+    left: 34.2%;
+    height: 1.7%;
+    width: 5%;
+  } */
+  #postOfficeWallHorizontal5 {
+    top: 44%;
+    left: 48.1%;
+    height: 1.7%;
+    width: 5%;
+  }
+  
+  /* Post Office Head Office */
+  .postOfficeTableClass {
+    top: 25%;
+    height: 21%;
+    width: 12%;
+  }
+  
+  #postOfficeChair1 {
+    top: 25%;
+    left: 11.5%;
+    width: 5%;
+    height: 12%;
+  }
+  
+  #postOfficeChair2 {
+    top: 25%;
+    left: 31.5%;
+    height: 10%;
+    width: 5.8%;
+  }
+  
+  #postOfficeChair3 {
+    top: 25%;
+    left: 52%;
+    height: 10%;
+    width: 5.8%;
+  }
+  #postOfficeSofa {
+    left: 28.2%;
+  }
+  #postOfficeSofa2 {
+    left: 38.2%;
+  }
+  .postOfficeSofaClass {
+    top: 1.4%;
+    height: 10%;
+    width: 10%;
+  }
+  
+  #postOfficeOfficeTable {
+    top: 3%;
+    left: 87.5%;
+    height: 21.5%;
+    width: 5.1%;
+  }
+  #postOfficeOfficeChair {
+    top: 10%;
+    left: 93%;
+    height: 7.5%;
+    width: 5%;
+  }
+  #postOfficeOfficeSofa1 {
+    top: 2%;
+    left: 75%;
+    height: 8.5%;
+    width: 4.5%;
+  }
+  #postOfficeOfficeSofa2 {
+    top: 11%;
+    left: 69.5%;
+    height: 16.7%;
+    width: 4.7%;
+  }
+  #postOfficeOfficeTable2 {
+    top: 12.5%;
+    left: 75.8%;
+    height: 13.8%;
+    width: 4%;
+  }
+  #postOfficeOfficeChair1 {
+    top: 6%;
+    left: 83.5%;
+    height: 7.5%;
+    width: 3.5%;
+  }
+  #postOfficeOfficeChair2 {
+    top: 15%;
+    left: 83.5%;
+    height: 7.5%;
+    width: 3.5%;
+  }
+  #postOfficePlant1 {
+    height: 6%;
+    width: 4%;
+    left: 70.3%;
+    top: 3%;
+  }
+  #postOfficePlant2 {
+    height: 6%;
+    width: 4%;
+    left: 4.5%;
+    top: 92%;
+  }
+  #postOfficeOfficeDustbin {
+    top: 4%;
+    left: 95%;
+    width: 2.5%;
+    height: 5%;
+  }
+  #postOfficeOfficeCupboard {
+    top: 38.8%;
+    left: 70%;
+    height: 6.7%;
+    width: 9.7%;
+  }
+  #postOfficeOfficeWallVertical {
+    top: 0.4%;
+    left: 68.9%;
+    height: 45.45%;
+    width: 0.8%;
+  }
+  #postOfficeOfficeWallHorizontal {
+    top: 44%;
+    left: 69.3%;
+    height: 1.85%;
+    width: 20%;
+  }
+  
+  #postOfficeDustbin2 {
+    top: 2%;
+    height: 5%;
+    width: 2.5%;
+    left: 14.7%;
+  }
+  
+  /* Post Office */
+  #postOfficeCabinet1 {
+    top: 1.7%;
+    left: 25%;
+    height: 5%;
+    width: 8%;
+  }
+  #postOfficeBlackCupBoard {
+    top: 1.7%;
+    left: 21%;
+    height: 13%;
+    width: 3%;
+  }
+  #postOfficeFiles1 {
+    top: 3.5%;
+    left: 21%;
+    height: 5%;
+    width: 2.7%;
+  }
+  #postOfficeFiles2 {
+    top: 9%;
+    left: 21%;
+    height: 5%;
+    width: 2.7%;
+  }
+  #postOfficeParcles1 {
+    top: 1.7%;
+    left: 4.6%;
+    height: 13%;
+    width: 14%;
+  }
+  #postOfficeParcles2 {
+    top: 31%;
+    left: 4.6%;
+    height: 13%;
+    width: 7%;
+  }
+  #postOfficeParcles3 {
+    top: 14.6%;
+    left: 4.5%;
+    height: 10%;
+    width: 6%;
+  }
+  #postOfficeManWithParcle {
+    top: 25%;
+    left: 5%;
+    height: 4%;
+    width: 3%;
+  }
+  
+  /* POST OFFICE COUNTERS */
+  #postOfficeCounterTable {
+    top: 34%;
+    left: 21%;
+    height: 10%;
+    width: 14.6%;
+  }
+  #postOfficechair1 {
+    top: 25%;
+    left: 21%;
+    height: 7%;
+    width: 4.5%;
+  }
+  #postOfficeDustbin3 {
+    height: 5%;
+    width: 2.5%;
+    left: 33%;
+    top: 28%;
+  }
+  
+  #postOfficeCounterTable2 {
+    top: 34%;
+    left: 36.5%;
+    height: 10%;
+    width: 15.6%;
+  }
+  #postOfficechair2 {
+    top: 25%;
+    left: 40%;
+    height: 7%;
+    width: 4.5%;
+  }
+  #postOfficeDustbin4 {
+    height: 5%;
+    width: 2.5%;
+    left: 49%;
+    top: 28%;
+  }
+  
+  /* WAITING ROOM */
+  
+  #postOfficeChairsVertical1 {
+    top: 65%;
+    left: 5%;
+    height: 25%;
+    width: 3.5%;
+  }
+  #postOfficeChairsHorizontal {
+    top: 91%;
+    height: 7.5%;
+    width: 12%;
+    left: 8.5%;
+  }
+  
+  /* POST OFFICE */
+  #postOfficeBrownTable {
+    top: 88%;
+    left: 23%;
+    height: 10%;
+    width: 10%;
+  }
+  #postOfficeMeetingTable
+  {
+    top: 74%;
+    left: 59%;
+    height: 18%;
+    width: 16%;
+  }
+  /* WASHROOM */
+  .postOfficeWashroomWallV {
+    top: 74%;
+    height: 25%;
+    width: 1%;
+  }
+  #postOfficeMeetingRoomWallVertical1 {
+    left: 59%;
+  }
+  #postOfficeWashroomWallVertical2 {
+    left: 83%;
+  }
+  
+  .postOfficeWashroomWallH {
+    top: 72.7%;
+    height: 1.7%;
+    width: 7.9%;
+  }
+  #postOfficeMeetingRoomWallHorizontal1 {
+    left: 59%;
+    width: 15%;
+  }
+  #postOfficeWashroomWallHorizontal2 {
+    left: 83%;
+  }
+  
+  #postOfficeToilet2 {
+    top: 77%;
+    left: 84%;
+    height: 4.5%;
+    width: 4%;
+  }
+  #postOfficeWashBasin2 {
+    top: 94%;
+    left: 94%;
+    height: 4.5%;
+    width: 5.5%;
+  }
+  
+  #postOfficeBlacklineHorizontal {
+    top: 0%;
+    left: 0%;
+    height: 2%;
+    width: 100%;
+  }
+  #postOfficeBlacklineHorizontal2 {
+    top: 98%;
+    left: 0%;
+    height: 2%;
+    width: 100%;
+  }
+  
+  #postOfficeBlacklineVertical3 {
+    top: 0%;
+    left: 99.3%;
+    height: 100%;
+    width: 0.7%;
+  }
+  .visibility {
+    opacity: 0.7;
+    visibility: hidden;
+  }
+  
+  /* PEOPLE */
+  #postOfficeSittingMan1 {
+    top: 88%;
+    left: 17%;
+    height: 7.5%;
+    width: 3.5%;
+  }
+  #postOfficeSittingMan2 {
+    top: 6%;
+    left: 76%;
+    height: 6%;
+    width: 2.5%;
+  }
+  #postOfficeSittingMan3 {
+    top: 66%;
+    left: 6%;
+    height: 5%;
+    width: 3.5%;
+  }
+  #postOfficeSittingWoman1 {
+    top: 88%;
+    left: 11.2%;
+    height: 8%;
+    width: 3.5%;
+  }
+  #postOfficeSittingWoman2 {
+    top: 78%;
+    left: 6%;
+    height: 5%;
+    width: 3.5%;
+  }
+  #postOfficeManager {
+    top: 10.5%;
+    left: 92%;
+    height: 6%;
+    width: 5%;
+  }
+  
+  /* -------------------------------------------------------------- */
+  #postOfficeCuriorBoy1 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 4%;
+    top: 17%;
+    left: 3%;
+    z-index: 1;
+    overflow: hidden;
+    /* display: none;  */
+    animation: postOfficeCuriorBoyAnimation 11s infinite linear;
+  }
+  
+  #postOfficeCuriorBoy1 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+  }
+  
+  @keyframes postOfficeCuriorBoyAnimation {
+    0% {
+      top: 17%;
+      left: 15%;
+      transform: rotate(0deg);
+    }
+    40% {
+      top: 53%;
+      left: 15%;
+      transform: rotate(0deg);
+    }
+    41% {
+      transform: rotate(-90deg);
+      left: 15%;
+      top: 53%;
+    }
+    50% {
+      transform: rotate(-90deg);
+      left: 20%;
+      top: 53%;
+    }
+    52% {
+      transform: rotate(90deg);
+      left: 20%;
+      top: 53%;
+    }
+    65% {
+      transform: rotate(90deg);
+      left: 15%;
+      top: 53%;
+    }
+    66% {
+      transform: rotate(180deg);
+      left: 15%;
+      top: 53%;
+    }
+    98% {
+      transform: rotate(180deg);
+      left: 15%;
+      top: 17%;
+    }
+    100% {
+      top: 17%;
+      left: 15%;
+      transform: rotate(0deg);
+    }
+  }
+  /* ----------------------------------------------------- */
+  #postOfficeYellowMan {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 8%;
+    left: 33%;
+    z-index: 1;
+    overflow: hidden;
+    animation: postOfficeYellowManAni 40s infinite linear;
+  }
+  
+  #postOfficeYellowMan > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+  }
+  
+  @keyframes postOfficeYellowManAni {
+    0% {
+      transform: rotate(-90deg);
+      top: 8%;
+      left: 33%;
+    }
+    7% {
+      transform: rotate(-90deg);
+      top: 8%;
+      left: 54%;
+    }
+    8% {
+      transform: rotate(0deg);
+      top: 8%;
+      left: 54%;
+    }
+    22% {
+      transform: rotate(0deg);
+      top: 87%;
+      left: 54%;
+    }
+    23% {
+      transform: rotate(90deg);
+      top: 87%;
+      left: 54%;
+    }
+    29% {
+      transform: rotate(90deg);
+      top: 87%;
+      left: 38%;
+    }
+    30% {
+      transform: rotate(270deg);
+      top: 87%;
+      left: 38%;
+    }
+    36% {
+      transform: rotate(270deg);
+      top: 87%;
+      left: 54%;
+    }
+    37% {
+      transform: rotate(180deg);
+      top: 87%;
+      left: 54%;
+    }
+    44% {
+      transform: rotate(180deg);
+      top: 50%;
+      left: 54%;
+    }
+    45% {
+      transform: rotate(270deg);
+      top: 50%;
+      left: 54%;
+    }
+    57% {
+      transform: rotate(270deg);
+      top: 50%;
+      left: 92%;
+    }
+    58% {
+      transform: rotate(180deg);
+      top: 50%;
+      left: 92%;
+    }
+    62% {
+      transform: rotate(180deg);
+      top: 27%;
+      left: 92%;
+    }
+    63% {
+      transform: rotate(0deg);
+      top: 27%;
+      left: 92%;
+    }
+    69% {
+      transform: rotate(0deg);
+      top: 50%;
+      left: 92%;
+    }
+    70% {
+      transform: rotate(90deg);
+      top: 50%;
+      left: 92%;
+    }
+    82% {
+      transform: rotate(90deg);
+      top: 50%;
+      left: 54%;
+    }
+    83% {
+      transform: rotate(180deg);
+      top: 50%;
+      left: 54%;
+    }
+    91% {
+      transform: rotate(180deg);
+      top: 8%;
+      left: 54%;
+    }
+    92% {
+      transform: rotate(90deg);
+      top: 8%;
+      left: 54%;
+    }
+    98% {
+      transform: rotate(90deg);
+      top: 8%;
+      left: 33%;
+    }
+    100% {
+      transform: rotate(-90deg);
+      top: 8%;
+      left: 33%;
+    }
+   
+  }
+  /* ---------------------------------------------------------------- */
+  
+  .postOfficewalk {
+    animation: postOfficewalk 0.8s infinite steps(2);
+  }
+  @keyframes postOfficewalk {
+    0% {
+      left: 0%;
+    }
+  
+    100% {
+      left: -200%;
+    }
+  }
+  
+
+  .riddhiHomeInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/riddhiHomefloor.png');
+    position: relative;
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+}
+
+.riddhiHomePosition {
+    position: absolute;
+}
+
+.hidden {
+    visibility: hidden;
+}
+#riddhiHomeWall03 {
+
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 99%;
+    /* border: 2px solid red; */
+
+}
+
+#riddhiHomeWall01 {
+
+    height: 3.5%;
+    width: 98.3%;
+    top: 0%;
+    left: 1%;
+    /* border: 2px solid green; */
+}
+
+#riddhiHomeWall02 {
+
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 0%;
+    /* border: 2px solid yellow; */
+}
+
+
+
+#riddhiHomeWall06 {
+
+    height: 50%;
+    width: 1.1%;
+    top: 1.6%;
+    left: 60%;
+
+}
+
+#riddhiHomeWall07 {
+
+    height: 49.1%;
+    width: 1.1%;
+    top: 1.6%;
+    left: 19.8%;
+
+}
+
+#riddhiHomeWall08 {
+
+    height: 2.2%;
+    width: 26%;
+    top: 49.7%;
+    left: 19.85%;
+
+}
+
+#riddhiHomeWall09 {
+
+    height: 2.2%;
+    width: 15%;
+    top: 50%;
+    left: 53%;
+
+}
+
+#riddhiHomeWall10 {
+
+    height: 2.2%;
+    width: 24%;
+    top: 50%;
+    left: 75%;
+
+}
+
+#riddhiHomeWall11 {
+
+    height: 2%;
+    width: 25%;
+    top: 98%;
+    left: 1%;
+
+}
+
+#riddhiHomeWall12 {
+
+    height: 2%;
+    width: 25%;
+    top: 98%;
+    left: 34%;
+
+}
+
+#riddhiHomeWall13 {
+
+    height: 2%;
+    width: 32.5%;
+    top: 98%;
+    left: 67%;
+
+}
+
+#riddhiHomeWall14 {
+    height: 2.4%;
+    width: 13%;
+    top: 46%;
+    left: 01%;
+
+}
+
+#riddhiHomebed1 {
+    height: 26%;
+    width: 13%;
+    top: 4%;
+    left: 34%;
+
+}
+
+#riddhiHomebed2 {
+    height: 26%;
+    width: 13%;
+    top: 4%;
+    left: 73%;
+}
+
+#riddhiHomekitchen {
+    height: 49.2%;
+    width: 6%;
+    top: 48.4%;
+    left: 1%;
+
+}
+
+#riddhiHomediningtable {
+    height: 27%;
+    width: 11%;
+    top: 70%;
+    left: 30%;
+}
+
+#riddhihometv1 {
+    height: 17%;
+    width: 3%;
+    top: 68%;
+    left: 96%;
+
+}
+
+#riddhihomesofa1 {
+    height: 27%;
+    width: 6.5%;
+    top: 63%;
+    left: 68%;
+}
+
+#riddhihometable1 {
+    height: 12%;
+    width: 5%;
+    top: 69.5%;
+    left: 80%;
+}
+
+#riddhihomechair01 {
+    height: 9.5%;
+    width: 6%;
+    top: 88%;
+    left: 80%;
+}
+
+#riddhihomeSofa2 {
+    height: 12%;
+    width: 12.5%;
+    top: 86%;
+    left: 78%;
+}
+
+#riddhihometv2 {
+    height: 5%;
+    width: 9%;
+    top: 45.5%;
+    left: 77%;
+}
+
+#riddhihometv3 {
+    height: 5%;
+    width: 10%;
+    top: 45.5%;
+    left: 36%;
+}
+
+#riddhihomecupboard1 {
+    height: 23%;
+    width: 3%;
+    top: 4%;
+    left: 57.1%;
+}
+
+#riddhihomecupboard2 {
+    height: 7%;
+    width: 12%;
+    top: 1.7%;
+    left: 86.8%;
+}
+
+#riddhihomebathtub {
+    height: 12%;
+    width: 11%;
+    top: 4%;
+    left: 1%;
+
+}
+
+#riddhihomewashbasin {
+    height: 8%;
+    width: 7%;
+    top: 38%;
+    left: 6.8%;
+}
+
+#riddhihomewashroom {
+    height: 7%;
+    width: 5%;
+    top: 27%;
+    left: 1%;
+}
+
+#riddhihomedoormate {
+    height: 8%;
+    width: 8%;
+    top: 90%;
+    left: 60%;
+}
+
+#riddhihomestudytable {
+    height: 15%;
+    width: 4%;
+    top: 22%;
+    left: 61.1%;
+}
+
+#riddhihomechair1 {
+    height: 8.5%;
+    width: 3.6%;
+    top: 26%;
+    left: 65.5%;
+
+}
+
+#riddhihomecarpet {
+    height: 13%;
+    width: 15%;
+    top: 31%;
+    left: 33%;
+}
+
+#riddhihomeflower1 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 94%;
+
+}
+
+#riddhihomeflower2 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 61%;
+
+}
+
+#riddhihomeflower3 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 56%;
+
+}
+
+#riddhihomeflower4 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 21%;
+
+}
+
+#riddhihomeflower5 {
+    height: 5%;
+    width: 4%;
+    top: 94%;
+    left: 47%;
+
+}
+
+#riddhihomeflower6 {
+    height: 5%;
+    width: 4%;
+    top: 94%;
+    left: 40%;
+
+}
+
+#riddhihomeflower7 {
+    height: 4%;
+    width: 3%;
+    top: 62%;
+    left: 96%;
+
+}
+
+#riddhihomeflower8 {
+    height: 4%;
+    width: 3%;
+    top: 89%;
+    left: 96%;
+
+}
+
+#riddhihomestudytable2 {
+    height: 10%;
+    width: 8.5%;
+    top: 4%;
+    left: 20.9%;
+}
+
+#riddhihomechair3 {
+    height: 7.8%;
+    width: 4%;
+    top: 12%;
+    left: 24.5%;
+
+}
+
+#riddhihomechair5 {
+    height: 9.5%;
+    width: 5.5%;
+    top: 5%;
+    left: 61%;
+}
+
+#riddhihomesittngman1 {
+    height: 9.5%;
+    width: 4%;
+    top: 63%;
+    left: 71%;
+}
+
+#riddhihomesittngman2 {
+    height: 9.2%;
+    width: 3.8%;
+    top: 25%;
+    left: 64%;
+}
+
+#riddhiHomeToilet {
+    height: 9%;
+    width: 5%;
+    top: 23%;
+    left: 1%;
+}
+
+#riddhiHomeFridge {
+    top: 89.4%;
+    left: 13%;
+    height: 8.8%;
+    width: 7.5%;
+}
+
+#riddhiHomeblackline1 {
+    height: 03%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+#riddhiHomeblackline2 {
+    height: 3%;
+    width: 100%;
+    top: 97%;
+    left: 1%;
+}
+
+#riddhiHomeblackline3 {
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 0%;
+}
+
+#riddhiHomeblackline4 {
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 100%;
+}
+
+
+.schoolInsideMap {
+    background-image: url('component/schoolBaseImage.PNG');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    display: none;
+    top: 0%;
+    left: 0%;
+    height: 180%;
+    width: 180%;
+}
+
+.schoolposition {
+    position: absolute;
+}
+
+
+/* OUTER WALLS */
+
+#schoolWall1 {
+    left: 0.4%;
+    height: 1.5%;
+    width: 99.3%;
+}
+
+#schoolWall2 {
+    height: 2%;
+    width: 40.6%;
+    left: 59.1%;
+    top: 98%;
+}
+
+#schoolWall3 {
+    height: 100%;
+    width: 0.8%;
+    left: 99.2%;
+    top:0%;
+}
+
+#schoolWall4 {
+    left:0.4%;
+    height: 2%;
+    width: 40%;
+    top: 98%;
+
+}
+
+#schoolWall5 {
+    height: 100%;
+    width: 1%;
+}
+
+/* INNER WALLS */
+#schoolWall6 {
+    height: 45%;
+    width: 1%;
+    left: 20%;
+    top: 0.6%;
+}
+
+#schoolWall7 {
+    height: 45%;
+    width: 1%;
+    left: 40%;
+    top: 0.6%;
+}
+
+#schoolWall8 {
+    height: 45%;
+    width: 1%;
+    left: 60%;
+    top: 0.6%;
+}
+
+#schoolWall9 {
+    height: 45%;
+    width: 1%;
+    left: 80%;
+    top: 0.6%;
+}
+
+#schoolWall10 {
+    height: 1.5%;
+    width: 13%;
+    left: 8%;
+    top: 45%;
+}
+
+#schoolWall11 {
+    height: 1.5%;
+    width: 13%;
+    left: 28%;
+    top: 45%;
+}
+
+#schoolWall12 {
+    height: 1.5%;
+    width: 13%;
+    left: 48%;
+    top: 45%;
+}
+
+#schoolWall13 {
+    height: 1.5%;
+    width: 13%;
+    left: 68%;
+    top: 45%;
+}
+
+#schoolWall14 {
+    height: 1.5%;
+    width: 12.8%;
+    left: 87%;
+    top: 45%;
+}
+
+#schoolWall15 {
+    height: 1.5%;
+    width: 16%;
+    left: 0.4%;
+    top: 70%;
+}
+
+#schoolWall16 {
+    height: 29.4%;
+    width: 1%;
+    left: 25%;
+    top: 69.8%;
+}
+
+#schoolWall17 {
+    height: 1.5%;
+    width: 20%;
+    left: 67%;
+    top: 70%;
+}
+
+#schoolWall18 {
+    height: 29.4%;
+    width: 1%;
+    left: 70%;
+    top: 69.8%;
+}
+
+#schoolWall19 {
+    height: 28%;
+    width: 1%;
+    left: 80%;
+    top: 70%;
+}
+
+#schoolWall20 {
+    height: 1.5%;
+    width: 22.1%;
+    left: 77.5%;
+    top: 70%;
+}
+
+#schoolWall21 {
+    height: 13%;
+    width: 1%;
+    left: 88%;
+    top: 57%;
+}
+
+#schoolRestRoomFloor {
+    height: 24%;
+    width: 13%;
+    left: 88%;
+    top: 46%;
+}
+
+#schoolRestroomWashBasin {
+    height: 5%;
+    width: 6.5%;
+    left: 92.7%;
+    top: 46.5%;
+}
+
+#schoolRestroom1 {
+    height: 6%;
+    width: 2.8%;
+    left: 96%;
+    top: 64%;
+}
+
+#schoolRestRoomWall {
+    height: 10%;
+    width: 1%;
+    left: 94%;
+    top: 60%;
+}
+
+#schoolRestroom2 {
+    height: 6%;
+    width: 2.8%;
+    left: 90%;
+    top: 64%;
+}
+
+/* CLASSROOMS */
+/* CR1 */
+#schoolClass1Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 8%;
+}
+
+#schoolClass1Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 1%;
+}
+
+#schoolClass1Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 1%;
+}
+
+#schoolClass1Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 14%;
+}
+
+#schoolClass1Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 1%;
+}
+
+#schoolClass1Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 14%;
+}
+
+#schoolClass1Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 14%;
+}
+
+#schoolClass1Desk7 {
+
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 1%;
+}
+
+#schoolClass1Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 1%;
+}
+
+#schoolClass1Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 14%;
+}
+
+#schoolClass1Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 1%;
+}
+
+#schoolClass1Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 14%;
+}
+
+#schoolClass1Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 14%;
+}
+
+/* CR2 */
+
+#schoolClass2Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 28%;
+}
+
+#schoolClass2Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 21%;
+}
+
+#schoolClass2Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 21%;
+}
+
+#schoolClass2Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 21%;
+}
+
+#schoolClass2Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 21%;
+}
+
+#schoolClass2Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 21%;
+}
+
+#schoolClass2Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 21%;
+}
+
+#schoolClass2Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 34%;
+}
+
+#schoolClass2Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 34%;
+}
+
+#schoolClass2Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 34%;
+}
+
+#schoolClass2Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 34%;
+}
+
+#schoolClass2Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 34%;
+}
+
+#schoolClass2Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 34%;
+}
+
+/* CR3 */
+
+#schoolClass3Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 48%;
+}
+
+#schoolClass3Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 41%;
+}
+
+#schoolClass3Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 41%;
+}
+
+#schoolClass3Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 41%;
+}
+
+#schoolClass3Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 41%;
+}
+
+#schoolClass3Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 41%;
+}
+
+#schoolClass3Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 41%;
+}
+
+#schoolClass3Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 54%;
+}
+
+#schoolClass3Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 54%;
+}
+
+#schoolClass3Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 54%;
+}
+
+#schoolClass3Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 54%;
+}
+
+#schoolClass3Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 54%;
+}
+
+#schoolClass3Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 54%;
+}
+
+/* CR4 */
+
+#schoolClass4Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 68%;
+}
+
+#schoolClass4Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 61%;
+}
+
+#schoolClass4Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 61%;
+}
+
+#schoolClass4Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 61%;
+}
+
+#schoolClass4Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 61%;
+}
+
+#schoolClass4Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 61%;
+}
+
+#schoolClass4Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 61%;
+}
+
+#schoolClass4Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 74%;
+}
+
+#schoolClass4Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 74%;
+}
+
+#schoolClass4Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 74%;
+}
+
+#schoolClass4Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 74%;
+}
+
+#schoolClass4Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 74%;
+}
+
+#schoolClass4Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 74%;
+}
+
+/* CR5 */
+
+#schoolClass5Board {
+    height: 2%;
+    width: 12%;
+    top: 43%;
+    left: 87.2%;
+}
+
+#schoolClass5Desk1 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 81%;
+}
+
+#schoolClass5Desk2 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 81%;
+}
+
+#schoolClass5Desk3 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 81%;
+}
+
+#schoolClass5Desk4 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 81%;
+}
+
+#schoolClass5Desk5 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 81%;
+}
+
+#schoolClass5Desk6 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 81%;
+}
+
+#schoolClass5Desk7 {
+    height: 5%;
+    width: 6%;
+    top: 1%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk8 {
+    height: 5%;
+    width: 6%;
+    top: 6%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk9 {
+    height: 5%;
+    width: 6%;
+    top: 11%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk10 {
+    height: 5%;
+    width: 6%;
+    top: 16%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk11 {
+    height: 5%;
+    width: 6%;
+    top: 21%;
+    left: 93.1%;
+}
+
+#schoolClass5Desk12 {
+    height: 5%;
+    width: 6%;
+    top: 26%;
+    left: 93.1%;
+}
+
+/* STAFFROOM */
+#schoolStaffRoomTable {
+    height: 14%;
+    width: 15%;
+    top: 78%;
+    left: 80%;
+}
+
+#schoolStaffRoomShelf {
+    height: 8%;
+    width: 3%;
+    top: 90%;
+    left: 71%;
+}
+
+
+/* PRINCIPAL CABIN */
+#schoolPrincipalTable {
+    height: 24%;
+    width: 5%;
+    top: 74%;
+    left: 8%;
+}
+
+#schoolPrincipalChair {
+    height: 8%;
+    width: 4%;
+    top: 82%;
+    left: 3%;
+}
+
+#schoolChair1 {
+    height: 8%;
+    width: 4%;
+    top: 78%;
+    left: 13%;
+}
+
+#schoolChair2 {
+    height: 8%;
+    width: 4%;
+    top: 88%;
+    left: 13%;
+}
+
+/* PLANTS */
+#schoolPlant1 {
+    height: 6%;
+    width: 4%;
+    left: 26%;
+    top: 92%;
+}
+
+#schoolPlant2 {
+    height: 6%;
+    width: 4%;
+    left: 31%;
+    top: 92%;
+}
+
+#schoolPlant3 {
+    height: 6%;
+    width: 4%;
+    left: 36%;
+    top: 92%;
+}
+
+#schoolPlant4 {
+    height: 6%;
+    width: 4%;
+    left: 60%;
+    top: 92%;
+}
+
+#schoolPlant5 {
+    height: 6%;
+    width: 4%;
+    left: 65%;
+    top: 92%;
+}
+
+#schoolPlant6 {
+    height: 6%;
+    width: 4%;
+    left: 84%;
+    top: 64%;
+}
+
+/* PEOPLE */
+
+#schoolPrincipal
+{
+    top: 83%;
+    left: 4%;
+    height: 5%;
+    width: 4%;
+}
+
+
+
+ 
+ 
+
+#schoolTeacher3
+{
+    top: 37%;
+    left: 47%;
+    height: 5%;
+    width: 4%;
+}
+
+#schoolTeacher4
+{
+    top: 37%;
+    left: 68%;
+    height: 5%;
+    width: 4%;
+}
+
+#schoolPerson1 {
+    position: absolute;
+    width: calc(7.5% / 3);
+    top: 90%;
+    height: 5.5%;
+    left: 22%;
+    z-index: 1;
+    overflow: hidden;
+    animation: maschollMan1 20s infinite linear;
+}
+
+@keyframes maschollMan1 {
+    0% {
+        transform: rotate(0deg);
+        top: 90%;
+        left: 22%;
+    }
+
+    13% {
+        transform: rotate(0deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    14% {
+        transform: rotate(-90deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    30% {
+        transform: rotate(-90deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    31% {
+        transform: rotate(0deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    42% {
+        transform: rotate(0deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    43% {
+        transform: rotate(90deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    50% {
+        transform: rotate(90deg);
+        top: 33%;
+        left: 13%;
+    }
+
+    52% {
+        transform: rotate(270deg);
+        top: 33%;
+        left: 13%;
+    }
+
+    60% {
+        transform: rotate(270deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    61% {
+        transform: rotate(180deg);
+        top: 33%;
+        left: 3%;
+    }
+
+    73% {
+        transform: rotate(180deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    74% {
+        transform: rotate(90deg);
+        top: 60%;
+        left: 3%;
+    }
+
+    87% {
+        transform: rotate(90deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    88% {
+        transform: rotate(180deg);
+        top: 60%;
+        left: 22%;
+    }
+
+    98% {
+        transform: rotate(180deg);
+        top: 90%;
+        left: 22%;
+    }
+    100% {
+        transform: rotate(0deg);
+        top: 90%;
+        left: 22%;
+    }
+}
+
+#schoolPerson1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.schoolWalk {
+    animation: schoolwalkAni .7s infinite steps(2);
+}
+
+
+@keyframes schoolwalkAni {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+#schoolPerson2 {
+    position: absolute;
+    width: calc(7.5% / 3);
+    height: 5.5%;
+    top: 3%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: schoolMan2 15s infinite linear;
+}
+
+#schoolPerson2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes schoolMan2 {
+    0% {
+        top: 3%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+
+    40% {
+        top: 32%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+
+    41% {
+        transform: rotate(-90deg);
+        left: 30%;
+        top: 32%;
+    }
+
+    53% {
+        transform: rotate(-90deg);
+        left: 35%;
+        top: 32%;
+    }
+
+    55% {
+        transform: rotate(90deg);
+        left: 35%;
+        top: 32%;
+    }
+
+    68% {
+        transform: rotate(90deg);
+        left: 30%;
+        top: 32%;
+    }
+
+    69% {
+        transform: rotate(180deg);
+        left: 30%;
+        top: 32%;
+    }
+
+    98% {
+        transform: rotate(180deg);
+        left: 30%;
+        top: 3%;
+    }
+
+    100% {
+        top: 3%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+}
+
+
+#schoolPerson3 {
+    position: absolute;
+    width: calc(5% / 2);
+    top: 90%;
+    height: 5%;
+    left: 22%;
+    z-index: 1;
+    overflow: hidden;
+    animation: schoolWoman1 15s infinite linear;
+}
+
+#schoolPerson3>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes schoolWoman1 {
+    0% {
+        top: 35%;
+        left: 83%;
+        transform: rotate(0deg);
+    }
+
+    10% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(0deg);
+    }
+
+    11% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(90deg);
+
+    }
+
+    23% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(90deg);
+
+    }
+
+    24% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(0deg);
+
+    }
+
+    40% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(0deg);
+
+    }
+
+    41% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(-90deg);
+
+    }
+
+    49% {
+        top: 77%;
+        left: 78%;
+        transform: rotate(-90deg);
+
+    }
+
+    51% {
+        top: 77%;
+        left: 78%;
+        transform: rotate(90deg);
+
+    }
+
+    58% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(90deg);
+
+    }
+    59% {
+        top: 77%;
+        left: 73%;
+        transform: rotate(180deg);
+
+    }
+    75% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(180deg);
+
+    }
+
+    76% {
+        top: 50%;
+        left: 73%;
+        transform: rotate(270deg);
+
+    }
+    89% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(270deg);
+
+    }
+    90% {
+        top: 50%;
+        left: 83%;
+        transform: rotate(180deg);
+
+    }
+    98% {
+        top: 35%;
+        left: 83%;
+        transform: rotate(180deg);
+
+    }
+    100% {
+        top: 35%;
+        left: 83%;
+        transform: rotate(0deg);
+
+    }
+
+  
+
+}
+
+.theaterInsideMap{
+    background-image: url("component/theaterBaseImage.PNG");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: 170%;
+    display: none;
+    width: 170%; 
+} 
+.theaterPosition
+{
+    position : absolute;
+}
+
+/* OUTER WALLS */
+
+#theaterWall1
+{
+    height:2%;
+    width: 48%;
+}
+#theaterWall2
+{
+    height:2%;
+    width: 39.5%;
+    left: 60%;
+}
+#theaterWall3
+{
+    top:0%; 
+    height: 100%;
+    width: 1%;
+    left: 99%;
+}
+#theaterWall4
+{
+    height: 2%;
+    width: 99.5%;
+    top: 98%;
+    left: 0%;
+}
+#theaterWall5
+{
+    height:100%;
+    width: 1%;
+}
+
+/* PLANT */
+
+#theaterPlant1
+{
+    height: 6%;
+    width: 4%;
+    left: 61%;
+    top:2%;
+}
+#theaterPlant2
+{
+    height: 6%;
+    width: 4%;
+    left: 61%;
+    top:14%;
+}
+#theaterPlant3
+{
+    height: 6%;
+    width: 4%;
+    left: 61%;
+    top:34%;
+}
+#theaterPlant4
+{
+    height: 6%;
+    width: 4%;
+    left: 61%;
+    top:48%;
+}
+#theaterPlant5
+{
+    height: 6%;
+    width: 4%;
+    left: 61%;
+    top:92%;
+}
+
+/* TICKET AND FOOD */
+
+#theaterTicketCounter
+{
+    height:10%;
+    width: 18%;
+    top: 18%;
+    left: 31.2%;
+}
+
+#theaterTicketCounterChair1
+{
+    height: 5%;
+    width: 3.5%;
+    top: 12.5%;
+    left: 43.1%;
+}
+
+#theaterTicketCounterChair2
+{
+    height: 5%;
+    width: 3.5%;
+    top: 12.5%;
+    left: 33%;
+}
+
+#theaterFoodCounter2
+{
+    height: 21%;
+    width: 7%;
+    top: 7%;
+    left: 1%;
+}
+
+#theaterFoodCounter
+{
+    height: 10%;
+    width: 15%;
+    top: 18%;
+    left: 7.5%;
+}
+
+#theaterFoodFridge
+{
+    height: 5%;
+    width: 6%;
+    top: 2%;
+    left: 1%;
+}
+/* VIP SCREEN */
+
+#theaterScreen1
+{
+    top: 1%;
+    left: 70%;
+    height: 10%;
+    width: 25%;
+}
+#theaterSeats11
+{
+    top: 22%; 
+    left: 71%; 
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats12
+{
+    top: 22%;
+    left: 81%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats13
+{
+    top: 44%;
+    left: 71%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats14
+{
+    top: 44%;
+    left: 81%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats15
+{
+    top: 22%;
+    left: 91%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats16
+{
+    top: 44%;
+    left: 91%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats17
+{
+    top: 65%;
+    left: 81%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats18
+{
+    top: 65%;
+    left: 71%;
+    height: 8%;
+    width: 4%;
+}
+#theaterSeats19
+{
+    top: 65%;
+    left: 91%;
+    height: 8%;
+    width: 4%;
+}
+
+#theaterWall7
+{
+    top: 1%;
+    height:18%;
+    width: 1%;
+    left: 66%;
+}
+
+#theaterWall6
+{
+    top: 67%;
+    height: 6%;
+    width: 1%;
+    left: 66%;
+}
+
+#theaterWall8
+{
+    top: 35%;
+    height: 17%;
+    width: 1%;
+    left: 66%;
+}
+
+/* RESTROOM */
+
+#theaterWall9
+{
+    top: 73%;
+    height:2%;
+    width: 33.5%;
+    left: 66%;
+}
+
+#theaterWall10
+{
+    top: 86.5%;
+    height: 12.4%;
+    width: 1%;
+    left: 66%;
+}
+
+#theaterRestRoom1
+{
+    height: 8%;
+    width: 4.5%;
+    left: 81.5%;
+    top: 90%;
+}
+#theaterWashBasin
+{
+    height: 6.5%;
+    width: 11%;
+    left: 67%;
+    top: 91.5%;
+}
+#theaterRestRoom2
+{
+    height: 8%;
+    width: 4.5%;
+    left: 92%;
+    top: 90%;
+}
+#theaterRestRoom
+{
+    top:75%;
+    left:65%;
+    height:25%;
+    width:35%;
+}
+
+#theaterWall14
+{
+    top: 86.5%;
+    height: 12.4%;
+    width: 1%;
+    left: 78%;
+}
+
+#theaterWall15
+{
+    top: 86.5%;
+    height: 12.4%;
+    width: 1%;
+    left: 88%;
+}
+
+/* GENERAL SCREEN */
+
+#theaterScreen3
+{
+    top: 56.5%;
+    left: 46.5%;
+    height: 41.5%;
+    width: 3.5%;
+}
+#theaterSeats31
+{
+    top: 57%;
+    left: 32%;
+    height: 16%;
+    width: 10.5%;
+}
+#theaterSeats32
+{
+    top: 82.5%;
+    left: 32%;
+    height: 16%;
+    width: 10.5%;
+}
+#theaterSeats33
+{
+    top: 57%;
+    left: 11.3%;
+    height: 16%;
+    width: 10.5%;
+}
+#theaterSeats34
+{
+    top: 82.5%;
+    left: 11.2%;
+    height: 16%;
+    width: 10.5%;
+}
+#theaterSeats35
+{
+    top: 57%;
+    left: 0.5%;
+    height: 16%;
+    width: 10.5%; 
+}
+#theaterSeats36
+{
+    top: 82.1%;
+    left: 1.1%;
+    height: 16%;
+    width: 10.5%;
+}
+
+#theaterWall11
+{
+    height:2%;
+    width: 20%;
+    top: 54%;
+    left: 1%;
+}
+
+#theaterWall12
+{
+    top: 54%;
+    height:2%;
+    width: 18%;
+    left: 32%;
+}
+
+#theaterWall13
+{
+    top: 54%;
+    height: 45%;
+    width: 1%;
+    left: 50%;
+}
+
+/* PEOPLE */
+
+#theaterPeople1
+{
+    height : 5%;
+    width: 3%;
+    left: 71.5%;
+    top: 21%;
+}
+
+#theaterPeople2
+{
+    height : 5%;
+    width: 3%;
+    left: 81.5%;
+    top: 43%;
+}
+
+#theaterPeople3
+{
+    height : 5%;
+    width: 4%;
+    left: 91%;
+    top: 63%;
+}
+#theaterCounterMan1
+{
+    height: 5%;
+    width:3.5%;
+    left:32.8%;
+    top:13.9%;
+}
+#theaterCounterMan2
+{
+    height: 5%;
+    width:3.5%;
+    left:43%;
+    top:13.9%;
+}
+#theaterStandingMan{
+    top: 13%;
+    left: 10%;
+    height:3.5%;
+    width: 3%;
+}
+
+.TheaterWalk{
+    animation: TheaterWalk .7s infinite steps(2);
+}
+@keyframes TheaterWalk {
+    0%{
+        left: 0%;
+    }
+    
+    100%{
+        left: -200%;
+    }
+}
+
+#theaterChr1{
+    position: absolute;
+    width: calc(5% / 2);
+    height: 4.5%;
+    top: 42%;
+    left: 64%;
+    z-index: 1;
+    overflow: hidden;
+    animation: theaterperson 25s infinite linear ;
+}
+
+#theaterChr1 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes theaterperson {
+   0%{
+      top: 42%;
+     left: 64%;
+     transform: rotate(0deg);
+   }
+    1%{
+        top: 42%;
+        left: 64%;
+        transform: rotate(90deg);
+    }
+    40%{
+        top: 42%;
+        left: 15%;
+        transform: rotate(90deg);
+    }
+    41%{
+        top: 42%;
+        left: 15%;
+        transform: rotate(180deg);
+    }
+    49%{
+        top: 30%;
+        left: 15%;
+        transform: rotate(180deg);
+    }
+    51%{
+        top: 30%;
+        left: 15%;
+        transform: rotate(0deg);
+    }
+    60%{
+        top: 42%;
+        left: 15%;
+        transform: rotate(0deg);
+    }
+    61%{
+        top: 42%;
+        left: 15%;
+        transform: rotate(-90deg);
+    }
+    100%{
+        top: 42%;
+        left: 64%;
+        transform: rotate(-90deg);
+    }
+   
+}
+
+#theaterChr2{
+    position: absolute;
+    width: calc(5% / 2);
+    height: 4.5%;
+    top: 5%;
+    left: 55%;
+    z-index: 1;
+    overflow: hidden;
+    animation: theaterperson2 20s infinite linear ;
+}
+
+#theaterChr2 > img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+@keyframes theaterperson2{
+    0%{
+        top: 5%;
+        left: 55%;
+        transform:rotate(180deg);
+    }
+    15%{
+        top: 30%;
+        left: 55%;
+        transform:rotate(180deg);
+    }
+    16%{
+        top: 30%;
+        left: 55%;
+        transform:rotate(270deg);
+    }
+    49%{
+        top: 30%;
+        left: 18%;
+        transform:rotate(270deg);
+    }
+    51%{
+        top: 30%;
+        left: 18%;
+        transform:rotate(450deg);
+    }
+    85%{
+        top: 30%;
+        left: 55%;
+        transform:rotate(450deg);
+    }
+    86%{
+        top: 30%;
+        left: 55%;
+        transform:rotate(360deg);
+    }
+    98%{
+        top: 5%;
+        left: 55%;
+        transform:rotate(360deg);
+    }
+    100%{
+        top: 5%;
+        left: 55%;
+        transform:rotate(180deg);
+    }
+}
+
+
+.exit_button{
+    display: none;
+}
+
+#exit_button{
+    border: 6px double rgb(234, 84, 84);
+    border-radius: 20%;
+    font-size: 70%;
+    font-weight: bold;
+    cursor: pointer;
+    width: 15%;
+    height: 5%;
+    background-color: black;
+    color: rgb(226, 218, 218);
+    position: absolute;
+    border-color: rgb(128, 0, 0);
+    left: 42.5%;
+    top: 90%;
+
+}
+
+#exit_button:hover{
+    transform: scale(1.2);
+    color: black;
+    background-color: aqua;
+}

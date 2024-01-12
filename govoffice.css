@@ -1,0 +1,828 @@
+.govOfficeInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/floor142.jpg');
+    position: relative;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.govofficePosition {
+    position: absolute;
+}
+
+
+#govofficewall01 {
+    height: 100%;
+    width: 1.5%;
+    top: 0%;
+    left: 0%;
+}
+
+#govofficewall02 {
+    height: 3%;
+    width: 98.5%;
+    top: 0%;
+    left: 1.5%;
+}
+
+#govofficewall03 {
+    height: 97.8%;
+    width: 1.5%;
+    top: 1.6%;
+    left: 98.5%;
+}
+
+#govofficewall04 {
+    height: 52.5%;
+    width: 1%;
+    top: 1.6%;
+    left: 22%;
+}
+
+#govofficewall05 {
+    height: 52%;
+    width: 1%;
+    top: 1.6%;
+    left: 68%;
+}
+
+#govofficewall06 {
+    height: 2%;
+    width: 16%;
+    top: 55%;
+    left: 1.5%;
+}
+
+#govofficewall07 {
+    height: 2%;
+    width: 18%;
+    top: 53%;
+    left: 36%;
+}
+
+#govofficewall08 {
+    height: 2%;
+    width: 25%;
+    top: 56.5%;
+    left: 74.3%;
+
+}
+
+#govofficewall09 {
+    height: 2.5%;
+    width: 24%;
+    top: 97.5%;
+    left:0.8%;
+}
+
+#govofficewall10 {
+    height: 2.5%;
+    width: 61%;
+    top: 97.5%;
+    left: 39%;
+}
+
+#govofficewall11 {
+    height: 51.5%;
+    width: 1%;
+    top: 1.6%;
+    left: 45%;
+
+}
+
+#govofficewall12 {
+    height: 2%;
+    width: 7%;
+    top: 53%;
+    left: 22%;
+}
+
+#govofficewall13 {
+    height: 2%;
+    width: 9%;
+    top: 53%;
+    left: 60%;
+}
+
+
+#govofficeTablecomputer1 {
+    height: 13%;
+    width: 20%;
+    left: 75%;
+    top: 26%;
+
+}
+
+#govofficeTablecomputer2 {
+    height: 10%;
+    width: 10%;
+    left: 06%;
+    top: 26%;
+}
+
+#govofficeTablecomputer3 {
+    height: 8%;
+    width: 20%;
+    left: 75%;
+    top: 58.5%;
+
+
+}
+
+#govofficeChair1 {
+    height: 7%;
+    width: 4%;
+    left: 34%;
+    top: 25%;
+}
+
+#govofficeChair2 {
+    height: 7%;
+    width: 4%;
+    left: 54.3%;
+    top: 24%;
+}
+
+#govofficeChair9 {
+    height: 7%;
+    width: 4%;
+    left: 76%;
+    top: 19%;
+}
+
+#govofficeChair10 {
+    height: 7%;
+    width: 4%;
+    left: 82.6%;
+    top: 19%;
+}
+
+#govofficeChair11 {
+    height: 7%;
+    width: 4%;
+    left: 90.3%;
+    top: 19%;
+}
+
+#govofficeChair12 {
+    height: 7%;
+    width: 4%;
+    left: 76%;
+    top: 38.9%;
+}
+
+#govofficeChair13 {
+    height: 7%;
+    width: 4%;
+    left: 82.6%;
+    top: 38.9%;
+}
+
+#govofficeChair14 {
+    height: 7%;
+    width: 4%;
+    left: 90.3%;
+    top: 38.9%;
+}
+
+#govofficeChair15 {
+    height: 7%;
+    width: 4%;
+    left: 09%;
+    top: 19%;
+}
+
+#govofficeChair16 {
+    height: 7%;
+    width: 4%;
+    left: 6%;
+    top: 37%;
+}
+
+#govofficeChair17 {
+    height: 7%;
+    width: 4%;
+    left: 12%;
+    top: 37%;
+}
+
+#govofficeChair18 {
+    height: 7%;
+    width: 4%;
+    left: 75.3%;
+    top: 66%;
+}
+
+#govofficeChair19 {
+    height: 7%;
+    width: 4%;
+    left: 83%;
+    top: 66%;
+}
+
+#govofficeChair20 {
+    height: 7%;
+    width: 4%;
+    left: 90%;
+    top: 66%;
+}
+
+#govofficesofa1 {
+    height: 9%;
+    width: 9%;
+    left: 1.5%;
+    top: 89%;
+}
+
+#govofficesofa2 {
+    height: 9%;
+    width: 9%;
+    left: 15%;
+    top: 89%;
+}
+
+#govofficesofa3 {
+    height: 9%;
+    width: 9%;
+    left: 40%;
+    top: 89%;
+}
+
+#govofficesofa4 {
+    height: 9%;
+    width: 9%;
+    left: 55%;
+    top: 89%;
+}
+
+#govofficesofa5 {
+    height: 9%;
+    width: 9%;
+    left: 70%;
+    top: 89%;
+}
+
+#govofficesofa6 {
+    height: 8%;
+    width: 8%;
+    left: 85%;
+    top: 89%;
+}
+
+#gov0fficeCupboard1 {
+    height: 6%;
+    width: 5%;
+    left: 1.5%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard2 {
+    height: 6%;
+    width: 7%;
+    left: 58%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard3 {
+    height: 6%;
+    width: 7%;
+    left: 69%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard4 {
+    height: 6%;
+    width: 5%;
+    left: 9%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard5 {
+    height: 6%;
+    width: 5%;
+    left: 16%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard6 {
+    height: 6%;
+    width: 7%;
+    left: 48%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard7 {
+    height: 6%;
+    width: 7%;
+    left: 27%;
+    top: 3%;
+
+
+}
+
+#gov0fficeCupboard8 {
+    height: 6%;
+    width: 7%;
+    left: 37%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard9 {
+    height: 6%;
+    width: 7%;
+    left: 79%;
+    top: 3%;
+
+}
+
+#gov0fficeCupboard10 {
+    height: 6%;
+    width: 7%;
+    left: 89%;
+    top: 3%;
+
+}
+
+
+
+#govofficeDustbin1{
+    height: 6%;
+    width: 3%;
+    left: 95%;
+    top: 91%;
+
+}
+
+#govofficezerox1 {
+    height: 8%;
+    width: 5%;
+    left: 2%;
+    top: 59%;
+
+}
+
+
+#govofficeFireext1 {
+    height: 3%;
+    width: 3%;
+    left: 13%;
+    top: 60%;
+}
+
+
+#govofficeFireext2 {
+    height: 3%;
+    width: 3%;
+    left: 97%;
+    top: 51%;
+}
+
+#govofficeScreen1 {
+    height: 30%;
+    width: 1%;
+    left: 26%;
+    top: 13%;
+}
+
+#govofficeScreen2 {
+    height: 27%;
+    width: 1%;
+    left: 69%;
+    top: 16%;
+}
+
+
+#govofficetable1 {
+    height: 8%;
+    width: 8%;
+    top: 31%;
+    left: 32%;
+}
+
+#govofficetable2 {
+    height: 8%;
+    width: 8%;
+    top: 31%;
+    left: 53%;
+}
+
+#govofficefile1 {
+    height: 13%;
+    width: 2.5%;
+    top: 14%;
+    left: 23%;
+}
+
+#govofficefile2 {
+    height: 13%;
+    width: 2.5%;
+    top: 30%;
+    left: 23%;
+}
+
+#govofficefile3 {
+    height: 13%;
+    width: 2.5%;
+    top: 14%;
+    left: 46%;
+}
+
+#govofficefile4 {
+    height: 13%;
+    width: 2.5%;
+    top: 30%;
+    left: 46%;
+}
+
+#govofficefile5 {
+    height: 13%;
+    width: 2.5%;
+    top: 14%;
+    left: 65.5%;
+}
+
+#govofficefile6 {
+    height: 13%;
+    width: 2.5%;
+    top: 30%;
+    left: 65.5%;
+}
+
+
+
+#govofficeman01 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 21%;
+    left: 8.7%;
+
+}
+
+#govofficeman02 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 26%;
+    left: 33.7%;
+
+}
+
+#govofficeman03 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 26%;
+    left: 54%;
+
+}
+
+#govofficeman04 {
+    height: 6.7%;
+    width: 4%;
+    top: 87%;
+    left: 7%;
+
+}
+
+#govofficeman05 {
+    height: 6.7%;
+    width: 3%;
+    top: 87%;
+    left: 43%;
+
+}
+
+#govofficeman06 {
+    height: 6.7%;
+    width: 4.7%;
+    top: 21%;
+    left: 76%;
+
+}
+
+#govofficeman07 {
+    height: 6.7%;
+    width: 4%;
+    top: 21%;
+    left: 82.8%;
+
+}
+
+#govofficeman08 {
+    height: 6.7%;
+    width: 4%;
+    top: 21%;
+    left: 90.3%;
+
+}
+
+#govofficeman09 {
+    height: 6.7%;
+    width: 4.4%;
+    top: 37.2%;
+    left: 76%;
+
+}
+
+#govofficeman10 {
+    height: 6.7%;
+    width: 4%;
+    top: 37.2%;
+    left: 82.2%;
+
+}
+
+#govofficeman11 {
+    height: 6.7%;
+    width: 4%;
+    top: 37.2%;
+    left: 90.4%;
+
+}
+
+#govofficeman12 {
+    height:6.7%;
+    width: 4.7%;
+    top: 65%;
+    left: 75%;
+
+}
+
+#govofficeman13 {
+    height: 6.7%;
+    width: 4%;
+    top: 65%;
+    left: 83%;
+
+}
+
+#govofficeman14 {
+    height: 6.7%;
+    width: 4%;
+    top: 65%;
+    left: 90%;
+
+}
+
+
+
+
+
+
+#govofficeman1 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 42%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: govOfficeman1 20s infinite linear;
+}
+
+#govofficeman1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: govOfficewalk .8s infinite steps(2);
+}
+
+
+
+@keyframes govOfficewalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+
+
+@keyframes govOfficeman1 {
+
+    0%{
+        top: 42%;
+        left: 30%;
+        transform: rotate(180deg);
+    }
+    15%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(180deg);
+    }
+    16%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(90deg);
+    }
+    49%{
+        top: 60%;
+        left: 70%;
+        transform: rotate(90deg);
+    }
+    51%{
+        top: 60%;
+        left: 70%;
+        transform: rotate(-90deg);
+    }
+    85%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(-90deg);
+    }
+    86%{
+        top: 60%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+    98%{
+        top: 42%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+    100%{
+        top: 42%;
+        left: 30%;
+        transform: rotate(180deg);
+    }
+   
+}
+
+#govofficeman2 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 42%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: govOfficeman2 20s infinite linear;
+}
+
+#govofficeman2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+
+
+@keyframes govOfficeman2 {
+
+    0%{
+        top: 80%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+    10%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+    11%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(-90deg);
+    }
+    40%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(-90deg);
+    }
+    41%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+    50%{
+        top: 60%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+    52%{
+        top: 60%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+    60%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(180deg);
+    }
+    61%{
+        top: 70%;
+        left: 10%;
+        transform: rotate(90deg);
+    }
+    90%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(90deg);
+    }
+    91%{
+        top: 70%;
+        left: 40%;
+        transform: rotate(180deg);
+    }
+    98%{
+        top: 80%;
+        left: 40%;
+        transform: rotate(180deg);
+    }
+    100%{
+        top: 80%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+}
+
+#govofficeman3{
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 42%;
+    left: 30%;
+    z-index: 1;
+    overflow: hidden;
+    animation: govOfficeman3 20s infinite linear;
+}
+
+#govofficeman3>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes govOfficeman3 {
+
+    0%{
+        top: 85%;
+        left: 50%;
+        transform: rotate(0deg);
+    }
+    6%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(0deg);
+    }
+    7%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(90deg);
+    }
+   
+   
+    50%{
+        top: 80%;
+        left: 90%;
+        transform: rotate(90deg);
+    }
+    52%{
+        top: 80%;
+        left: 90%;
+        transform: rotate(-90deg);
+    }
+   
+   
+    90%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(-90deg);
+    }
+    91%{
+        top: 80%;
+        left: 50%;
+        transform: rotate(-180deg);
+    }
+    98%{
+        top: 85%;
+        left: 50%;
+        transform: rotate(-180deg);
+    }
+    100%{
+        top: 85%;
+        left: 50%;
+        transform: rotate(0deg);
+    }
+}

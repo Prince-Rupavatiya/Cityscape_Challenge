@@ -1,0 +1,636 @@
+.postOfficePosition {
+  position: absolute;
+}
+.postOfficeInsideMap {
+  height: 150%;
+  width: 150%;
+  background-image: url("component/postOfficeBaseC.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+  position: relative;
+  /* border: 5px solid red; */
+}
+
+/* WALLS */
+#postOfficeWallVertical1 {
+  top: 0.4%;
+  left: 3.7%;
+  height: 99%;
+  width: 0.85%;
+}
+
+#postOfficeWallVertical2 {
+  top: 0.4%;
+  width: 0.85%;
+  left: 20%;
+  height: 43.5%;
+}
+#postOfficeWallVertical3 {
+  top: 23%;
+  width: 0.85%;
+  left: 35.7%;
+  height: 21%;
+}
+#postOfficeWallVertical4 {
+  top: 23%;
+  width: 0.85%;
+  left: 52.2%;
+  height: 21%;
+}
+
+#postOfficeWallHorizontal1 {
+  top: 44%;
+  left: 4.3%;
+  height: 1.7%;
+  width: 10%;
+}
+#postOfficeWallHorizontal2 {
+  top: 44%;
+  left: 20%;
+  height: 1.7%;
+  width: 5%;
+}
+#postOfficeWallHorizontal3 {
+  top: 44%;
+  left: 32%;
+  height: 1.7%;
+  width: 8.5%;
+}
+/* #postOfficeWallHorizontal4 {
+  top: 44%;
+  left: 34.2%;
+  height: 1.7%;
+  width: 5%;
+} */
+#postOfficeWallHorizontal5 {
+  top: 44%;
+  left: 48.1%;
+  height: 1.7%;
+  width: 5%;
+}
+
+/* Post Office Head Office */
+.postOfficeTableClass {
+  top: 25%;
+  height: 21%;
+  width: 12%;
+}
+
+#postOfficeChair1 {
+  top: 25%;
+  left: 11.5%;
+  width: 5%;
+  height: 12%;
+}
+
+#postOfficeChair2 {
+  top: 25%;
+  left: 31.5%;
+  height: 10%;
+  width: 5.8%;
+}
+
+#postOfficeChair3 {
+  top: 25%;
+  left: 52%;
+  height: 10%;
+  width: 5.8%;
+}
+#postOfficeSofa {
+  left: 28.2%;
+}
+#postOfficeSofa2 {
+  left: 38.2%;
+}
+.postOfficeSofaClass {
+  top: 1.4%;
+  height: 10%;
+  width: 10%;
+}
+
+#postOfficeOfficeTable {
+  top: 3%;
+  left: 87.5%;
+  height: 21.5%;
+  width: 5.1%;
+}
+#postOfficeOfficeChair {
+  top: 10%;
+  left: 93%;
+  height: 7.5%;
+  width: 5%;
+}
+#postOfficeOfficeSofa1 {
+  top: 2%;
+  left: 75%;
+  height: 8.5%;
+  width: 4.5%;
+}
+#postOfficeOfficeSofa2 {
+  top: 11%;
+  left: 69.5%;
+  height: 16.7%;
+  width: 4.7%;
+}
+#postOfficeOfficeTable2 {
+  top: 12.5%;
+  left: 75.8%;
+  height: 13.8%;
+  width: 4%;
+}
+#postOfficeOfficeChair1 {
+  top: 6%;
+  left: 83.5%;
+  height: 7.5%;
+  width: 3.5%;
+}
+#postOfficeOfficeChair2 {
+  top: 15%;
+  left: 83.5%;
+  height: 7.5%;
+  width: 3.5%;
+}
+#postOfficePlant1 {
+  height: 6%;
+  width: 4%;
+  left: 70.3%;
+  top: 3%;
+}
+#postOfficePlant2 {
+  height: 6%;
+  width: 4%;
+  left: 4.5%;
+  top: 92%;
+}
+#postOfficeOfficeDustbin {
+  top: 4%;
+  left: 95%;
+  width: 2.5%;
+  height: 5%;
+}
+#postOfficeOfficeCupboard {
+  top: 38.8%;
+  left: 70%;
+  height: 6.7%;
+  width: 9.7%;
+}
+#postOfficeOfficeWallVertical {
+  top: 0.4%;
+  left: 68.9%;
+  height: 45.45%;
+  width: 0.8%;
+}
+#postOfficeOfficeWallHorizontal {
+  top: 44%;
+  left: 69.3%;
+  height: 1.85%;
+  width: 20%;
+}
+
+#postOfficeDustbin2 {
+  top: 2%;
+  height: 5%;
+  width: 2.5%;
+  left: 14.7%;
+}
+
+/* Post Office */
+#postOfficeCabinet1 {
+  top: 1.7%;
+  left: 25%;
+  height: 5%;
+  width: 8%;
+}
+#postOfficeBlackCupBoard {
+  top: 1.7%;
+  left: 21%;
+  height: 13%;
+  width: 3%;
+}
+#postOfficeFiles1 {
+  top: 3.5%;
+  left: 21%;
+  height: 5%;
+  width: 2.7%;
+}
+#postOfficeFiles2 {
+  top: 9%;
+  left: 21%;
+  height: 5%;
+  width: 2.7%;
+}
+#postOfficeParcles1 {
+  top: 1.7%;
+  left: 4.6%;
+  height: 13%;
+  width: 14%;
+}
+#postOfficeParcles2 {
+  top: 31%;
+  left: 4.6%;
+  height: 13%;
+  width: 7%;
+}
+#postOfficeParcles3 {
+  top: 14.6%;
+  left: 4.5%;
+  height: 10%;
+  width: 6%;
+}
+#postOfficeManWithParcle {
+  top: 25%;
+  left: 5%;
+  height: 4%;
+  width: 3%;
+}
+
+/* POST OFFICE COUNTERS */
+#postOfficeCounterTable {
+  top: 34%;
+  left: 21%;
+  height: 10%;
+  width: 14.6%;
+}
+#postOfficechair1 {
+  top: 25%;
+  left: 21%;
+  height: 7%;
+  width: 4.5%;
+}
+#postOfficeDustbin3 {
+  height: 5%;
+  width: 2.5%;
+  left: 33%;
+  top: 28%;
+}
+
+#postOfficeCounterTable2 {
+  top: 34%;
+  left: 36.5%;
+  height: 10%;
+  width: 15.6%;
+}
+#postOfficechair2 {
+  top: 25%;
+  left: 40%;
+  height: 7%;
+  width: 4.5%;
+}
+#postOfficeDustbin4 {
+  height: 5%;
+  width: 2.5%;
+  left: 49%;
+  top: 28%;
+}
+
+/* WAITING ROOM */
+
+#postOfficeChairsVertical1 {
+  top: 65%;
+  left: 5%;
+  height: 25%;
+  width: 3.5%;
+}
+#postOfficeChairsHorizontal {
+  top: 91%;
+  height: 7.5%;
+  width: 12%;
+  left: 8.5%;
+}
+
+/* POST OFFICE */
+#postOfficeBrownTable {
+  top: 88%;
+  left: 23%;
+  height: 10%;
+  width: 10%;
+}
+#postOfficeMeetingTable
+{
+  top: 74%;
+  left: 59%;
+  height: 18%;
+  width: 16%;
+}
+/* WASHROOM */
+.postOfficeWashroomWallV {
+  top: 74%;
+  height: 25%;
+  width: 1%;
+}
+#postOfficeMeetingRoomWallVertical1 {
+  left: 59%;
+}
+#postOfficeWashroomWallVertical2 {
+  left: 83%;
+}
+
+.postOfficeWashroomWallH {
+  top: 72.7%;
+  height: 1.7%;
+  width: 7.9%;
+}
+#postOfficeMeetingRoomWallHorizontal1 {
+  left: 59%;
+  width: 15%;
+}
+#postOfficeWashroomWallHorizontal2 {
+  left: 83%;
+}
+
+#postOfficeToilet2 {
+  top: 77%;
+  left: 84%;
+  height: 4.5%;
+  width: 4%;
+}
+#postOfficeWashBasin2 {
+  top: 94%;
+  left: 94%;
+  height: 4.5%;
+  width: 5.5%;
+}
+
+#postOfficeBlacklineHorizontal {
+  top: 0%;
+  left: 0%;
+  height: 2%;
+  width: 100%;
+}
+#postOfficeBlacklineHorizontal2 {
+  top: 98%;
+  left: 0%;
+  height: 2%;
+  width: 100%;
+}
+
+#postOfficeBlacklineVertical3 {
+  top: 0%;
+  left: 99.3%;
+  height: 100%;
+  width: 0.7%;
+}
+.visibility {
+  opacity: 0.7;
+  visibility: hidden;
+}
+
+/* PEOPLE */
+#postOfficeSittingMan1 {
+  top: 88%;
+  left: 17%;
+  height: 7.5%;
+  width: 3.5%;
+}
+#postOfficeSittingMan2 {
+  top: 6%;
+  left: 76%;
+  height: 6%;
+  width: 2.5%;
+}
+#postOfficeSittingMan3 {
+  top: 66%;
+  left: 6%;
+  height: 5%;
+  width: 3.5%;
+}
+#postOfficeSittingWoman1 {
+  top: 88%;
+  left: 11.2%;
+  height: 8%;
+  width: 3.5%;
+}
+#postOfficeSittingWoman2 {
+  top: 78%;
+  left: 6%;
+  height: 5%;
+  width: 3.5%;
+}
+#postOfficeManager {
+  top: 10.5%;
+  left: 92%;
+  height: 6%;
+  width: 5%;
+}
+
+/* -------------------------------------------------------------- */
+#postOfficeCuriorBoy1 {
+  position: absolute;
+  width: calc(7% / 2);
+  height: 4%;
+  top: 17%;
+  left: 3%;
+  z-index: 1;
+  overflow: hidden;
+  /* display: none;  */
+  animation: postOfficeCuriorBoyAnimation 11s infinite linear;
+}
+
+#postOfficeCuriorBoy1 > img {
+  position: relative;
+  height: 100%;
+  width: 200%;
+  top: 0%;
+  left: 0%;
+}
+
+@keyframes postOfficeCuriorBoyAnimation {
+  0% {
+    top: 17%;
+    left: 15%;
+    transform: rotate(0deg);
+  }
+  40% {
+    top: 53%;
+    left: 15%;
+    transform: rotate(0deg);
+  }
+  41% {
+    transform: rotate(-90deg);
+    left: 15%;
+    top: 53%;
+  }
+  50% {
+    transform: rotate(-90deg);
+    left: 20%;
+    top: 53%;
+  }
+  52% {
+    transform: rotate(90deg);
+    left: 20%;
+    top: 53%;
+  }
+  65% {
+    transform: rotate(90deg);
+    left: 15%;
+    top: 53%;
+  }
+  66% {
+    transform: rotate(180deg);
+    left: 15%;
+    top: 53%;
+  }
+  98% {
+    transform: rotate(180deg);
+    left: 15%;
+    top: 17%;
+  }
+  100% {
+    top: 17%;
+    left: 15%;
+    transform: rotate(0deg);
+  }
+}
+/* ----------------------------------------------------- */
+#postOfficeYellowMan {
+  position: absolute;
+  width: calc(6% / 2);
+  height: 6%;
+  top: 8%;
+  left: 33%;
+  z-index: 1;
+  overflow: hidden;
+  animation: postOfficeYellowManAni 40s infinite linear;
+}
+
+#postOfficeYellowMan > img {
+  position: relative;
+  height: 100%;
+  width: 200%;
+  top: 0%;
+  left: 0%;
+}
+
+@keyframes postOfficeYellowManAni {
+  0% {
+    transform: rotate(-90deg);
+    top: 8%;
+    left: 33%;
+  }
+  7% {
+    transform: rotate(-90deg);
+    top: 8%;
+    left: 54%;
+  }
+  8% {
+    transform: rotate(0deg);
+    top: 8%;
+    left: 54%;
+  }
+  22% {
+    transform: rotate(0deg);
+    top: 87%;
+    left: 54%;
+  }
+  23% {
+    transform: rotate(90deg);
+    top: 87%;
+    left: 54%;
+  }
+  29% {
+    transform: rotate(90deg);
+    top: 87%;
+    left: 38%;
+  }
+  30% {
+    transform: rotate(270deg);
+    top: 87%;
+    left: 38%;
+  }
+  36% {
+    transform: rotate(270deg);
+    top: 87%;
+    left: 54%;
+  }
+  37% {
+    transform: rotate(180deg);
+    top: 87%;
+    left: 54%;
+  }
+  44% {
+    transform: rotate(180deg);
+    top: 50%;
+    left: 54%;
+  }
+  45% {
+    transform: rotate(270deg);
+    top: 50%;
+    left: 54%;
+  }
+  57% {
+    transform: rotate(270deg);
+    top: 50%;
+    left: 92%;
+  }
+  58% {
+    transform: rotate(180deg);
+    top: 50%;
+    left: 92%;
+  }
+  62% {
+    transform: rotate(180deg);
+    top: 27%;
+    left: 92%;
+  }
+  63% {
+    transform: rotate(0deg);
+    top: 27%;
+    left: 92%;
+  }
+  69% {
+    transform: rotate(0deg);
+    top: 50%;
+    left: 92%;
+  }
+  70% {
+    transform: rotate(90deg);
+    top: 50%;
+    left: 92%;
+  }
+  82% {
+    transform: rotate(90deg);
+    top: 50%;
+    left: 54%;
+  }
+  83% {
+    transform: rotate(180deg);
+    top: 50%;
+    left: 54%;
+  }
+  91% {
+    transform: rotate(180deg);
+    top: 8%;
+    left: 54%;
+  }
+  92% {
+    transform: rotate(90deg);
+    top: 8%;
+    left: 54%;
+  }
+  98% {
+    transform: rotate(90deg);
+    top: 8%;
+    left: 33%;
+  }
+  100% {
+    transform: rotate(-90deg);
+    top: 8%;
+    left: 33%;
+  }
+ 
+}
+/* ---------------------------------------------------------------- */
+
+.postOfficewalk {
+  animation: postOfficewalk 0.8s infinite steps(2);
+}
+@keyframes postOfficewalk {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: -200%;
+  }
+}

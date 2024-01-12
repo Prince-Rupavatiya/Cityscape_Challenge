@@ -1,0 +1,883 @@
+.mallInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/floor123.jpg');
+    position: relative;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.mallposition {
+    position: absolute;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#mallWall01 {
+    height: 100%;
+    width: 1.2%;
+    top: 0%;
+    left: 0%;
+}
+
+#mallwall02 {
+    height: 3%;
+    width: 099.3%;
+    top: 0%;
+    left: 0.74%;
+}
+
+#mallWall03 {
+    height: 98.1%;
+    width: 1.5%;
+    top: 1.9%;
+    left: 98.5%;
+}
+
+
+#mallwall05 {
+    height: 3%;
+    width: 20%;
+    top: 55%;
+    left: 0.75%;
+}
+
+
+
+#mallwall07 {
+    height: 3%;
+    width: 25.5%;
+    top: 97%;
+    left: 0.75%;
+}
+
+#mallwall08 {
+    height: 3%;
+    width: 30%;
+    top: 97%;
+    left: 35%;
+}
+
+#mallwall09 {
+    height: 3%;
+    width: 24.1%;
+    top: 97%;
+    left: 75%;
+}
+
+#mallWall10 {
+    height: 23.1%;
+    width: 1%;
+    top: 76.9%;
+    left: 74.5%;
+}
+
+#mallWall11 {
+    height: 20%;
+    width: 0.5%;
+    top: 78%;
+    left: 87%;
+}
+
+#mallwall12 {
+    height: 2%;
+    width: 9%;
+    top: 76%;
+    left: 82.8%;
+}
+
+#mallTablechair1 {
+    height: 12%;
+    width: 7%;
+    top: 70%;
+    left: 35%;
+}
+
+#mallTablechair2 {
+    height: 12%;
+    width: 7%;
+    top: 80%;
+    left: 45%;
+}
+
+#mallTablechair3 {
+    height: 12%;
+    width: 7%;
+    top: 80%;
+    left: 55%;
+}
+
+#mallCart1 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 03%;
+}
+
+#mallCart2 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 06%;
+}
+
+#mallCart3 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 09%;
+}
+
+#mallCart4 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 12%;
+}
+
+#mallCart5 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 15%;
+}
+
+#mallCart6 {
+    height: 8%;
+    width: 6%;
+    top: 80%;
+    left: 18%;
+}
+
+#mallCart7 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 03%;
+}
+
+#mallCart8 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 06%;
+}
+
+#mallCart9 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 09%;
+}
+
+#mallCart10 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 12%;
+}
+
+#mallCart11 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 15%;
+}
+
+#mallCart12 {
+    height: 8%;
+    width: 6%;
+    top: 60%;
+    left: 18%;
+}
+
+#mallCart13 {
+    height: 8%;
+    width: 6%;
+    top: 40%;
+    left: 50%;
+}
+
+#mallCart14 {
+    height: 8%;
+    width: 6%;
+    top: 70%;
+    left: 45%;
+}
+
+#mallCart15 {
+    height: 10%;
+    width: 4%;
+    top: 5%;
+    left: 60%;
+}
+
+#mallCart16 {
+    height: 10%;
+    width: 4%;
+    top: 5%;
+    left: 29%;
+}
+
+#mallrack01 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 5%
+}
+
+#mallrack02 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 5%
+}
+
+#mallRack03 {
+    height: 14%;
+    width: 3%;
+    top:2.6%;
+    left: 10%
+}
+
+#mallRack04 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 10%
+}
+
+#mallRack05 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 17%
+}
+
+#mallRack06 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 17%
+}
+
+#mallRack07 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 22%
+}
+
+#mallRack08 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 22%
+}
+
+#mallRoom01 {
+    height: 11%;
+    width: 4%;
+    top: 3%;
+    left: 94.5%
+}
+
+#mallRoom02 {
+    height: 11%;
+    width: 5%;
+    top: 19%;
+    left: 93.5%
+}
+
+#mallRoom03 {
+    height: 11%;
+    width: 5%;
+    top: 35%;
+    left: 93.5%
+}
+
+#mallpent1 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 80%
+}
+
+#mallpent2 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 80%
+}
+
+#mallTshirt1 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 72%
+}
+
+#mallTshirt2 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 72%
+}
+
+#mallshirt1 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 64%
+}
+
+#mallshirt2 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 64%
+}
+
+#mallWashroom1 {
+    height: 11%;
+    width: 4%;
+    top: 85%;
+    left: 83%;
+}
+
+#mallWashroom2 {
+    height: 11%;
+    width: 4%;
+    top: 85%;
+    left: 88%;
+}
+
+#mallBiscuit01 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 37%
+}
+
+#mallsoap02 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 37%
+}
+
+#mallsoap03 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 44%
+}
+
+#mallToothpaste04 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 44%
+}
+
+#mallWashingpowder05 {
+    height: 14%;
+    width: 3%;
+    top: 2.6%;
+    left: 51%
+}
+
+#mallWashingpowder06 {
+    height: 14%;
+    width: 3%;
+    top: 29%;
+    left: 51%
+}
+
+#mallrack11 {
+    height: 11%;
+    width: 8%;
+    top: 48%;
+    left: 55%
+}
+
+#mallrack12 {
+    height: 11%;
+    width: 8%;
+    top: 48%;
+    left: 40%
+}
+
+#mallwashbasin {
+    height: 10%;
+    width: 3%;
+    top: 87%;
+    left: 75.5%;
+
+}
+#mallwashbasin2{
+    height: 10%;
+    width: 3%;
+    top: 87%;
+    left: 95.5%;
+
+}
+
+#malltable1 {
+    height: 10%;
+    width: 18%;
+    left: 45%;
+    top: 65%;
+
+}
+
+#malltable2 {
+    height: 22%;
+    width: 5%;
+    top: 75%;
+    left: 45%;
+}
+
+#mallchair1 {
+    height: 9%;
+    width: 5%;
+    top: 75%;
+    left: 58%;
+}
+
+#mallchair2 {
+    height: 9%;
+    width: 5%;
+    top: 75%;
+    left: 50%;
+}
+
+#mallsittingman1{
+    height:8%;
+    width:6%;
+    top:73.5%;
+    left:57.5%;
+
+}
+#mallsittingman2{
+    height:8%;
+    width:6%;
+    top:73.5%;
+    left:49.5%;
+
+}
+
+#mallicecreamstall1{
+    height:10%;
+    width:8%;
+    top:87%;
+    left:35%;
+}
+
+#mallman1 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallMan1 20s infinite linear;
+
+
+
+}
+
+#mallman1>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+.walk {
+    animation: mallWalk .8s infinite steps(2);
+}
+
+
+
+@keyframes mallWalk {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+
+
+@keyframes mallMan1 {
+    0% {
+        top: 60%;
+        left: 30%;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        top: 18%;
+        left: 30%;
+        transform: rotate(0deg);
+
+    }
+
+    21% {
+        top: 18%;
+        left: 30%;
+        transform: rotate(90deg);
+
+    }
+
+    40% {
+        top: 18%;
+        left: 55%;
+        transform: rotate(90deg);
+
+    }
+
+    41% {
+        top: 18%;
+        left: 55%;
+        transform: rotate(00deg);
+
+    }
+
+    50% {
+        top: 7%;
+        left: 55%;
+        transform: rotate(0deg);
+
+    }
+    52% {
+        top: 7%;
+        left: 55%;
+        transform: rotate(180deg);
+
+    }
+    60% {
+        top:18%;
+        left: 55%;
+        transform: rotate(180deg);
+
+    }
+    61% {
+        top:18%;
+        left: 55%;
+        transform: rotate(270deg);
+
+    }
+    80% {
+        top:18%;
+        left: 30%;
+        transform: rotate(270deg);
+
+    }
+    81% {
+        top:18%;
+        left: 30%;
+        transform: rotate(180deg);
+
+    }
+    98% {
+        top:60%;
+        left: 30%;
+        transform: rotate(180deg);
+
+    }
+    100% {
+        top:60%;
+        left: 30%;
+        transform: rotate(0deg);
+
+    }
+    
+
+   
+
+}
+
+/*-----------------------    man 2 -------------------------*/
+#mallman2 {
+    position: absolute;
+    width: calc(7% / 2);
+    height: 7%;
+    top: 65%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallMan2 20s infinite linear;
+
+
+
+}
+
+#mallman2>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes mallMan2 {
+    0% {
+        top: 65%;
+        left: 25%;
+        transform: rotate(0deg);
+    }
+
+    15% {
+        top: 43%;
+        left: 25%;
+        transform: rotate(0deg);
+    }
+
+    16% {
+        top: 43%;
+        left: 25%;
+        transform: rotate(-90deg);
+    }
+
+    38% {
+        top: 43%;
+        left: 1.7%;
+        transform: rotate(-90deg);
+    }
+
+    39% {
+        top: 43%;
+        left: 1.7%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 18%;
+        left: 1.7%;
+        transform: rotate(0deg);
+    }
+
+    51% {
+        top: 18%;
+        left: 1.7%;
+        transform: rotate(90deg);
+    }
+
+    75% {
+        top: 18%;
+        left: 25%;
+        transform: rotate(90deg);
+    }
+
+    76% {
+        top: 18%;
+        left: 25%;
+        transform: rotate(180deg);
+    }
+    98% {
+        top: 65%;
+        left: 25%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 65%;
+        left: 25%;
+        transform: rotate(0deg);
+    }
+
+
+}
+
+#mallman3 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallMan3 20s infinite linear;
+
+
+
+}
+
+#mallman3>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+
+@keyframes mallMan3 {
+    0% {
+        top: 60%;
+        left: 85%;
+        transform: rotate(0deg);
+    }
+    25% {
+        top: 20%;
+        left: 85%;
+        transform: rotate(0deg);
+    }
+    26% {
+        top: 20%;
+        left: 85%;
+        transform: rotate(-90deg);
+    }
+    50% {
+        top: 20%;
+        left: 60%;
+        transform: rotate(-90deg);
+    }
+    51% {
+        top: 20%;
+        left: 60%;
+        transform: rotate(-180deg);
+    }
+    65% {
+        top: 44%;
+        left: 60%;
+        transform: rotate(-180deg);
+    }
+    66% {
+        top: 44%;
+        left: 60%;
+        transform: rotate(-270deg);
+    }
+    87% {
+        top: 44%;
+        left: 85%;
+        transform: rotate(-270deg);
+    }
+    88% {
+        top: 44%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+    98% {
+        top: 60%;
+        left: 85%;
+        transform: rotate(-180deg);
+    }
+    100% {
+        top: 60%;
+        left: 85%;
+        transform: rotate(0deg);
+    }
+}
+
+#mallman4 {
+    position: absolute;
+    width: calc(6% / 2);
+    height: 6%;
+    top: 75%;
+    left: 35%;
+    z-index: 1;
+    overflow: hidden;
+    animation: mallWoman2 20s infinite linear;
+
+}
+
+#mallman4>img {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    top: 0%;
+    left: 0%;
+}
+
+@keyframes mallWoman2 {
+    0%{
+        top: 75%;
+        left: 35%;
+        transform: rotate(180deg);
+    }
+    2%{
+        top: 75%;
+        left: 35%;
+        transform: rotate(0deg);
+    }
+    23%{
+        top: 43%;
+        left: 35%;
+        transform: rotate(0deg);
+    }
+    24%{
+        top: 43%;
+        left: 35%;
+        transform: rotate(90deg);
+    }
+    35%{
+        top: 43%;
+        left: 48%;
+        transform: rotate(90deg);
+    }
+    36%{
+        top: 43%;
+        left: 48%;
+        transform: rotate(0deg);
+    }
+    45%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(0deg);
+    }
+    46%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(-90deg);
+    }
+    48%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(-90deg);
+    }
+    49%{
+        top: 30%;
+        left: 48%;
+        transform: rotate(-180deg);
+    }
+    65%{
+        top:50%;
+        left: 48%;
+        transform: rotate(-180deg);
+    }
+    66%{
+        top:50%;
+        left: 48%;
+        transform: rotate(-90deg);
+    }
+    80%{
+        top:50%;
+        left: 35%;
+        transform: rotate(-90deg);
+    }
+    81%{
+        top:50%;
+        left: 35%;
+        transform: rotate(-180deg);
+    }
+    98%{
+        top:75%;
+        left: 35%;
+        transform: rotate(-180deg);
+    }
+    100%{
+        top:75%;
+        left: 35%;
+        transform: rotate(-180deg);
+    }  
+   
+   
+}

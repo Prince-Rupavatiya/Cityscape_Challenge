@@ -1,0 +1,93 @@
+*
+{
+	margin:0%;
+	padding:0%;
+	
+}
+
+.main_game_zone{
+    display: none;
+}
+
+#main_game_zone
+{
+	background: url("image/background_game.jpg") no-repeat center fixed;
+	background-size: cover;
+	height:100vh;
+	width:100vw;
+}
+
+.flex-container
+{
+	height:100%;
+	width:100%;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: center;
+	align-items: center;
+	border:5px grooved black;
+	background-color:rgba(38,15,34,0.7);
+	
+}	
+.flex-items
+{
+	height:28%;
+	width:15%;
+	padding:3%;
+	padding-right: 4%;
+	margin:4%;
+	border:4px ridge magenta;
+	box-shadow: 0.4em 0.4em  #DFCCFB;	
+	border-radius:10%;
+	background-color:rgba(23,08,34,0.8);
+	justify-content:center;
+	text-align:center;
+}
+
+.game_zone_p
+{
+	color:white;
+	font-size: 1rem;
+	font-family:consolas;
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+
+}
+.game_zone_img
+{
+	height:100%;
+	width:120%;
+	border:4px double white;
+	border-radius:8%;
+}
+.flex-items:hover
+{
+	background: linear-gradient(45deg,navy,rgba(55,56,95,0.5), rgba(140,193,241,0.5),white);
+	border:4px ridge rgb(5,6,42);
+	transform: scale(1.1);
+}
+
+@media (max-width : 600px){
+
+	.flex-container{
+	height:100%;
+	width:100%;
+	margin: 0%;
+	}	
+
+	.flex-items{
+	height:20%;
+	width:40%;
+	padding:1%;
+	}
+
+	.game_zone_img{
+		width: 90%;
+	}
+
+	.game_zone_p{
+		display: none;
+	}
+}

@@ -1,0 +1,413 @@
+.riddhiHomeInsideMap {
+    height: 130%;
+    width: 130%;
+    background-image: url('component/riddhiHomefloor.png');
+    position: relative;
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+}
+
+.riddhiHomePosition {
+    position: absolute;
+}
+
+.hidden {
+    visibility: hidden;
+}
+#riddhiHomeWall03 {
+
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 99%;
+    /* border: 2px solid red; */
+
+}
+
+#riddhiHomeWall01 {
+
+    height: 3.5%;
+    width: 98.3%;
+    top: 0%;
+    left: 1%;
+    /* border: 2px solid green; */
+}
+
+#riddhiHomeWall02 {
+
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 0%;
+    /* border: 2px solid yellow; */
+}
+
+
+
+#riddhiHomeWall06 {
+
+    height: 50%;
+    width: 1.1%;
+    top: 1.6%;
+    left: 60%;
+
+}
+
+#riddhiHomeWall07 {
+
+    height: 49.1%;
+    width: 1.1%;
+    top: 1.6%;
+    left: 19.8%;
+
+}
+
+#riddhiHomeWall08 {
+
+    height: 2.2%;
+    width: 26%;
+    top: 49.7%;
+    left: 19.85%;
+
+}
+
+#riddhiHomeWall09 {
+
+    height: 2.2%;
+    width: 15%;
+    top: 50%;
+    left: 53%;
+
+}
+
+#riddhiHomeWall10 {
+
+    height: 2.2%;
+    width: 24%;
+    top: 50%;
+    left: 75%;
+
+}
+
+#riddhiHomeWall11 {
+
+    height: 2%;
+    width: 25%;
+    top: 98%;
+    left: 1%;
+
+}
+
+#riddhiHomeWall12 {
+
+    height: 2%;
+    width: 25%;
+    top: 98%;
+    left: 34%;
+
+}
+
+#riddhiHomeWall13 {
+
+    height: 2%;
+    width: 32.5%;
+    top: 98%;
+    left: 67%;
+
+}
+
+#riddhiHomeWall14 {
+    height: 2.4%;
+    width: 13%;
+    top: 46%;
+    left: 01%;
+
+}
+
+#riddhiHomebed1 {
+    height: 26%;
+    width: 13%;
+    top: 4%;
+    left: 34%;
+
+}
+
+#riddhiHomebed2 {
+    height: 26%;
+    width: 13%;
+    top: 4%;
+    left: 73%;
+}
+
+#riddhiHomekitchen {
+    height: 49.2%;
+    width: 6%;
+    top: 48.4%;
+    left: 1%;
+
+}
+
+#riddhiHomediningtable {
+    height: 27%;
+    width: 11%;
+    top: 70%;
+    left: 30%;
+}
+
+#riddhihometv1 {
+    height: 17%;
+    width: 3%;
+    top: 68%;
+    left: 96%;
+
+}
+
+#riddhihomesofa1 {
+    height: 27%;
+    width: 6.5%;
+    top: 63%;
+    left: 68%;
+}
+
+#riddhihometable1 {
+    height: 12%;
+    width: 5%;
+    top: 69.5%;
+    left: 80%;
+}
+
+#riddhihomechair01 {
+    height: 9.5%;
+    width: 6%;
+    top: 88%;
+    left: 80%;
+}
+
+#riddhihomeSofa2 {
+    height: 12%;
+    width: 12.5%;
+    top: 86%;
+    left: 78%;
+}
+
+#riddhihometv2 {
+    height: 5%;
+    width: 9%;
+    top: 45.5%;
+    left: 77%;
+}
+
+#riddhihometv3 {
+    height: 5%;
+    width: 10%;
+    top: 45.5%;
+    left: 36%;
+}
+
+#riddhihomecupboard1 {
+    height: 23%;
+    width: 3%;
+    top: 4%;
+    left: 57.1%;
+}
+
+#riddhihomecupboard2 {
+    height: 7%;
+    width: 12%;
+    top: 1.7%;
+    left: 86.8%;
+}
+
+#riddhihomebathtub {
+    height: 12%;
+    width: 11%;
+    top: 4%;
+    left: 1%;
+
+}
+
+#riddhihomewashbasin {
+    height: 8%;
+    width: 7%;
+    top: 38%;
+    left: 6.8%;
+}
+
+#riddhihomewashroom {
+    height: 7%;
+    width: 5%;
+    top: 27%;
+    left: 1%;
+}
+
+#riddhihomedoormate {
+    height: 8%;
+    width: 8%;
+    top: 90%;
+    left: 60%;
+}
+
+#riddhihomestudytable {
+    height: 15%;
+    width: 4%;
+    top: 22%;
+    left: 61.1%;
+}
+
+#riddhihomechair1 {
+    height: 8.5%;
+    width: 3.6%;
+    top: 26%;
+    left: 65.5%;
+
+}
+
+#riddhihomecarpet {
+    height: 13%;
+    width: 15%;
+    top: 31%;
+    left: 33%;
+}
+
+#riddhihomeflower1 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 94%;
+
+}
+
+#riddhihomeflower2 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 61%;
+
+}
+
+#riddhihomeflower3 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 56%;
+
+}
+
+#riddhihomeflower4 {
+    height: 5%;
+    width: 4%;
+    top: 45%;
+    left: 21%;
+
+}
+
+#riddhihomeflower5 {
+    height: 5%;
+    width: 4%;
+    top: 94%;
+    left: 47%;
+
+}
+
+#riddhihomeflower6 {
+    height: 5%;
+    width: 4%;
+    top: 94%;
+    left: 40%;
+
+}
+
+#riddhihomeflower7 {
+    height: 4%;
+    width: 3%;
+    top: 62%;
+    left: 96%;
+
+}
+
+#riddhihomeflower8 {
+    height: 4%;
+    width: 3%;
+    top: 89%;
+    left: 96%;
+
+}
+
+#riddhihomestudytable2 {
+    height: 10%;
+    width: 8.5%;
+    top: 4%;
+    left: 20.9%;
+}
+
+#riddhihomechair3 {
+    height: 7.8%;
+    width: 4%;
+    top: 12%;
+    left: 24.5%;
+
+}
+
+#riddhihomechair5 {
+    height: 9.5%;
+    width: 5.5%;
+    top: 5%;
+    left: 61%;
+}
+
+#riddhihomesittngman1 {
+    height: 9.5%;
+    width: 4%;
+    top: 63%;
+    left: 71%;
+}
+
+#riddhihomesittngman2 {
+    height: 9.2%;
+    width: 3.8%;
+    top: 25%;
+    left: 64%;
+}
+
+#riddhiHomeToilet {
+    height: 9%;
+    width: 5%;
+    top: 23%;
+    left: 1%;
+}
+
+#riddhiHomeFridge {
+    top: 89.4%;
+    left: 13%;
+    height: 8.8%;
+    width: 7.5%;
+}
+
+#riddhiHomeblackline1 {
+    height: 03%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+#riddhiHomeblackline2 {
+    height: 3%;
+    width: 100%;
+    top: 97%;
+    left: 1%;
+}
+
+#riddhiHomeblackline3 {
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 0%;
+}
+
+#riddhiHomeblackline4 {
+    height: 100%;
+    width: 1%;
+    top: 0%;
+    left: 100%;
+}

@@ -1,0 +1,318 @@
+.advikHomeInsideMap{
+    height: 150%;
+    width: 150%;
+    background-image:url('component/advikHomeBaseImage.png');
+    background-repeat: no-repeat;
+    display: none;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.advikHomePosition {
+    position: absolute;
+}
+
+#advikHomeSofaVertical {
+    top: 23%;
+    left: 6.5%;
+    height: 28.5%;
+    width: 7.5%;
+}
+
+#advikHomeSofaHorizontal {
+    top: 7%;
+    left: 14%;
+    height: 14.5%;
+    width: 14.5%;
+}
+
+#advikHomePinkFlower {
+    height: 11%;
+    width: 5%;
+    top: 9%;
+    left: 8%;
+}
+
+#advikHomeTv {
+    top: 63%;
+    left: 45.5%;
+    height: 20%;
+    width: 1.5%;
+}
+
+#advikHomeBlueSofa {
+    top: 79.5%;
+    left: 30%;
+    height: 15%;
+    width: 12%;
+}
+
+#advikHomeBlueChair {
+    top: 55%;
+    left: 7%;
+    height: 14%;
+    width: 7%;
+}
+
+#advikHomeFlower2 {
+    top: 85%;
+    left: 43%;
+    height: 9%;
+    width: 4.3%;
+}
+
+#advikHomeFlower1 {
+    top: 53%;
+    left: 43%;
+    height: 9%;
+    width: 4.3%;
+}
+
+#advikHomeCarpet {
+    top: 60%;
+    left: 33%;
+    height: 20%;
+    width: 7%;
+}
+
+#advikHomeChair1 {
+    top: 13%;
+    left: 76%;
+    height: 10%;
+    width: 5%;
+}
+
+#advikHomeChair2 {
+    top: 13%;
+    left: 89%;
+    height: 10%;
+    width: 5%;
+}
+
+#advikHomeBed {
+    top: 72%;
+    left: 77%;
+    height: 23%;
+    width: 10%;
+}
+
+#advikHomeStudyTable {
+    top: 42%;
+    left: 88.8%;
+    height: 18%;
+    width: 5.5%;
+}
+
+#advikHomeStudyChair {
+    top: 51%;
+    left: 85%;
+    height: 8.5%;
+    width: 4.5%;
+}
+
+#advikHomeBedroomCupboard {
+    height: 23%;
+    width: 4.8%;
+    left: 91%;
+    top: 71.6%;
+}
+
+#advikHomeLamp {
+    height: 7%;
+    width: 4.5%;
+    left: 70.5%;
+    top: 87.8%;
+}
+
+#advikHomeBathtub {
+    top: 6%;
+    left: 59%;
+    height: 9%;
+    width: 9%;
+}
+
+#advikHomeToilet {
+    top: 19%;
+    left: 64%;
+    height: 7%;
+    width: 4%;
+}
+
+#advikHomeWashBasin {
+    top: 6.5%;
+    left: 48.5%;
+    height: 8%;
+    width: 4.5%;
+}
+
+#advikHomeDoormat {
+    top: 85%;
+    left: 7%;
+    height: 9%;
+    width: 8%;
+}
+
+#advikHomeBalconyTepoy {
+    top: 10%;
+    left: 82%;
+    height: 12%;
+    width: 5.5%;
+}
+
+#advikHomeLivingRoomTepoy {
+    top: 50%;
+    left: 32%;
+    height: 33%;
+    width: 15%;
+}
+
+#advikHomePendrive {
+    top: 13%;
+    left: 81.7%;
+    height: 4.8%;
+    width: 4.8%;
+}
+
+#advikHomeDiningTable {
+    top: 47.5%;
+    left: 61.5%;
+    height: 12%;
+    width: 6.5%;
+}
+
+#advikHomeGasStand {
+    top: 67%;
+    left: 52%;
+    height: 9%;
+    width: 8%;
+}
+
+#advikHomeKitchenHorizontal {
+    top: 85.5%;
+    left: 54%;
+    height: 9%;
+    width: 14%;
+}
+
+#advikHomeKitchenVertical {
+    top: 72.5%;
+    left: 64%;
+    height: 13%;
+    width: 4%;
+}
+
+#advikHomeGas {
+    top: 67%;
+    left: 53.5%;
+    height: 7%;
+    width: 4.5%;
+}
+
+#advikHomeKitchenDrawer {
+    height: 11%;
+    width: 5%;
+    top: 84%;
+    left: 48%;
+}
+
+#advikHomeBalconyFlower {
+    height: 9%;
+    width: 4.5%;
+    top: 6.7%;
+    left: 31%;
+}
+
+#advikHomeBalconyTable1 {
+    height: 9%;
+    width: 4.5%;
+    top: 17%;
+    left: 32.5%;
+}
+
+#advikHomeSwing {
+    height: 14%;
+    width: 5%;
+    top: 10%;
+    left: 42%;
+}
+
+#advikHomeBedroomWall2 {
+    height: 56%;
+    width: 2%;
+    top: 45%;
+    left: 68%;
+}
+
+#advikHomeWashroomWall1 {
+    height: 29.5%;
+    width: 2%;
+    top: 0%;
+    left: 68%;
+}
+
+#advikHomeWashroomWall2 {
+    height: 3%;
+    width: 13%;
+    top: 28%;
+    left: 57%;
+}
+
+#advikHomeWashroomWall3 {
+    height: 30%;
+    width: 0.8%;
+    top: 0%;
+    left: 47.5%;
+}
+
+#advikHomeBalconyWall {
+    height: 30%;
+    width: 3.5%;
+    top: -0.5%;
+    left: 28.5%;
+}
+
+#advikHomeKitchenWall1 {
+    height: 2%;
+    width: 12%;
+    top: 45%;
+    left: 58%;
+}
+
+#advikHomeKitchenWall2 {
+    height: 55%;
+    width: 0.8%;
+    top: 45%;
+    left: 47%;
+}
+
+#advikHomeBlackline_h1 {
+    top: 0%;
+    left: 0%;
+    height: 6.5%;
+    width: 100%;
+}
+
+#advikHomeBlackline_h2 {
+    top: 94.5%;
+    left: 0%;
+    height: 5%;
+    width: 100%;
+}
+
+#advikHomeBlackline_v1 {
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 6.4%;
+}
+
+#advikHomeBlackline_v2 {
+    top: 0%;
+    left: 94%;
+    height: 100%;
+    width: 6%;
+}
+
+.v {
+    visibility: hidden;
+}
