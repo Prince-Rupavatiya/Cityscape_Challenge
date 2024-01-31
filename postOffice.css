@@ -2,6 +2,7 @@
   position: absolute;
 }
 .postOfficeInsideMap {
+  top:20%;
   height: 150%;
   width: 150%;
   background-image: url("component/postOfficeBaseC.png");
